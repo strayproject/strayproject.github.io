@@ -6,7 +6,8 @@ module.exports = {
     './_posts/*.md',
     './*.md',
     './*.html',
-    "./node_modules/flowbite/**/*.js",
+    './node_modules/flowbite/**/*.js',
+    './assets/js/*.js',
   ],
   theme: {
     theme: {

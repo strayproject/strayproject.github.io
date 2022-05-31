@@ -1,0 +1,57 @@
+---
+layout: default
+title: "Main"
+---
+<div class="container mx-auto">
+    <div class="flex flex-row flex-wrap py-4">
+        <main role="main" class="w-full sm:w-2/3 pt-1 px-2">
+            <div class="mx-auto flex flex-col items-center justify-center">
+                <div class="relative rounded-lg bg-cover container my-5 flex flex-col items-center shadow-xl py-20"
+                    style="background-image: url('dist/img/campfire.webp')">
+                    <div class="w-11/12 sm:w-2/3 m-10">
+                        <img class="mx-auto justify-self-center" src="assets/img/icon/strandedlogo.webp">
+                        <h1
+                            class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-white font-boogaloo text-shadow leading-tight">
+                            Five Strangers, One Goal.</h1>
+                    </div>
+                    <div class="flex justify-center items-center">
+                        <a href="stranded.html">
+                            <button
+                                class="text-green-400 bg-gray-200/75 hover:bg-green-500 lg:text-2xl hover:border-green-500 hover:text-white transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded border border-white px-4 sm:px-8 py-1 sm:py-3 text-md font-boogaloo text-shadow">>
+                                Main Page</button>
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="mt-8 relative rounded-lg bg-gradient-to-tl bg-cover from-black container mx-auto flex flex-col items-center shadow-xl py-20">
+                    <div class="w-11/12 sm:w-2/3 m-10">
+                        <h1
+                            class="text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-white first-line:text-shadow leading-tight">
+                            WISH DINER</h1>
+                        <h1
+                            class="text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl text-center text-white text-shadow leading-tight">
+                            Everything has a price.</h1>
+                    </div>
+                    <div class="flex justify-center items-center mb-10 sm:mb-20">
+                        <button
+                            class="text-green-400 bg-gray-200/75 hover:bg-green-500 lg:text-2xl hover:border-green-500 hover:text-white transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded border border-white px-4 sm:px-8 py-1 sm:py-3 text-md text-shadow">>
+                            Learn More</button>
+                    </div>
+                </div>
+        </main>
+        <aside class="w-full sm:w-1/3 md:w-1/4 px-2">
+            <div class="p-4 w-full">
+                <!-- Posts -->
+                <h1 class="text-lg lg:text-xl">New Posts</h1>
+                <ul class="flex flex-col overflow-hidden">
+                    {% for post in site.posts %}
+                        <li>
+                        <a href="{{ post.url }}">{{ post.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </aside>
+    </div>
+</div>
+</div>
