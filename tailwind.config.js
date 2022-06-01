@@ -10,8 +10,10 @@ module.exports = {
     './assets/js/*.js',
   ],
   theme: {
-    theme: {
-      extend: {},
+    extend: {
+      fontFamily: {
+        'boogaloo': ['"Boogaloo"', 'regular']
+      },
     },
   },
   plugins: [

@@ -6,14 +6,19 @@
     <title>{{ page.title }} - {{ site.title }}</title>
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
     <script src="assets/js/flowbite.js"></script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- boogaloo font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet"> 
   </head>
-  <body">
+  <body>
   <!-- navbar -->
   <nav class="bg-gray-200 border-gray-200 px-3 sm:px-4 py-3 rounded-b-lg dark:bg-gray-800">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
       <a href="index.html" class="flex items-center">
           <!--<img src="/assets/img/logo.webp" class="mr-3 h-6 sm:h-9" alt="Stray Project Logo" />-->
-          <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white md:hover:text-blue-700">Stray Project</span>
+          <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white md:hover:text-blue-700 transition duration-250 font-boogaloo">Stray Project</span>
       </a>
       <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-300 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu" aria-expanded="false">
         <span class="sr-only">Open main menu</span>
@@ -23,24 +28,24 @@
       <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
         <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
           <li>
-            <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:text-md lg:text-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Stranded</a>
+            <a href="#" class="block py-3 px-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:text-md lg:text-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 transition duration-250">Stranded</a>
           </li>
           <li>
-            <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:text-md lg:text-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Wish Diner</a>
+            <a href="#" class="block py-3 px-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:text-md lg:text-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 transition duration-250">Wish Diner</a>
           </li>
           <li>
-            <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:text-md lg:text-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Posts</a>
+            <a href="#" class="block py-3 px-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:text-md lg:text-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 transition duration-250">Posts</a>
           </li>
           <li>
-            <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:text-md lg:text-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About Us</a>
+            <a href="#" class="block py-3 px-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:text-md lg:text-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 transition duration-250">About Us</a>
           </li>
           <li>
-            <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:text-md lg:text-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+            <a href="#" class="block py-3 px-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:text-md lg:text-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 transition duration-250">Contact</a>
           </li>
           <div class="hidden md:flex items-center space-x-4">
-						<a href="https://discord.gg/4Rp2sVzAHk"><img class="hover:scale-125 transition duration-200" alt="Discord" src="assets/img/discord_icon.webp"></a>
-						<a href="https://ko-fi.com/strayproject22"><img class="hover:scale-125 transition duration-200" alt="Ko-Fi" src="assets/img/kofi_icon.webp"></a>
-						<a href="https://twitter.com/thestrayproject"><img class="hover:scale-125 transition duration-200" alt="Twitter" src="assets/img/twitter_icon.webp"></a>
+						<a href="https://discord.gg/4Rp2sVzAHk"><img class="hover:scale-125 transition duration-250" alt="Discord" src="assets/img/icon/discord_icon.webp"></a>
+						<a href="https://ko-fi.com/strayproject22"><img class="hover:scale-125 transition duration-250" alt="Ko-Fi" src="assets/img/icon/kofi_icon.webp"></a>
+						<a href="https://twitter.com/thestrayproject"><img class="hover:scale-125 transition duration-250" alt="Twitter" src="assets/img/icon/twitter_icon.webp"></a>
 					</div>
         </ul>
       </div>
