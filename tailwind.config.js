@@ -1,7 +1,8 @@
 module.exports = {
-  content: [
-    './**/*.html'
+  purge: [
+
   ],
+  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       fontFamily: {
@@ -9,7 +10,10 @@ module.exports = {
       },
     },
   },
+  variants: {
+    extend: {},
+  },
   plugins: [
-    require('flowbite/plugin')
-]
+        require('flowbite/plugin')
+    ],
 }

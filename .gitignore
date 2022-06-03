@@ -1,5 +1,7 @@
-_site/
-.sass-cache/
-.jekyll-cache/
+### Jekyll ###
+_site
 .jekyll-metadata
-node_modules/
+.jekyll-cache/
+
+### NPM ###
+/node_modules/
