@@ -1,51 +1,22 @@
-<!DOCTYPE html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
-    <link href="dist/output.css" rel="stylesheet">
-    <title>Stranded Web</title>
-    <script defer src="https://kit.fontawesome.com/8c6c4c3a07.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-    <!-- navbar script -->
-    <script defer id="replace_with_navbar" src="nav.js"></script>
-    <div class="w-full h-full flex items-center justify-center">
-        <iframe src="https://itch.io/embed-upload/5805463?color=333333" allowfullscreen="" width="1280" height="740" frameborder="0"><a href="https://brandonpow.itch.io/stranded-web">Play stranded-web on itch.io</a></iframe>
-    </div>
-    <div class="px-2 sm:px-2 md:px-4 lg:px-6 xl:px-10">
-        <h1 class="text-xl sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-boogaloo pt-3 pb-2">Frequently Asked
-            Questions</h1>
-        <h2 class="text-lg sm:text-md md:text-lg lg:text-xl xl:text-2xl font-boogaloo text-gray-500">It's not working!
-            Help!</h2>
-        <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">This version of Stranded
-            runs on RenPyWeb, support for individual browsers seems to be quite picky. If you see the following error
-            message:</p>
-        <img class="mx-auto" src="dist/img/strandedweb-webkiterror.webp">
-        <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">...then you can't run
-            Stranded on this browser. Sorry.</p>
-        <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">If you're running the
-            latest Chrome or Edge version, you can still play this game by changing the user agent to Firefox. (I
-            recommend using a user agent changer extension. If you can't, then try using developer tools: F12 > ... >
-            More tools > Network conditions > User agent: uncheck the 'use browser default' checkbox and select Firefox
-            > F5 to refresh)</p>
-        <h2 class="text-lg sm:text-md md:text-lg lg:text-xl xl:text-2xl font-boogaloo text-gray-500">How do I make the
-            game fullscreen?</h2>
-        <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">There's an icon on the
-            bottom right of the visual novel container: <i class="fa-solid fa-maximize"></i></p>
-        <h2 class="text-lg sm:text-md md:text-lg lg:text-xl xl:text-2xl font-boogaloo text-gray-500">This doesn't feel
-            like the real experience...</h2>
-        <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">Despite best efforts,
-            many corners had to be cut: the main menu video is now a static image, images appear blurry while assets are
-            loading, music takes a while to play and sound effects may not play in time. To avoid these issues, I
-            recommend that you <a class="alink" href="stranded.html#download">download and play a local version of the
-                game</a> rather than in a web browser; this version is for players who have no local file saving or
-            application running permissions. (...or who don't want to update.)</p>
-    </div>
-    <!-- navbar script -->
-    <script defer id="replace_with_footer" src="footer.js"></script>
-</body>
+---
+layout: default
+title: "Stranded Web"
+description: "Play in your browser!"
+image: /assets/img/bg/campfire.webp
+---
+<div class="w-full h-full flex items-center justify-center">
+    <iframe src="https://itch.io/embed-upload/5805463?color=333333" allowfullscreen="" width="1280" height="740"
+        frameborder="0"><a href="https://brandonpow.itch.io/stranded-web">Play stranded-web on itch.io</a></iframe>
+</div>
+<div class="px-2 sm:px-2 md:px-4 lg:px-6 xl:px-10">
+    <h1 class="text-xl sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-boogaloo pt-3 pb-2">Frequently Asked Questions</h1>
+    <h2 class="text-lg sm:text-md md:text-lg lg:text-xl xl:text-2xl font-boogaloo text-gray-500">It's not working! Help!</h2>
+    <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">This version of Stranded runs on RenPyWeb, support for individual browsers seems to be quite picky. If you see the following error message:</p>
+    <img class="mx-auto" src="assets/img/sc/strandedweb-webkiterror.webp">
+    <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">...then you can't run Stranded on this browser. Sorry.</p>
+    <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">If you're running the latest Chrome or Edge version, you can still play this game by changing the user agent to Firefox. (I recommend using a user agent changer extension. If you can't, then try using developer tools: F12 > ... > More tools > Network conditions > User agent: uncheck the 'use browser default' checkbox and select Firefox > F5 to refresh)</p>
+    <h2 class="text-lg sm:text-md md:text-lg lg:text-xl xl:text-2xl font-boogaloo text-gray-500">How do I make the game fullscreen?</h2>
+    <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">There's an icon on the bottom right of the visual novel container: <i class="fa-solid fa-maximize"></i></p>
+    <h2 class="text-lg sm:text-md md:text-lg lg:text-xl xl:text-2xl font-boogaloo text-gray-500">This doesn't feel like the real experience...</h2>
+    <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">Despite best efforts, many corners had to be cut: the main menu video is now a static image, images appear blurry while assets are loading, music takes a while to play and sound effects may not play in time. To avoid these issues, I recommend that you <a class="alink" href="stranded.html#download">download and play a local version of the game</a> rather than in a web browser; this version is for players who have no local file saving or application running permissions. (...or who don't want to update.)</p>
+</div>
