@@ -6,7 +6,8 @@ layout: default
 </div>
 <!-- center column -->
 <div class="mx-2 md:mx-4 lg:mx-16 xl:mx-32" style="background-color: #fff8;">
-<h1>{{ page.title }}</h1>
-<p>{{ page.date | date: "%-d %B %Y" }} | {{ page.author }}</p>
-<div class="px-2 md:px-8 lg:px-16">{{ content }}</div>
+    <h1 class="font-boogaloo">{{ page.title }}</h1>
+    <p class="font-boogaloo">{{ page.date | date: "%-d %B %Y" }} | {{ page.author }}</p>
+<div class="px-2 md:px-8 lg:px-16 font-boogaloo prose lg:prose-lg max-w-none prose-img:rounded-xl xl:prose-xl">
+    {{ content }}</div>
 </div>

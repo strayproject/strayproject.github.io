@@ -10,14 +10,15 @@ image: /assets/img/bg/campfire.webp
 <!-- center column -->
 <div class="mx-2 md:mx-4 lg:mx-16 xl:mx-32" style="background-color: #fff8;">
 <div class="flex flex-row items-center mx-auto justify-center">
+    <image class="inline pr-2" src="assets/img/emotes/dum.webp"></image>
     <h1 id="download" class="text-3xl md:text-3xl lg:text-4xl font-boogaloo self-center">Posts</h1>
 </div>
 <div class="px-2 sm:px-2 md:px-4 lg:px-6 xl:px-10 py-2 min-h-screen">
-    <ul class="flex flex-col overflow-hidden">
+    <ul class="flex flex-col overflow-hidden space-y-2">
         {% for post in site.posts %}
             <li>
             <a href="{{ post.url }}">
-                <div class="w-full rounded-lg h-32 p-2 bg-gray-200 hover:bg-gray-300 transition duration-250">
+                <div class="w-full py-auto lg:px-4 rounded-lg h-32 p-2 bg-blue-100 hover:bg-blue-300 transition duration-250">
                     <div class="flex justify-between">
                     <h1 class="text-xl md:text-2xl lg:text-3xl font-boogaloo py-1">{{ post.title }}</h1>
                     <p class="text-md lg:text-lg xl:text-xl font-boogaloo">{{ post.date | date: "%-d %B %Y" }}</p>
