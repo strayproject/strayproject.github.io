@@ -4,8 +4,8 @@ module.exports = {
     './_includes/**/*.html',
     './_layouts/**/*.html',
     './_posts/*.md',
-    './*.md',
-    './*.html',
+    './*.{md,html}',
+    './assets/js/flowbite.js',
   ],
   theme: {
     extend: {
