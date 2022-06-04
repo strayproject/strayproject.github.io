@@ -6,6 +6,9 @@ plugins:
   - jekyll-postcss
   - jekyll-seo-tag
 
+postcss:
+  cache: false
+  
 sass:
   load_paths:
     - _sass

@@ -1,8 +1,12 @@
 module.exports = {
-  purge: [
-
+  content: [
+    './_drafts/**/*.html',
+    './_includes/**/*.html',
+    './_layouts/**/*.html',
+    './_posts/*.md',
+    './*.md',
+    './*.html',
   ],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       fontFamily: {
@@ -11,10 +15,7 @@ module.exports = {
     },
   },
   variants: {
-    extend: {
-      margin: ['hover'],
-      margin: ['responsive', 'hover'],
-    },
+    extend: {},
   },
   plugins: [
         require('flowbite/plugin'),
