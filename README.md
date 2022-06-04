@@ -1,5 +1,5 @@
 # Stray Project Website
-![gh-pages](https://github.com/github/docs/actions/workflows/jekyll-ghpages.yml/badge.svg)
+[![.github/workflows/jekyll-ghpages.yml](https://github.com/strayproject/strayproject.github.io/actions/workflows/jekyll-ghpages.yml/badge.svg?branch=main)](https://github.com/strayproject/strayproject.github.io/actions/workflows/jekyll-ghpages.yml)
 
 ## Installation
 before starting, please install the following programs:
@@ -34,4 +34,4 @@ author: brandon pow
 
 ## Further Reading
 - [jekyll](https://jekyllrb.com/)
-- [tailwind 2](https://v2.tailwindcss.com/) (can't seem to get tailwind 3 to work with github pages)
+- [tailwind v3](https://tailwindcss.com/)
