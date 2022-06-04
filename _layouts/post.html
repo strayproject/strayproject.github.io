@@ -1,5 +1,12 @@
 ---
 layout: default
 ---
-<p>{{ page.date }} | {{ page.author }}</p>
-{{ content }}
+<!-- bg -->
+<div class="h-full w-full fixed top-0 -z-10 bg-cover blur-sm"  style="background-image:url('/assets/img/bg/beach1.webp');">
+</div>
+<!-- center column -->
+<div class="mx-2 md:mx-4 lg:mx-16 xl:mx-32" style="background-color: #fff8;">
+<h1>{{ page.title }}</h1>
+<p>{{ page.date | date: "%-d %B %Y" }} | {{ page.author }}</p>
+<div class="px-2 md:px-8 lg:px-16">{{ content }}</div>
+</div>
