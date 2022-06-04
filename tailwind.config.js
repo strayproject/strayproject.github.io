@@ -11,7 +11,10 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      margin: ['hover'],
+      margin: ['responsive', 'hover'],
+    },
   },
   plugins: [
         require('flowbite/plugin'),
