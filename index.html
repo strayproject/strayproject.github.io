@@ -2,11 +2,14 @@
 layout: default
 title: "Main Page"
 ---
-<div class="h-full w-full fixed top-0 -z-10 bg-gradient-to-br from-green-200 to-green-500"></div>
+<div class="h-full w-full fixed top-0 -z-10" style="background-color: #171717;
+opacity: 1;
+background-image:  radial-gradient(#926c00 3px, transparent 3px), radial-gradient(#926c00 3px, #171717 3px);
+background-size: 80px 80px;
+background-position: 0 0,40px 40px;"></div>
 <div class="container mx-auto">
     <div class="flex flex-row flex-wrap py-4">
-        <main role="main" class="flex-auto px-2">
-            
+        <main role="main" class="flex-auto">            
             <div class="mx-auto flex flex-col items-center justify-center">
                 <div class="relative rounded-lg bg-gradient-to-tl bg-cover from-black container mx-auto flex flex-col items-center shadow-xl py-20"
                     style="background-image: url('assets/img/campfire.webp')">
@@ -43,18 +46,18 @@ title: "Main Page"
         </main>
         <!-- sidebar -->
         <aside class="flex-auto px-2">
-            <div class="p-4 w-full">
+            <div class="p-4 w-full rounded bg-gray-100/80">
                 <!-- Posts -->
-                <div class="w-full h-12 flex rounded border-4 border-red-200">
+                <div class="w-full h-12 flex">
                     <image class="flex-none" src="assets/img/emotes/dum.webp"></image>
                     <h1 class="self-center place-self-center text-lg lg:text-xl">New Posts</h1>
                 </div>
                 <ul class="flex flex-col overflow-hidden">
                     {% for post in site.posts %}
-                        <li>
+                        <li class="pb-1">
                         <a href="{{ post.url }}">
-                            <div class="w-full h-10 bg-gray-200 hover:bg-gray-300 transition duration-250">
-                                <h2 class="my-auto">{{ post.title }}</h2>
+                            <div class="w-full rounded-lg h-12 m-2 bg-blue-100/80 hover:bg-blue-200 transition duration-250">
+                                <h2 class="inline-block align-middle">{{ post.title }}</h2>
                             </div></a>
                         </li>
                     {% endfor %}

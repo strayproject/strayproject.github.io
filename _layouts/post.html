@@ -6,8 +6,18 @@ layout: default
 </div>
 <!-- center column -->
 <div class="mx-2 md:mx-4 lg:mx-16 xl:mx-32" style="background-color: #fff8;">
-    <h1 class="font-boogaloo">{{ page.title }}</h1>
-    <p class="font-boogaloo">{{ page.date | date: "%-d %B %Y" }} | {{ page.author }}</p>
-<div class="px-2 md:px-8 lg:px-16 font-boogaloo prose lg:prose-lg max-w-none prose-img:rounded-xl xl:prose-xl">
-    {{ content }}</div>
+    <!-- title -->
+    <div class="py-2 lg:py-4">
+        <h1 class="font-boogaloo text-3xl lg:text-4xl text-center">{{ page.title }}</h1>
+        <p class="font-boogaloo text-xl md:text-2xl text-center">{{ page.date | date: "%-d %B %Y" }} | {{ page.author }}</p>
+    </div>
+    <div class="px-2 md:px-8 lg:px-16 font-boogaloo prose lg:prose-lg max-w-none prose-img:rounded-xl xl:prose-xl">
+    {{ content }}
+    </div>
+    <a href="/posts.html">
+        <div class="flex justify-center items-center py-2">
+        <button
+            class="bg-gray-500 hover:bg-green-500 hover:border-white my-2 transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded border border-white text-white px-4 sm:px-8 py-1 sm:py-3 text-md font-boogaloo"><i class="fa-solid fa-arrow-left pr-2"></i>Back to posts</button>
+        </div>
+    </a>
 </div>
