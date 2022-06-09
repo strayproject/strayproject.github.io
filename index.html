@@ -38,26 +38,28 @@ background-position: 0 0,40px 40px;"></div>
                             Everything has a price.</h1>
                     </div>
                     <div class="flex justify-center items-center mb-10 sm:mb-20">
+                        <a href="construction.html">
                         <button
                             class="text-green-400 bg-gray-200/75 hover:bg-green-500 lg:text-2xl hover:border-green-500 hover:text-white transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded border border-white px-4 sm:px-8 py-1 sm:py-3 text-md text-shadow">>
                             Learn More</button>
+                        </a>
                     </div>
                 </div>
         </main>
         <!-- sidebar -->
-        <aside class="flex-auto px-2">
+        <aside class="flex-auto px-2 font-boogaloo">
             <div class="p-4 w-full rounded bg-gray-100/80">
                 <!-- Posts -->
                 <div class="w-full h-12 flex">
                     <image class="flex-none" src="assets/img/emotes/dum.webp"></image>
-                    <h1 class="self-center place-self-center text-lg lg:text-xl">New Posts</h1>
+                    <h1 class="self-center place-self-center text-xl lg:text-2xl">New Posts</h1>
                 </div>
                 <ul class="flex flex-col overflow-hidden">
                     {% for post in site.posts %}
                         <li class="pb-1">
                         <a href="{{ post.url }}">
-                            <div class="w-full rounded-lg h-12 m-2 bg-blue-100/80 hover:bg-blue-200 transition duration-250">
-                                <h2 class="inline-block align-middle">{{ post.title }}</h2>
+                            <div class="w-full rounded-lg h-12 bg-blue-100/80 hover:bg-blue-200 transition duration-250">
+                                <h2 class="p-auto align-middle text-lg lg:text-xl text-gray-800">{{ post.title }}</h2>
                             </div></a>
                         </li>
                     {% endfor %}
