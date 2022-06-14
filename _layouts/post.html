@@ -7,9 +7,13 @@ layout: default
 <!-- center column -->
 <div class="mx-0 md:mx-4 lg:mx-16 xl:mx-32" style="background-color: #fff8;">
     <!-- title -->
-    <div class="py-2 lg:py-4">
-        <h1 class="font-boogaloo text-3xl lg:text-4xl text-center">{{ page.title }}</h1>
-        <p class="font-boogaloo text-xl md:text-2xl text-center">{{ page.date | date: "%-d %B %Y" }} | {{ page.author }}</p>
+    <div class="py-2 lg:py-4 font-boogaloo">
+        <h1 class="text-3xl lg:text-4xl text-center">{{ page.title }}</h1>
+        <p class="text-xl text-center">{{ page.date | date: "%-d %B %Y" }} | {{ page.author }} | Tags: 
+            {% for tags in page.tags %}
+            <span class="bg-green-100 text-green-800 text-xs font-semibold mr-1 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900">{{ tags | upcase }}</span>
+            {% endfor %}
+        </p>
     </div>
     <div class="px-2 md:px-8 lg:px-16 font-boogaloo prose lg:prose-lg max-w-none prose-img:rounded-xl xl:prose-xl">
     {{ content }}
