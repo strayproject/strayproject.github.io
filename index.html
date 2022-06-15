@@ -12,23 +12,23 @@ background-position: 0 0,40px 40px;"></div>
         <main role="main" class="flex-auto">            
             <div class="mx-auto flex flex-col items-center justify-center">
                 <div class="relative rounded-lg bg-gradient-to-tl bg-cover from-black container mx-auto flex flex-col items-center shadow-xl py-20"
-                    style="background-image: url('assets/img/campfire.webp')">
+                    style="background-image: url('/assets/img/campfire.webp')">
                     <div class="w-11/12 sm:w-2/3 m-10">
-                        <img class="mx-auto justify-self-center" src="assets/img/icon/strandedlogo.webp">
+                        <img class="mx-auto justify-self-center" src="/assets/img/icon/strandedlogo.webp">
                         <h1
-                            class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-white font-boogaloo text-shadow leading-tight">
+                            class="text-2xl sm:text-3xl md:text-4xl text-center text-white font-boogaloo text-shadow leading-tight">
                             Five Strangers, One Goal.</h1>
                     </div>
                     <div class="flex justify-center items-center">
-                        <a href="stranded.html">
+                        <a href="/stranded.html">
                             <button
-                                class="text-green-400 bg-gray-200/75 hover:bg-green-500 lg:text-2xl hover:border-green-500 hover:text-white transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded border border-white px-4 sm:px-8 py-1 sm:py-3 text-md font-boogaloo text-shadow">>
+                                class="text-green-700 bg-gray-200/75 hover:bg-green-500 lg:text-2xl hover:border-green-500 hover:text-white transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded border border-white px-4 sm:px-8 py-1 sm:py-3 text-md font-boogaloo">>
                                 Main Page</button>
                         </a>
                     </div>
                 </div>
-                <div
-                    class="mt-8 relative rounded-lg bg-gradient-to-tl bg-cover from-black container mx-auto flex flex-col items-center shadow-xl py-20">
+                <div class="mt-2 relative rounded-lg bg-gradient-to-tl bg-cover from-black container mx-auto flex flex-col items-center shadow-xl py-20"
+                    style="background-image: url('/assets/img/bg/diner.webp')">
                     <div class="w-11/12 sm:w-2/3 m-10">
                         <h1
                             class="text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-white first-line:text-shadow leading-tight">
@@ -38,9 +38,9 @@ background-position: 0 0,40px 40px;"></div>
                             Everything has a price.</h1>
                     </div>
                     <div class="flex justify-center items-center mb-10 sm:mb-20">
-                        <a href="construction.html">
+                        <a href="/wishdiner.html">
                         <button
-                            class="text-green-400 bg-gray-200/75 hover:bg-green-500 lg:text-2xl hover:border-green-500 hover:text-white transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded border border-white px-4 sm:px-8 py-1 sm:py-3 text-md text-shadow">>
+                            class="text-blue-900 bg-gray-200/75 hover:bg-blue-500 lg:text-2xl hover:border-blue-500 hover:text-white transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded border border-white px-4 sm:px-8 py-1 sm:py-3 text-md">>
                             Learn More</button>
                         </a>
                     </div>
@@ -48,10 +48,10 @@ background-position: 0 0,40px 40px;"></div>
         </main>
         <!-- sidebar -->
         <aside class="flex-auto px-2 font-boogaloo">
-            <div class="p-4 w-full rounded bg-gray-100/80">
-                <!-- Posts -->
+            <!-- Posts -->
+            <div class="p-4 mb-2 w-full rounded bg-gray-100/80">
                 <div class="w-full h-12 flex">
-                    <image class="flex-none" src="assets/img/emotes/dum.webp"></image>
+                    <image class="flex-none" src="/assets/img/emotes/dum.webp"></image>
                     <h1 class="self-center place-self-center text-xl lg:text-2xl">New Posts</h1>
                 </div>
                 <ul class="flex flex-col overflow-hidden">
@@ -62,15 +62,15 @@ background-position: 0 0,40px 40px;"></div>
                                 {% if post.tags.first == "stranded" %}
                                     <span class="absolute bottom-1 right-0 bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900">STRANDED</span>
                                 {% elsif post.tags.first == "admin" %}
-                                <span class="absolute bottom-1 right-0 bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">ADMIN</span>
+                                    <span class="absolute bottom-1 right-0 bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">ADMIN</span>
                                 {% endif %}
                                 <h2 class="px-2.5 py-2.5 align-middle text-lg lg:text-xl text-gray-800">{{ post.title }}</h2>
                             </div></a>
                         </li>
                     {% endfor %}
                 </ul>
-
             </div>
+            <a class="twitter-timeline" data-height="500" data-dnt="true" href="https://twitter.com/TheStrayProject?ref_src=twsrc%5Etfw">Tweets by TheStrayProject</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
         </aside>
     </div>
 </div>

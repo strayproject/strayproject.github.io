@@ -18,12 +18,17 @@ image: /assets/img/bg/campfire.webp
         {% for post in site.posts %}
             <li>
             <a href="{{ post.url }}">
-                <div class="w-full py-auto lg:px-4 rounded-lg h-32 p-2 bg-blue-100/80 hover:bg-blue-200 transition duration-250">
+                <div class="w-full py-auto lg:px-4 relative rounded-lg h-32 p-2 font-boogaloo bg-blue-100/80 hover:bg-blue-200 transition duration-250">
                     <div class="flex justify-between">
-                    <h1 class="text-xl md:text-2xl lg:text-3xl font-boogaloo py-1">{{ post.title }}</h1>
-                    <p class="text-md lg:text-lg xl:text-xl font-boogaloo">{{ post.date | date: "%-d %B %Y" }}</p>
+                    <h1 class="text-xl md:text-2xl lg:text-3xl py-1">{{ post.title }}</h1>
+                    <p class="text-md lg:text-lg xl:text-xl">{{ post.date | date: "%-d %B %Y" }}</p>
                     </div>
-                    <h2 class="text-md lg:text-lg xl:text-xl font-boogaloo">{{ post.excerpt | strip_html | truncatewords:40 }}</h2>
+                    <h2 class="text-md lg:text-lg xl:text-xl text-gray-800">{{ post.excerpt | strip_html | truncatewords:40 }}</h2>
+                    {% if post.tags.first == "stranded" %}
+                        <span class="absolute bottom-1 right-0 bg-green-100 text-green-800 text-md mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900">STRANDED</span>
+                    {% elsif post.tags.first == "admin" %}
+                        <span class="absolute bottom-1 right-0 bg-blue-100 text-blue-800 text-md mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">ADMIN</span>
+                    {% endif %}
                 </div></a>
             </li>
         {% endfor %}
