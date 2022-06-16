@@ -5,13 +5,13 @@ description: "Five Strangers, One Goal."
 image: /assets/img/bg/campfire.webp
 ---
 <!-- bg -->
-<div class="h-full w-full fixed top-0 -z-10 bg-cover blur-sm"  style="background-image:url('/assets/img/bg/beach.webp');">
+<div class="h-full w-full fixed top-0 -z-10 bg-cover blur-sm"  style="background-color: #000;background-image:url('/assets/img/bg/beach.webp');">
 </div>
 <!-- center column -->
 <div class="mx-0 md:mx-4 lg:mx-16 xl:mx-32" style="background-color: #fff8;">
 <!-- title -->
 <div class="py-4 lg:py-8">
-<img class="mx-auto justify-self-center my-4" src="/assets/img/icon/strandedlogo.webp">
+<img class="mx-auto justify-self-center my-4" src="/assets/img/icon/strandedlogo.webp" alt="Stranded">
 </div>
 <!-- text -->
 <div class="px-2 lg:px-4">
@@ -22,7 +22,7 @@ image: /assets/img/bg/campfire.webp
     <p class="text-center text-xl lg:text-2xl font-boogaloo pb-1">Your choices determine the outcome: who will survive?</p>
 </div>
 <!-- gallery -->
-<h1 id="gallery" class="text-3xl md:text-3xl lg:text-4xl text-center font-boogaloo pt-4 pb-2">Gallery</h1>
+<h2 id="gallery" class="text-3xl md:text-3xl lg:text-4xl text-center font-boogaloo pt-4 pb-2">Gallery</h2>
 <div id="gallery-carousel" class="relative" data-carousel="static">
     <!-- Carousel wrapper -->
     <div class="flex flex-row place-content-center">
@@ -94,10 +94,10 @@ image: /assets/img/bg/campfire.webp
 
 <!-- contents -->
 <div class="flex flex-row justify-center pt-4">
-    <div class="hidden sm:block rotate-2 shrink w-80 h-80 justify-self-start lg:mr-6 xl:mr-10">
+    <div class="hidden sm:block rotate-2 shrink w-72 justify-self-start lg:mr-6 xl:mr-10">
     <img src="/assets/img/minibg/smoke.webp">
     </div>
-    <div id="content" class="mt-6">
+    <div id="content" class="my-6">
         <h2 class="text-xl lg:text-2xl font-boogaloo text-red-900">Featuring*:</h2>
         <div class="pl-8">
             <ul class="list-disc">
@@ -115,12 +115,12 @@ image: /assets/img/bg/campfire.webp
         </div>
         <p class="font-boogaloo">* correct as of chapter 2</p>
     </div>
-    <div class="hidden lg:block -rotate-2 shrink w-80 h-80 justify-self-start lg:ml-6 xl:ml-10">
+    <div class="hidden lg:block -rotate-2 shrink w-72 justify-self-start lg:ml-6 xl:ml-10">
         <img src="/assets/img/minibg/sta.webp">
         </div>
 </div>
 <!-- download links -->
-<h1 id="download" class="text-3xl md:text-3xl lg:text-4xl text-center font-boogaloo pb-2">Download</h1>
+<h2 id="download" class="text-3xl md:text-3xl lg:text-4xl text-center font-boogaloo pb-2">Download</h2>
 <div class="flex justify-center items-center">
     <a href="https://github.com/strayproject/strayproject.github.io/releases/download/v0.1.2.2/Stranded-0.1.2.2-pc.zip">
         <button
@@ -128,21 +128,25 @@ image: /assets/img/bg/campfire.webp
                 class="fa-brands fa-windows pr-2"></i><i class="fa-brands fa-linux pr-2"></i>Windows/Linux</button>
     </a>
     <a href="https://github.com/strayproject/strayproject.github.io/releases/download/v0.1.2.2/Stranded-0.1.2.2-mac.zip">
-        <button
+        <button data-tooltip-target="tooltip-mac"
             class="bg-gray-500 hover:bg-green-500 lg:text-2xl hover:border-white mx-1 transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded border border-white text-white px-4 sm:px-8 py-1 sm:py-3 text-md font-boogaloo"><i
                 class="fa-brands fa-apple pr-2"></i>Mac</button>
+        <div id="tooltip-mac" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700 font-boogaloo">
+            The computer, not the iPad or iPhone! Sorry.
+            <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
     </a>
     <a
         href="https://github.com/strayproject/strayproject.github.io/releases/download/v0.1.2.2/com.strayproject.stranded-release.apk">
-        <button
+        <button 
             class="bg-gray-500 hover:bg-green-500 lg:text-2xl hover:border-white mx-1 transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded border border-white text-white px-4 sm:px-8 py-1 sm:py-3 text-md font-boogaloo"><i
                 class="fa-solid fa-mobile-screen pr-2"></i>Android</button>
     </a>
 </div>
 <p class="font-boogaloo text-center text-xl py-2">v0.1.2.2 | June 9, 2022 | <a class="alink" href="install.html">General
         Installation Guide</a> | <a class="alink" href="https://thestrayproject.itch.io/stranded">Itch.io page</a>
-    </h1>
-<h1 class="font-boogaloo text-center text-xl py-2">or...</h1>
+</p>
+<p class="font-boogaloo text-center text-xl py-2">or...</p>
 <div class="flex justify-center items-center">
     <a href="strandedweb.html">
         <button id="strandedweb-modalbtn" href="stranded.html"
@@ -155,7 +159,7 @@ image: /assets/img/bg/campfire.webp
 <p class="font-boogaloo text-center pb-2">** can be bypassed by changing user agent</p>
 <!-- faq -->
 <div class="px-2 lg:px-4">
-    <h1 class="text-3xl md:text-3xl lg:text-4xl text-center font-boogaloo pb-2">Frequently Asked Questions</h1>
+    <h2 class="text-3xl md:text-3xl lg:text-4xl text-center font-boogaloo pb-2">Frequently Asked Questions</h2>
     <h2 class="text-xl lg:text-2xl font-boogaloo text-red-900">Why is this game rated 18 and above?</h2>
     <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">Without spoiling too much, please understand that this game contains profanity, mention of disturbing events and blood. In addition, as the script progresses, more elements will be added to the game that would be considered too strong for players under the age of 18. You have been warned!</p>
     <h2 class="text-xl lg:text-2xl font-boogaloo text-red-900">Are you currently accepting fan translations?</h2>
