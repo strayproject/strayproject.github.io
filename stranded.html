@@ -5,21 +5,127 @@ description: "Five Strangers, One Goal."
 image: /assets/img/bg/campfire.webp
 ---
 <!-- bg -->
-<div class="h-full w-full fixed top-0 -z-10 bg-cover blur-sm"  style="background-color: #000;background-image:url('/assets/img/bg/beach.webp');">
+<div class="h-full w-full fixed top-0 -z-10 bg-cover blur-sm"  style="background-color: lightskyblue;background-image:url('/assets/img/bg/beach.webp');">
 </div>
 <!-- center column -->
 <div class="mx-0 md:mx-4 lg:mx-16 xl:mx-32" style="background-color: #fff8;">
 <!-- title -->
-<div class="py-4 lg:py-8">
+<div class="py-4 lg:py-12">
 <img class="mx-auto justify-self-center my-4" src="/assets/img/icon/strandedlogo.webp" alt="Stranded">
 </div>
 <!-- text -->
-<div class="px-2 lg:px-4">
+<div class="px-2 lg:px-8 xl:px-16">
     <p class="text-center text-xl lg:text-2xl font-boogaloo pb-1"><i
             class="fa-solid fa-triangle-exclamation pr-2"></i>RATED 18: DEATH, BLOOD, PROFANITY</p>
     <p class="text-center text-xl lg:text-2xl font-boogaloo pb-1">You're on your way to a well-deserved vacation, saved up after months toiling away in the office. This is looking to be a great experience... until the plane you're in crashes headfirst into the ocean.</p>
     <p class="text-center text-xl lg:text-2xl font-boogaloo pb-1">Miraculously you survive on an unknown island along with five other passengers who know nothing about each other, yet must work together; not only are rations and morale low, but the island harbours some dangers of its own, too...</p>
     <p class="text-center text-xl lg:text-2xl font-boogaloo pb-1">Your choices determine the outcome: who will survive?</p>
+</div>
+<!-- cast -->
+<h2 id="gallery" class="text-3xl md:text-3xl lg:text-4xl text-center font-boogaloo pt-4 pb-2">Cast</h2>
+<div id="character-carousel" class="relative" data-carousel="static">
+    <!-- Carousel wrapper -->
+    <div class="flex flex-row place-content-center font-boogaloo">
+        <button type="button"
+            class="flex place-self-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+            data-carousel-prev>
+            <span
+                class="inline-flex justify-center items-center w-8 h-8 sm:w-10 sm:h-10 brightness-100 group-hover:brightness-125 transition duration-150">
+                <img class="hover:brightness-120" src="assets/img/icon/arrow_left.webp">
+            </span>
+        </button>
+        <div
+            class="overflow-hidden relative aspect-video rounded-lg h-48 sm:h-64 md:h-80 l:h-96 xl:h-[28rem] 2xl:h-[32rem]">
+            <!-- Item 1 -->
+            <div class="hidden duration-500 ease-in-out" data-carousel-item="active">
+                <div class="h-full w-full grid grid-rows-3 grid-flow-col gap-4">
+                    <div class="row-span-3">
+                        <img class="max-h-full max-w-full" src="/assets/img/char/kimfull.webp">
+                    </div>
+                    <h1 class="text-center py-2 text-2xl lg:text-3xl self-center">KIM</h1>
+                    <p class="row-span-2 text-left text-xl lg:text-2xl">A husky with a mild, optimistic temperament. Has natural leadership abilities.</p>
+                </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-500 ease-in-out" data-carousel-item>
+                <div class="absolute top-1/2 left-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 grid grid-rows-3 grid-flow-col gap-4">
+                    <div class="row-span-3">
+                        <img class="max-h-full max-w-full" src="/assets/img/char/berufull.webp">
+                    </div>
+                    <h1 class="text-center py-2 text-2xl lg:text-3xl self-center">BERU</h1>
+                    <p class="row-span-2 text-left text-xl lg:text-2xl">A gamer bear, strong but soft on the inside. Often puts others first.</p>
+                </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-500 ease-in-out" data-carousel-item>
+                <div class="h-full w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-3 grid-flow-col gap-4">
+                    <div class="row-span-3">
+                        <img class="max-h-full max-w-full" src="/assets/img/char/terryfull.webp">
+                    </div>
+                    <h1 class="text-center py-2 text-2xl lg:text-3xl self-center">TERRY</h1>
+                    <p class="row-span-2 text-left text-xl lg:text-2xl">A cold fox, not of many words. His appearance and behavior seem sharp and distrustful, but is that his true nature?</p>
+                </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="hidden duration-500 ease-in-out" data-carousel-item>
+                <div class="h-full w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-3 grid-flow-col gap-4">
+                    <div class="row-span-3">
+                        <img class="max-h-full max-w-full" src="/assets/img/char/lucyfull.webp">
+                    </div>
+                    <h1 class="text-center col-span-3 py-2 text-2xl lg:text-3xl self-center">LUCY</h1>
+                    <p class="row-span-2 text-left text-xl lg:text-2xl">A rabbit with a lot of smarts. Tends to stutter a lot, but isn't afraid to speak when the situation demands it.</p>
+                </div>
+            </div>
+            <!-- Item 5 -->
+            <div class="hidden duration-500 ease-in-out" data-carousel-item>
+                <div class="h-full w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-rows-3 grid-flow-col gap-4">
+                    <div class="row-span-3">
+                        <img class="max-h-full max-w-full" src="/assets/img/char/owenfull.webp">
+                    </div>
+                    <h1 class="text-center py-2 text-2xl lg:text-3xl self-center">OWEN</h1>
+                    <p class="row-span-2 text-left text-xl lg:text-2xl">Otter with a knack for fishing. Loud and boisterous.</p>
+                </div>
+            </div>
+            <!-- Item 6 -->
+            <div class="hidden duration-500 ease-in-out" data-carousel-item>
+                <div class="h-full w-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 grid grid-cols-2 grid-flow-col gap-4">
+                    <div class="col-span-1">
+                        <img class="max-h-full max-w-full" src="/assets/img/char/kimfull.webp" style="filter: contrast(0%) brightness(50%);">
+                    </div>
+                    <p class="col-span-1 text-center text-2xl lg:text-3xl self-center">More characters to come!</p>
+                </div>
+            </div>
+        </div>
+        <button type="button"
+            class="place-self-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+            data-carousel-next>
+            <span
+                class="inline-flex justify-center items-center w-8 h-8 sm:w-10 sm:h-10 brightness-100 group-hover:brightness-125 transition duration-150">
+                <img src="assets/img/icon/arrow_right.webp">
+                <span class="hidden">Next</span>
+            </span>
+        </button>
+    </div>
+    <!-- Slider indicators -->
+    <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+            data-carousel-slide-to="0"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+            data-carousel-slide-to="1"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+            data-carousel-slide-to="2"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
+            data-carousel-slide-to="3"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
+            data-carousel-slide-to="4"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 6"
+            data-carousel-slide-to="5"></button>
+    </div>
+    <!-- Slider controls -->
+</div>
+<!-- explanation -->
+<div class="py-4 px-2 lg:px-8 xl:px-16">
+    <p class="text-center text-xl lg:text-2xl font-boogaloo">Stranded is the Stray Project's first furry visual novel with elements of island survival written using <a class="alink" href="https://renpy.org/">Ren'Py</a>. The game is a work in progress. Updates are done on a best-effort basis.</p>
 </div>
 <!-- gallery -->
 <h2 id="gallery" class="text-3xl md:text-3xl lg:text-4xl text-center font-boogaloo pt-4 pb-2">Gallery</h2>
@@ -91,7 +197,6 @@ image: /assets/img/bg/campfire.webp
 
 
 </div>
-
 <!-- contents -->
 <div class="flex flex-row justify-center pt-4">
     <div class="hidden sm:block rotate-2 shrink w-72 justify-self-start lg:mr-6 xl:mr-10">
@@ -120,7 +225,7 @@ image: /assets/img/bg/campfire.webp
         </div>
 </div>
 <!-- download links -->
-<h2 id="download" class="text-3xl md:text-3xl lg:text-4xl text-center font-boogaloo pb-2">Download</h2>
+<h2 id="download" class="text-3xl md:text-3xl lg:text-4xl text-center font-boogaloo pt-4 pb-2">Download</h2>
 <div class="flex justify-center items-center">
     <a href="https://github.com/strayproject/strayproject.github.io/releases/download/v0.1.2.2/Stranded-0.1.2.2-pc.zip">
         <button
@@ -143,8 +248,7 @@ image: /assets/img/bg/campfire.webp
                 class="fa-solid fa-mobile-screen pr-2"></i>Android</button>
     </a>
 </div>
-<p class="font-boogaloo text-center text-xl py-2">v0.1.2.2 | June 9, 2022 | <a class="alink" href="install.html">General
-        Installation Guide</a> | <a class="alink" href="https://thestrayproject.itch.io/stranded">Itch.io page</a>
+<p class="font-boogaloo text-center text-xl py-2">v0.1.2.2 | June 9, 2022 | <a class="alink" href="install.html">General Installation Guide</a> | <a class="alink" href="https://thestrayproject.itch.io/stranded">Itch.io page</a>
 </p>
 <p class="font-boogaloo text-center text-xl py-2">or...</p>
 <div class="flex justify-center items-center">
