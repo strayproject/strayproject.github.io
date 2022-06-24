@@ -5,6 +5,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@import "/assets/css/amplitude.css";
 
 @layer components {
     .alink {

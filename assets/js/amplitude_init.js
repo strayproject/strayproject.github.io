@@ -95,5 +95,6 @@ Amplitude.init({
         "cover_art_url": "/assets/img/player/AlbumCover2.webp"
       }
     ],
-    "default_album_art": "/assets/img/player/AlbumCover.webp"
+    "default_album_art": "/assets/img/player/AlbumCover.webp",
+    "volume": 100,
   });
