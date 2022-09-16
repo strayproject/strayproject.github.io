@@ -6,6 +6,7 @@ module.exports = {
     './_posts/*.md',
     './*.{md,html}',
     './assets/js/*.js',
+    './assets/css/amplitude.css',
   ],
   theme: {
     extend: {
