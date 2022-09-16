@@ -3,7 +3,7 @@ baseurl: ""
 title: "Stray Project"
 
 plugins:
-  - jekyll-postcss
+  - jekyll-postcss-v2
   - jekyll-seo-tag
 
 postcss:

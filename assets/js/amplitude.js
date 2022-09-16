@@ -2564,10 +2564,10 @@ var MuteElements = function () {
     */
     for (var i = 0; i < muteClasses.length; i++) {
       if (!state) {
-        muteClasses[i].classList.add("amplitude-not-muted");
+        muteClasses[i].classList.add("amplitude-volume");
         muteClasses[i].classList.remove("amplitude-muted");
       } else {
-        muteClasses[i].classList.remove("amplitude-not-muted");
+        muteClasses[i].classList.remove("amplitude-volume");
         muteClasses[i].classList.add("amplitude-muted");
       }
     }

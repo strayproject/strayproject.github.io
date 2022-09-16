@@ -2,10 +2,11 @@
 ---
 
 @import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
 
-@import "/assets/css/amplitude.css";
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+@import "amplitude.css";
 
 @layer components {
     .alink {
