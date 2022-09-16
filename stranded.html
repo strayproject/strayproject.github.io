@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang=" en-US">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>Stranded - Stray Project</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <!-- fontkit (windows, mac, linux icons)-->
+  <script defer src="https://kit.fontawesome.com/8c6c4c3a07.js" crossorigin="anonymous"></script>
+  <!-- boogaloo font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet">
+  <!-- seo tag content -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Stranded | Stray Project</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Stranded" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Five Strangers, One Goal." />
+<meta property="og:description" content="Five Strangers, One Goal." />
+<link rel="canonical" href="https://strayproject.github.io/stranded.html" />
+<meta property="og:url" content="https://strayproject.github.io/stranded.html" />
+<meta property="og:site_name" content="Stray Project" />
+<meta property="og:image" content="https://strayproject.github.io/assets/img/bg/campfire.webp" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://strayproject.github.io/assets/img/bg/campfire.webp" />
+<meta property="twitter:title" content="Stranded" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Five Strangers, One Goal.","headline":"Stranded","image":"https://strayproject.github.io/assets/img/bg/campfire.webp","url":"https://strayproject.github.io/stranded.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--  amplitudejs -->
+  <script type="text/javascript" src="/assets/js/amplitude.js"></script>
+  <script defer src="/assets/js/amplitude_init.js"></script>
+</head>
+<body>
+  <div class="flex min-h-screen flex-col">
+  <!-- navbar -->
+  <nav class="bg-gray-100/80 border-gray-200 px-3 sm:px-4 py-3 rounded-b-lg dark:bg-gray-800">
+    <div class="container flex flex-wrap justify-between items-center mx-auto">
+      <a href="/index.html" class="flex items-center">
+        <!--<img src="/assets/img/logo.webp" class="mr-3 h-6 sm:h-9" alt="Stray Project Logo" />-->
+        <span
+          class="self-center text-xl font-semibold whitespace-nowrap dark:text-white md:hover:text-blue-700 transition duration-250 font-boogaloo">Stray
+          Project</span>
+      </a>
+      <button data-collapse-toggle="mobile-menu" type="button"
+        class="inline-flex items-center p-2 ml-3 text-sm text-gray-300 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="mobile-menu" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-6 h-6" fill="black" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <svg class="hidden w-6 h-6" fill="black" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+        <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+          <li>
+            <a href="/stranded.html"
+              class="block py-3 px-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:text-md lg:text-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 transition duration-250">Stranded</a>
+          </li>
+          <li>
+            <a href="/wishdiner.html"
+              class="block py-3 px-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:text-md lg:text-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 transition duration-250">Wish Diner</a>
+          </li>
+          <li>
+            <a href="/posts.html"
+              class="block py-3 px-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:text-md lg:text-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 transition duration-250">Posts</a>
+          </li>
+          <li>
+            <a href="/about.html"
+              class="block py-3 px-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:text-md lg:text-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 transition duration-250">About
+              Us</a>
+          </li>
+          <li>
+            <span></span>
+          </li>
+          <li>
+            <div class="flex py-3 px-3 md:py-0 md:px-0 items-center space-x-4">
+              <a href="https://discord.gg/4Rp2sVzAHk"><img class="transition duration-250 ease-in-out transform hover:scale-125" alt="Discord"
+                  src="/assets/img/icon/discord_icon.webp"></a>
+              <a href="https://ko-fi.com/strayproject22"><img class="transition duration-250 ease-in-out transform hover:scale-125" alt="Ko-Fi"
+                  src="/assets/img/icon/kofi_icon.webp"></a>
+              <a href="https://twitter.com/thestrayproject"><img class="transition duration-250 ease-in-out transform hover:scale-125"
+                  alt="Twitter" src="/assets/img/icon/twitter_icon.webp"></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- flex-1 wrapper container to push footer down with minimum screen height -->
+  <div class="flex-1">
+  <!-- font setter -->
+<div class="font-boogaloo">
+    <!-- bg -->
+    <div class="h-full w-full fixed top-0 -z-10 bg-cover blur-sm"
+        style="background-color: lightskyblue;background-image:url('/assets/img/bg/beach.webp');">
+    </div>
+    <!-- center column -->
+    <div class="mx-0 md:mx-4 lg:mx-16 xl:mx-32" style="background-color: #fff8;">
+        <!-- title -->
+        <div class="py-4 lg:py-12">
+            <img class="mx-auto justify-self-center my-4" src="/assets/img/icon/strandedlogo.webp" alt="Stranded">
+        </div>
+        <!-- text -->
+        <div class="px-2 lg:px-8 xl:px-16">
+            <p class="text-center text-xl lg:text-2xl pb-1"><i class="fa-solid fa-triangle-exclamation pr-2"></i>RATED
+                18</p>
+            <p class="text-center text-xl lg:text-2xl pb-1">You're on your way to a well-deserved vacation, saved up
+                after months toiling away in the office. This is looking to be a great experience... until the plane
+                you're in crashes headfirst into the ocean.</p>
+            <p class="text-center text-xl lg:text-2xl pb-1">Miraculously you survive on an unknown island along with
+                five other passengers who know nothing about each other, yet must work together; not only are rations
+                and morale low, but the island harbours some dangers of its own, too...</p>
+            <p class="text-center text-xl lg:text-2xl pb-1">Your choices determine the outcome: who will survive?</p>
+        </div>
+        <!-- cast -->
+        <h2 id="gallery" class="text-3xl md:text-3xl lg:text-4xl text-center pt-4 pb-2">Cast</h2>
+        <div id="character-carousel" class="relative" data-carousel="static">
+            <!-- Slider indicators -->
+            <div
+                class="w-full flex h-14 px-1 py-1 gap-x-2 lg:h-16 lg:px-2 lg:py-2 lg:gap-x-3 xl:h-20 xl:px-3 xl:py-3 xl:gap-x-4">
+                <button type="button" class="flex-auto rounded-lg" aria-current="false" aria-label="Slide 1"
+                    data-carousel-slide-to="0">
+                    <p class="text-center text-xl xl:text-2xl">Kim</p>
+                </button>
+                <button type="button" class="flex-auto rounded-lg" aria-current="false" aria-label="Slide 2"
+                    data-carousel-slide-to="1">
+                    <p class="text-center text-xl xl:text-2xl">Beru</p>
+                </button>
+                <button type="button" class="flex-auto rounded-lg" aria-current="false" aria-label="Slide 3"
+                    data-carousel-slide-to="2">
+                    <p class="text-center text-xl xl:text-2xl">Terry</p>
+                </button>
+                <button type="button" class="flex-auto rounded-lg" aria-current="false" aria-label="Slide 4"
+                    data-carousel-slide-to="3">
+                    <p class="text-center text-xl xl:text-2xl">Lucy</p>
+                </button>
+                <button type="button" class="flex-auto rounded-lg" aria-current="false" aria-label="Slide 5"
+                    data-carousel-slide-to="4">
+                    <p class="text-center text-xl xl:text-2xl">Owen</p>
+                </button>
+                <button type="button" class="flex-auto rounded-lg" aria-current="false" aria-label="Slide 6"
+                    data-carousel-slide-to="5">
+                    <p class="text-center text-xl xl:text-2xl">???</p>
+                </button>
+            </div>
+            <!-- Carousel wrapper -->
+            <div class="flex flex-row place-content-center">
+                <div class="overflow-hidden relative w-full h-64 md:h-80 l:h-96 xl:h-[28rem] 2xl:h-[32rem]">
+                    <!-- Item 1 -->
+                    <div class="hidden duration-500 ease-in-out" data-carousel-item="active">
+                        <div class="h-full w-full flex flex-row bg-yellow-100">
+                            <img class="max-h-full max-w-full mx-2 self-start" src="/assets/img/char/kimfull.webp">
+                            <div
+                                class="grid grid-rows-3 grid-cols-3 grid-flow-row md:grid-rows-4 lg:grid-rows-5 w-full">
+                                <h1 class="text-center col-span-3 py-2 text-2xl lg:text-3xl self-center">KIM</h1>
+                                <p class="hidden lg:block text-center text-lg lg:text-xl">Species: Husky</p>
+                                <p class="hidden lg:block text-center text-lg lg:text-xl">Age: 25</p>
+                                <p class="hidden lg:block text-center text-lg lg:text-xl">Interest: Sports</p>
+                                <p class="row-span-2 col-span-3 text-center text-xl lg:text-2xl mx-2 lg:mx-4 xl:mx-6">A
+                                    husky with a mild, optimistic temperament. Has natural leadership abilities and
+                                    tries his best to keep the team together.</p>
+                                <p
+                                    class="hidden md:block col-span-3 text-center text-gray-800 text-lg lg:text-xl mx-2 lg:mx-4 xl:mx-6">
+                                    “A calm mind is a clear mind.”</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-500 ease-in-out" data-carousel-item>
+                        <div class="h-full w-full flex flex-row bg-red-200">
+                            <img class="max-h-full max-w-full mx-2 self-start" src="/assets/img/char/berufull.webp">
+                            <div
+                                class="grid grid-rows-3 grid-cols-3 grid-flow-row md:grid-rows-4 lg:grid-rows-5 w-full">
+                                <h1 class="text-center col-span-3 py-2 text-2xl lg:text-3xl self-center">BERU</h1>
+                                <p class="hidden lg:block text-center text-lg lg:text-xl">Species: Bear</p>
+                                <p class="hidden lg:block text-center text-lg lg:text-xl">Age: 21</p>
+                                <p class="hidden lg:block text-center text-lg lg:text-xl">Interest: Games</p>
+                                <p class="row-span-2 col-span-3 text-center text-xl lg:text-2xl mx-2 lg:mx-4 xl:mx-6">A
+                                    gamer bear, strong but soft on the inside. Often puts others first. His physical
+                                    strength is an asset on the island.</p>
+                                <p
+                                    class="hidden md:block col-span-3 text-center text-gray-800 text-lg lg:text-xl mx-2 lg:mx-4 xl:mx-6">
+                                    “Well if it’s the cold you’re worried about, my big fluffy fur can warm you up all
+                                    night!”</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-500 ease-in-out" data-carousel-item>
+                        <div class="h-full w-full flex flex-row bg-emerald-200">
+                            <img class="max-h-full max-w-full mx-2 self-start" src="/assets/img/char/terryfull.webp">
+                            <div
+                                class="grid grid-rows-3 grid-cols-3 grid-flow-row md:grid-rows-4 lg:grid-rows-5 w-full">
+                                <h1 class="text-center col-span-3 py-2 text-2xl lg:text-3xl self-center">TERRY</h1>
+                                <p class="hidden lg:block text-center text-lg lg:text-xl">Species: Fox</p>
+                                <p class="hidden lg:block text-center text-lg lg:text-xl">Age: 23</p>
+                                <p class="hidden lg:block text-center text-lg lg:text-xl">Interest: Terry</p>
+                                <p class="row-span-2 col-span-3 text-center text-xl lg:text-2xl mx-2 lg:mx-4 xl:mx-6">A
+                                    cold fox, not of many words. His appearance and behavior seem sharp and distrustful,
+                                    but is that his true nature?</p>
+                                <p
+                                    class="hidden md:block col-span-3 text-center text-gray-800 text-lg lg:text-xl mx-2 lg:mx-4 xl:mx-6">
+                                    “I’m SO gonna die with these idiots…”</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="hidden duration-500 ease-in-out" data-carousel-item>
+                        <div class="h-full w-full flex flex-row bg-fuchsia-200">
+                            <img class="max-h-full max-w-full mx-2 self-start" src="/assets/img/char/lucyfull.webp">
+                            <div
+                                class="grid grid-rows-3 grid-cols-3 grid-flow-row md:grid-rows-4 lg:grid-rows-5 w-full">
+                                <h1 class="text-center col-span-3 py-2 text-2xl lg:text-3xl self-center">LUCY</h1>
+                                <p class="hidden lg:block text-center text-lg lg:text-xl">Species: Bunny</p>
+                                <p class="hidden lg:block text-center text-lg lg:text-xl">Age: 23</p>
+                                <p class="hidden lg:block text-center text-lg lg:text-xl">Interest: Plants</p>
+                                <p class="row-span-2 col-span-3 text-center text-xl lg:text-2xl mx-2 lg:mx-4 xl:mx-6">A
+                                    rabbit with a lot of smarts. Tends to stutter, but isn't afraid to speak when the
+                                    situation demands it.</p>
+                                <p
+                                    class="hidden md:block col-span-3 text-center text-gray-800 text-lg lg:text-xl mx-2 lg:mx-4 xl:mx-6">
+                                    “N-No problem. It’s the least I can do to help.”</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="hidden duration-500 ease-in-out" data-carousel-item>
+                        <div class="h-full w-full flex flex-row bg-teal-200">
+                            <img class="max-h-full max-w-full mx-2 self-start" src="/assets/img/char/owenfull.webp">
+                            <div
+                                class="grid grid-rows-3 grid-cols-3 grid-flow-row md:grid-rows-4 lg:grid-rows-5 w-full">
+                                <h1 class="text-center col-span-3 py-2 text-2xl lg:text-3xl self-center">OWEN</h1>
+                                <p class="hidden lg:block text-center text-lg lg:text-xl">Species: Otter</p>
+                                <p class="hidden lg:block text-center text-lg lg:text-xl">Age: 21</p>
+                                <p class="hidden lg:block text-center text-lg lg:text-xl">Interest: Fishing</p>
+                                <p class="row-span-2 col-span-3 text-center text-xl lg:text-2xl mx-2 lg:mx-4 xl:mx-6">
+                                    Otter with a loud and boisterous attitude. Knows how to fish.</p>
+                                <p
+                                    class="hidden md:block col-span-3 text-center text-gray-800 text-lg lg:text-xl mx-2 lg:mx-4 xl:mx-6">
+                                    “Yeah! No matter what happens, we’ll get through this together!”</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 6 -->
+                    <div class="hidden duration-500 ease-in-out" data-carousel-item>
+                        <div class="h-full w-full flex flex-row bg-gray-200">
+                            <img class="max-h-full max-w-full mx-2 self-start" src="/assets/img/char/kimfull.webp"
+                                style="filter: contrast(0%) brightness(50%);">
+                            <div class="grid grid-rows-3 grid-cols-3 grid-flow-col w-full">
+                                <h1 class="text-center row-span-3 col-span-3 py-2 text-2xl lg:text-3xl self-center">More
+                                    characters to come!</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- explanation -->
+        <div class="py-4 px-2 lg:px-8 xl:px-16">
+            <p class="text-center text-xl lg:text-2xl">Stranded is the Stray Project's first furry visual novel with
+                elements of island survival written in <a class="alink" href="https://renpy.org/">Ren'Py</a>. The game
+                is a work in progress. Updates are done on a best-effort basis.</p>
+        </div>
+        <!-- gallery -->
+        <h2 id="gallery" class="text-3xl md:text-3xl lg:text-4xl text-center pt-4 pb-2">Gallery</h2>
+        <div id="gallery-carousel" class="relative" data-carousel="static">
+            <!-- Carousel wrapper -->
+            <div class="flex flex-row place-content-center">
+                <button type="button"
+                    class="flex place-self-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+                    data-carousel-prev>
+                    <span
+                        class="inline-flex justify-center items-center w-8 h-8 sm:w-10 sm:h-10 brightness-100 group-hover:brightness-125 transition duration-150">
+                        <img class="hover:brightness-120" src="assets/img/icon/arrow_left.webp">
+                    </span>
+                </button>
+                <div
+                    class="overflow-hidden relative aspect-video rounded-lg h-48 sm:h-64 md:h-80 l:h-96 xl:h-[28rem] 2xl:h-[32rem]">
+                    <!-- Item 1 -->
+                    <div class="hidden duration-500 ease-in-out" data-carousel-item="active">
+                        <img src="assets/img/bg/campfire.webp"
+                            class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+                            alt="campfire">
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-500 ease-in-out" data-carousel-item>
+                        <img src="assets/img/bg/firstmeetup.webp"
+                            class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+                            alt="first meetup">
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-500 ease-in-out" data-carousel-item>
+                        <img src="assets/img/bg/aero.webp"
+                            class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="aero">
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="hidden duration-500 ease-in-out" data-carousel-item>
+                        <img src="assets/img/bg/plane.webp"
+                            class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+                            alt="plane">
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="hidden duration-500 ease-in-out" data-carousel-item>
+                        <img src="assets/img/bg/campfirenight.webp"
+                            class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+                            alt="campfire night">
+                    </div>
+                </div>
+                <button type="button"
+                    class="place-self-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+                    data-carousel-next>
+                    <span
+                        class="inline-flex justify-center items-center w-8 h-8 sm:w-10 sm:h-10 brightness-100 group-hover:brightness-125 transition duration-150">
+                        <img src="assets/img/icon/arrow_right.webp">
+                        <span class="hidden">Next</span>
+                    </span>
+                </button>
+            </div>
+            <!-- Slider indicators -->
+            <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+                    data-carousel-slide-to="0"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+                    data-carousel-slide-to="1"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+                    data-carousel-slide-to="2"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
+                    data-carousel-slide-to="3"></button>
+                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
+                    data-carousel-slide-to="4"></button>
+            </div>
+            <!-- Slider controls -->
+
+
+        </div>
+        <!-- music -->
+        <h2 id="music" class="text-3xl md:text-3xl lg:text-4xl text-center pt-4 pb-2">Music</h2>
+        <!-- Blue Playlist Container -->
+        <div id="stranded-musicplayer" class="w-full rounded-lg md:px-2 lg:px-4">
+            <!-- Amplitude Player -->
+            <div id="amplitude-player" class="flex flex-col md:flex-row bg-white/75 lg:max-h-full">
+                <!-- Left Side Player -->
+                <div id="amplitude-left" class="w-full md:w-1/2 my-auto flex flex-row md:flex-col">
+                    <img data-amplitude-song-info="cover_art_url" class="album-art m-auto block w-1/3 md:w-1/2" />
+                    <div id="player-left-bottom" class="w-full m-auto">
+                        <div id="time-container" class="py-4">
+                            <span class="current-time">
+                                <span class="amplitude-current-minutes"></span>:<span
+                                    class="amplitude-current-seconds"></span>
+                            </span>
+                            <div id="progress-container">
+                                <input type="range" class="amplitude-song-slider" />
+                                <progress id="song-played-progress" class="amplitude-song-played-progress"></progress>
+                                <progress id="song-buffered-progress" class="amplitude-buffered-progress"
+                                    value="0"></progress>
+                            </div>
+                            <span class="duration">
+                                <span class="amplitude-duration-minutes"></span>:<span
+                                    class="amplitude-duration-seconds"></span>
+                            </span>
+                        </div>
+
+                        <div id="control-container">
+                            <div id="repeat-container">
+                                <div class="amplitude-repeat" id="repeat"></div>
+                                <div class="amplitude-shuffle amplitude-shuffle-off" id="shuffle">
+                                </div>
+                            </div>
+
+                            <div id="central-control-container">
+                                <div id="central-controls">
+                                    <div class="amplitude-prev" id="previous"></div>
+                                    <div class="amplitude-play-pause" id="play-pause">
+
+                                    </div>
+                                    <div class="amplitude-next" id="next"></div>
+                                </div>
+                            </div>
+
+                            <div id="volume-container">
+                                <div class="volume-controls">
+                                    <div class="amplitude-mute amplitude-volume"></div>
+                                    <input type="range" class="amplitude-volume-slider" />
+                                    <div class="ms-range-fix"></div>
+                                </div>
+                                <div class="amplitude-shuffle amplitude-shuffle-off" id="shuffle-right"></div>
+                            </div>
+                        </div>
+
+                        <div id="meta-container" class="text-center">
+                            <span data-amplitude-song-info="name" class="song-name text-xl lg:text-2xl"></span>
+
+                            <div class="song-artist-album">
+                                <span data-amplitude-song-info="artist" class="text-lg lg:text-xl text-gray-500"></span>
+                                <span data-amplitude-song-info="album"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Left Side Player -->
+
+                <!-- Right Side Player -->
+                <div id="amplitude-right" class="w-full md:w-1/2 bg-white">
+                    <div class="song amplitude-song-container amplitude-play-pause flex flex-row"
+                        data-amplitude-song-index="0">
+                        <div class="song-now-playing-icon-container flex-initial self-center">
+                            <div class="play-button-container" class="px-auto py-auto mx-auto my-auto">
+                            </div>
+                            <img class="now-playing" src="/assets/img/player/nowplaying.svg" class="w-full">
+                        </div>
+                        <div class="song-meta-data flex-1">
+                            <div class="song-title">Stranded (Main Theme)</div>
+                            <div class="song-artist text-gray-500">Rex Revon</div>
+                        </div>
+                        <div class="song-duration flex-initial self-center px-2 text-gray-500">1:33</div>
+                    </div>
+                    <div class="song amplitude-song-container amplitude-play-pause flex flex-row"
+                        data-amplitude-song-index="1">
+                        <div class="song-now-playing-icon-container flex-initial self-center align-middle">
+                            <div class="play-button-container">
+                            </div>
+                            <img class="now-playing" src="/assets/img/player/nowplaying.svg" />
+                        </div>
+                        <div class="song-meta-data flex-1">
+                            <div class="song-title">Intense</div>
+                            <div class="song-artist text-gray-500">Rex Revon</div>
+                        </div>
+                        <div class="song-duration flex-initial self-center px-2 text-gray-500">1:23</div>
+                    </div>
+                    <div class="song amplitude-song-container amplitude-play-pause flex flex-row"
+                        data-amplitude-song-index="2">
+                        <div class="song-now-playing-icon-container flex-initial self-center align-middle">
+                            <div class="play-button-container">
+                            </div>
+                            <img class="now-playing" src="/assets/img/player/nowplaying.svg" />
+                        </div>
+                        <div class="song-meta-data flex-1">
+                            <div class="song-title">Sun (Day)</div>
+                            <div class="song-artist text-gray-500">Rex Revon</div>
+                        </div>
+                        <div class="song-duration flex-initial self-center px-2 text-gray-500">1:14</div>
+                    </div>
+                    <div class="song amplitude-song-container amplitude-play-pause flex flex-row"
+                        data-amplitude-song-index="3">
+                        <div class="song-now-playing-icon-container flex-initial self-center align-middle">
+                            <div class="play-button-container">
+                            </div>
+                            <img class="now-playing" src="/assets/img/player/nowplaying.svg" />
+                        </div>
+                        <div class="song-meta-data flex-1">
+                            <div class="song-title">Hopeless Harmony</div>
+                            <div class="song-artist text-gray-500">Rex Revon</div>
+                        </div>
+                        <div class="song-duration flex-initial self-center px-2 text-gray-500">1:36</div>
+                    </div>
+                    <div class="song amplitude-song-container amplitude-play-pause flex flex-row"
+                        data-amplitude-song-index="4">
+                        <div class="song-now-playing-icon-container flex-initial self-center align-middle">
+                            <div class="play-button-container">
+                            </div>
+                            <img class="now-playing" src="/assets/img/player/nowplaying.svg" />
+                        </div>
+                        <div class="song-meta-data flex-1">
+                            <div class="song-title">Chaotic Dumbass</div>
+                            <div class="song-artist text-gray-500">Rex Revon</div>
+                        </div>
+                        <div class="song-duration flex-initial self-center px-2 text-gray-500">0:22</div>
+                    </div>
+                    <div class="song amplitude-song-container amplitude-play-pause flex flex-row"
+                        data-amplitude-song-index="5">
+                        <div class="song-now-playing-icon-container flex-initial self-center align-middle">
+                            <div class="play-button-container">
+                            </div>
+                            <img class="now-playing" src="/assets/img/player/nowplaying.svg" />
+                        </div>
+                        <div class="song-meta-data flex-1">
+                            <div class="song-title">HeartFelt Midnight</div>
+                            <div class="song-artist text-gray-500">Zammu</div>
+                        </div>
+                        <div class="song-duration flex-initial self-center px-2 text-gray-500">1:59</div>
+                    </div>
+                    <div class="song amplitude-song-container amplitude-play-pause flex flex-row"
+                        data-amplitude-song-index="6">
+                        <div class="song-now-playing-icon-container flex-initial self-center align-middle">
+                            <div class="play-button-container">
+                            </div>
+                            <img class="now-playing" src="/assets/img/player/nowplaying.svg" />
+                        </div>
+                        <div class="song-meta-data flex-1">
+                            <div class="song-title">Sincerely</div>
+                            <div class="song-artist text-gray-500">Zammu</div>
+                        </div>
+                        <div class="song-duration flex-initial self-center px-2 text-gray-500">2:20</div>
+                    </div>
+                </div>
+                <!-- End Right Side Player -->
+            </div>
+            <p class="text-center text-xl lg:text-2xl py-2">Coming to a streaming platform soon!</p>
+            <!-- contents -->
+            <div class="flex flex-row justify-center pt-4">
+                <div class="hidden sm:block rotate-2 shrink w-72 justify-self-start lg:mr-6 xl:mr-10">
+                    <img src="/assets/img/minibg/smoke.webp">
+                </div>
+                <div id="content" class="my-6">
+                    <h2 class="text-xl lg:text-2xl text-red-900">Featuring*:</h2>
+                    <div class="pl-8">
+                        <ul class="list-disc">
+                            <li class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl pb-1">2 chapters
+                                (+1 prologue)</li>
+                            <li class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl pb-1">17k words
+                                (about 20 mins gameplay)</li>
+                            <li class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl pb-1">about 20
+                                backgrounds and 20 scenes</li>
+                            <li class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl pb-1">5
+                                characters, not including the player</li>
+                            <li class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl pb-1">7 original
+                                music tracks</li>
+                        </ul>
+                    </div>
+                    <p class="font-boogaloo">* correct as of chapter 2</p>
+                </div>
+                <div class="hidden lg:block -rotate-2 shrink w-72 justify-self-start lg:ml-6 xl:ml-10">
+                    <img src="/assets/img/minibg/sta.webp">
+                </div>
+            </div>
+            <!-- download links -->
+            <h2 id="download" class="text-3xl md:text-3xl lg:text-4xl text-center pt-4 pb-2">Download</h2>
+            <div class="flex justify-center items-center">
+                <a
+                    href="https://github.com/strayproject/strayproject.github.io/releases/download/v0.1.2.3/Stranded-0.1.2.3-pc.zip">
+                    <button
+                        class="bg-gray-500 hover:bg-green-500 lg:text-2xl hover:border-white mx-1 transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded border border-white text-white px-4 sm:px-8 py-1 sm:py-3 text-md"><i
+                            class="fa-brands fa-windows pr-2"></i><i
+                            class="fa-brands fa-linux pr-2"></i>Windows/Linux</button>
+                </a>
+                <a
+                    href="https://github.com/strayproject/strayproject.github.io/releases/download/v0.1.2.3/Stranded-0.1.2.3-mac.zip">
+                    <button data-tooltip-target="tooltip-mac"
+                        class="bg-gray-500 hover:bg-green-500 lg:text-2xl hover:border-white mx-1 transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded border border-white text-white px-4 sm:px-8 py-1 sm:py-3 text-md"><i
+                            class="fa-brands fa-apple pr-2"></i>Mac</button>
+                    <div id="tooltip-mac" role="tooltip"
+                        class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700 transition-opacity duration-250">
+                        The computer, not the iPad or iPhone! Sorry.
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+                </a>
+                <a
+                    href="https://github.com/strayproject/strayproject.github.io/releases/download/v0.1.2.3/com.strayproject.stranded-release.apk">
+                    <button
+                        class="bg-gray-500 hover:bg-green-500 lg:text-2xl hover:border-white mx-1 transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded border border-white text-white px-4 sm:px-8 py-1 sm:py-3 text-md"><i
+                            class="fa-solid fa-mobile-screen pr-2"></i>Android</button>
+                </a>
+            </div>
+            <p class="text-center text-xl py-2">v0.1.2.3 | June 28, 2022 | <a class="alink" href="install.html">General
+                    Installation Guide</a> | <a class="alink" href="https://thestrayproject.itch.io/stranded">Itch.io
+                    page</a>
+            </p>
+            <p class="text-center text-xl py-2">or...</p>
+            <div class="flex justify-center items-center">
+                <a href="strandedweb.html">
+                    <button id="strandedweb-modalbtn" href="stranded.html"
+                        class="bg-gray-500 hover:bg-green-500 lg:text-2xl hover:border-white transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded border border-white text-white px-4 sm:px-8 py-1 sm:py-3 text-md"><i
+                            class="fa-solid fa-globe pr-2"></i>Try Web Version</button>
+            </div>
+            </a>
+            <p class="text-center pt-2">Supported browsers: <i class="fa-brands fa-firefox-browser pr-1"></i>Firefox, <i
+                    class="fa-brands fa-chrome pr-1"></i>Chrome, <i class="fa-brands fa-edge pr-1"></i>Edge</p>
+
+            <!-- faq -->
+            <div class="px-2 lg:px-4">
+                <h2 class="text-3xl md:text-3xl lg:text-4xl text-center pt-4 pb-2">Frequently Asked Questions</h2>
+                <h2 class="text-xl lg:text-2xl text-red-900">Why is this game rated 18 and above?</h2>
+                <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl pb-1">Without spoiling too much,
+                    please understand that this game contains profanity, mention of disturbing events and blood. In
+                    addition, as the script progresses, more elements will be added to the game that would be considered
+                    too strong for players under the age of 18. You have been warned!</p>
+                <h2 class="text-xl lg:text-2xl text-red-900">Are you currently accepting fan translations?</h2>
+                <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl pb-1">Yes! However we ask you
+                    to first negotiate with us via <a class="alink" href="https://discord.gg/4Rp2sVzAHk">Discord</a>
+                    before starting; by merging your translation efforts into the main application, not only do we
+                    benefit from a wider reach, but you will also be informed when strings are changed, and
+                    communication will definitely help with clarifying and localizing specific dialogue blocks. (You
+                    might even show up in the credits, too!)</p>
+            </div>
+            <!-- patch notes -->
+            <h2 id="patchnotes" class="text-2xl md:text-2xl lg:text-3xl text-center pt-4 pb-2">Patch Notes</h2>
+            <div class="text-center text-md lg:text-lg" markdown="1">
+                <details>
+                    <summary>v0.1.2.3 - 28 Jun 2022</summary>
+                    * removed spanish because of incomplete translations
+                    * web port: applied lossy compression to backgrounds
+                    * fixed russian description display bug
+                </details>
+                <details>
+                    <summary>v0.1.2.2 - 9 Jun 2022</summary>
+                    * added Traditional and Simplified Chinese (thanks to 泡澡的inko)
+                    * web port: rearranging audio folder so music and effects are streamed. initial size reduced.
+                </details>
+                <details>
+                    <summary>v0.1.2 - 17 May 2022</summary>
+                    * gui overhaul, movie main menu screen
+                    * added Portuguese (thanks to E-Arky, Mr. P. XIII, Sil and Chase)
+                    * added Russian (thanks to Vorobei - воробей)
+                </details>
+                <details>
+                    <summary>v0.1.1 - 11 Jan 2022</summary>
+                    * various bugfixes
+                </details>
+                <details>
+                    <summary>v0.1 - 26 Nov 2021</summary>
+                    * release of first chapter and character sprites
+                </details>
+                <details>
+                    <summary>"Demo" - 24 Jun 2021</summary>
+                    * release of prologue without character sprites
+                    * new main menu image
+                </details>
+            </div>
+            <!-- disclaimer -->
+            <p class="px-4 text-sm text-gray-800 text-center py-2">This game is a work of fiction. The story, along with
+                all names, characters and events are fictitious and any resemblance to real-life counterparts (if any)
+                are purely coincidental. No animals were harmed in the making of this game.</p>
+        </div>
+    </div>
+  </div>
+  <!-- footer -->
+  <footer class="p-4 bg-white/80 rounded-t-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
+    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">Art, story and music © <a href="/index.html"
+        class="hover:underline">The Stray Project</a>. All Rights Reserved. This website uses third-party cookies from <a href="https://help.twitter.com/en/rules-and-policies/twitter-cookies"
+        class="hover:underline">Twitter</a> and <a href="https://itch.io/docs/legal/cookie-policy"
+        class="hover:underline">Itch.io</a>.
+    </span>
+    <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+      <li>
+        <a href="https://github.com/strayproject/strayproject.github.io" class="mr-4 hover:underline md:mr-6 "><i class="fa-brands fa-github pr-2"></i>Source</a>
+      </li>
+    </ul>
+  </footer>
+</div>
+  <!-- flowbite js -->
+  <script src="/assets/js/flowbite.js"></script>
+</body>
+
+</html>
