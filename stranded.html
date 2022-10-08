@@ -21,19 +21,14 @@ image: /assets/img/bg/campfire.webp
         <div class="flex justify-center items-center">
             <a href="#download">
                 <button
-                    class="bg-gray-500 hover:bg-green-500 lg:text-2xl hover:border-white mx-1 transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded border border-white text-white px-4 sm:px-8 py-1 sm:py-3 text-md"><i class="fa-solid fa-down-long"></i>Download</button>
+                    class="bg-gray-500 hover:bg-green-500 lg:text-2xl hover:border-white mx-1 transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded border border-white text-white px-4 sm:px-8 py-1 sm:py-3 text-md"><i class="fa-solid fa-down-long pr-2"></i>Download</button>
                 </a>
         </div>
         <!-- text -->
         <div class="py-4 px-2 lg:px-8 xl:px-16">
-            <p class="text-center text-xl lg:text-2xl py-2"><i class="fa-solid fa-triangle-exclamation pr-2"></i>RATED
-                18</p>
-            <p class="text-center text-xl lg:text-2xl pb-1">You're on your way to a well-deserved vacation, saved up
-                after months toiling away in the office. This is looking to be a great experience... until the plane
-                you're in crashes headfirst into the ocean.</p>
-            <p class="text-center text-xl lg:text-2xl pb-1">Miraculously you survive on an unknown island along with
-                five other passengers who know nothing about each other, yet must work together; not only are rations
-                and morale low, but the island harbours some dangers of its own, too...</p>
+            <p class="text-center text-xl lg:text-2xl py-2"><i class="fa-solid fa-triangle-exclamation pr-2"></i>RATED 18</p>
+            <p class="text-center text-xl lg:text-2xl pb-1">You're on your way to a well-deserved vacation, saved up after months toiling away in the office. This is looking to be a great experience... until the plane you're in crashes headfirst into the ocean.</p>
+            <p class="text-center text-xl lg:text-2xl pb-1">Miraculously you survive on an unknown island along with five other passengers who know nothing about each other, yet must work together; not only are rations and morale low, but the island harbours some dangers of its own, too...</p>
             <p class="text-center text-xl lg:text-2xl pb-1">Your choices determine the outcome: who will survive?</p>
         </div>
         <!-- cast -->
@@ -187,7 +182,7 @@ image: /assets/img/bg/campfire.webp
         </div>
         <!-- gallery -->
         <h2 id="gallery" class="text-3xl md:text-3xl lg:text-4xl text-center pt-4 pb-2">Gallery</h2>
-        <div id="gallery-carousel" class="relative" data-carousel="static">
+        <div id="gallery-carousel" class="relative"  data-carousel="slide" data-carousel-interval="5000">
             <!-- Carousel wrapper -->
             <div class="flex flex-row place-content-center">
                 <button type="button"
@@ -421,9 +416,36 @@ image: /assets/img/bg/campfire.webp
             </div>
             <p class="text-center text-xl lg:text-2xl py-2">Coming to a streaming platform soon!</p>
             <!-- features -->
-            <div class="py-4 px-2">
-                <p class="text-center text-xl lg:text-2xl">Thanks to a fan translation system, Stranded supports multiple languages!</p>
-                <p class="text-center text-xl lg:text-2xl">Translation Progress:</p>
+            <!-- translations -->
+            <h2 id="translations" class="text-3xl md:text-3xl lg:text-4xl text-center pt-4 pb-2">Translations</h2>
+            <div class="py-4 flex flex-col xl:flex-row">
+                <div id="indicators-carousel" class="relative w-auto xl:w-1/2" data-carousel="slide" data-carousel-interval="5000">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-96 overflow-hidden rounded-lg">
+                         <!-- Item 1 -->
+                        <div class="hidden duration-1000 ease-in-out" data-carousel-item="active">
+                            <img src="/assets/img/sc/tr1.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                            <img src="/assets/img/sc/tr2.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                            <img src="/assets/img/sc/tr3.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                            <img src="/assets/img/sc/tr4.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                        <!-- Item 5 -->
+                        <div class="hidden duration-1000 ease-in-out" data-carousel-item>
+                            <img src="/assets/img/sc/tr5.webp" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                        </div>
+                    </div>
+                </div>
+                <div class="pl-0 xl:pl-4 w-full h-full xl:w-1/2 align-middle">
+                <p class="text-center text-xl lg:text-2xl pb-2">Thanks to a fan translation system, Stranded supports multiple languages! Enjoy this visual novel in your native language (if it is available)! Set it in options > General > Language.</p>
                 <div class="overflow-x-auto relative text-center text-md lg:text-lg shadow-md sm:rounded-lg">   
                     <table class="w-full text-lg lg:text-xl text-left">
                         <thead class="bg-gray-100/90">
@@ -469,6 +491,8 @@ image: /assets/img/bg/campfire.webp
                         </table>
                         </div>
                     <p class="text-center">* ✔️ = ready, 🚧 = in progress</p>
+                    <p class="text-center text-lg lg:text-xl pb-2">To submit typos or translate into your native language, please talk to us via our social media.</p>
+                </div>
             </div>
             <!-- contents -->
             <div class="flex flex-row justify-center pt-4">
@@ -551,27 +575,16 @@ image: /assets/img/bg/campfire.webp
                     <h2 class="text-xl lg:text-2xl text-red-900">Which version should I download?</h2>
                     <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl pb-1">
                         <ul class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl pb-1">
-                            <li>- <i class="fa-brands fa-windows pr-2"></i> Windows: get the Windows/Linux build, extract and run Stranded.exe (32-bit users please run Stranded-32.exe)</li>
-                            <li>- <i class="fa-brands fa-linux pr-2"></i> Linux: also get the Windows/Linux build and extract, but run Stranded.sh</li>
-                            <li>- <i class="fa-brands fa-apple pr-2"></i></i> Apple Mac computers: get the Mac build, extract and double-click on Stranded.app (allow running apps not from the App Store)</li>
-                            <li>- <i class="fa-solid fa-mobile-screen pr-2"></i> Android phones: get the Android .apk file, tap to install (allow installing apps from third-party sources)</li>
-                            <li>- <i class="fa-solid fa-mobile-button pr-2"></i> iOS phones: use the Web version. Stranded will likely never clear App Store requirements.</li>
+                            <li>- <i class="fa-brands fa-windows"></i> Windows: get the Windows/Linux build, extract and run Stranded.exe (32-bit users please run Stranded-32.exe)</li>
+                            <li>- <i class="fa-brands fa-linux"></i> Linux: also get the Windows/Linux build and extract, but run Stranded.sh</li>
+                            <li>- <i class="fa-brands fa-apple"></i></i> Apple Mac computers: get the Mac build, extract and double-click on Stranded.app (allow running apps not from the App Store)</li>
+                            <li>- <i class="fa-solid fa-mobile-screen"></i> Android phones: get the Android .apk file, tap to install (allow installing apps from third-party sources)</li>
+                            <li>- <i class="fa-solid fa-mobile-button"></i> iOS phones: use the Web version. Stranded will likely never clear App Store requirements.</li>
                             <li>- <i class="fa-solid fa-laptop"></i> Chromebooks: as a first option, download the Android version. If not supported, your second option is to enable Linux and use the Windows/Linux version (run Stranded.sh). Third option: run the Web version.</li>
                         </ul>
                     </p>
                 <h2 class="text-xl lg:text-2xl text-red-900">Why is the itch.io version so old?</h2>
                 <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl pb-1">It appears that any and all updates to the itch.io version informs multiple people via email, Discord notification via a bot as well as in the launcher itself. The updates however are language- and bug-related, and they come quite often as opposed to the story updates which take comparatively longer. To try not to spam players and give false hope, minor non-story updates are distributed through this website.</p>
-                <h2 class="text-xl lg:text-2xl text-red-900">Which version should I download?</h2>
-                <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl pb-1">
-                    <ul class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">
-                        <li>- <i class="fa-brands fa-windows"></i> Windows: get the Windows/Linux build, extract and run Stranded.exe (32-bit users please run Stranded-32.exe)</li>
-                        <li>- <i class="fa-brands fa-linux"></i> Linux: also get the Windows/Linux build and extract, but run Stranded.sh</li>
-                        <li>- <i class="fa-brands fa-apple"></i></i> Apple Mac computers: get the Mac build, extract and double-click on Stranded.app (allow running apps not from the App Store)</li>
-                        <li>- <i class="fa-solid fa-mobile-screen"></i> Android phones: get the Android .apk file, tap to install (allow installing apps from third-party sources)</li>
-                        <li>- <i class="fa-solid fa-mobile-button"></i> iOS phones: use the Web version. Stranded will likely never clear App Store requirements.</li>
-                        <li>- <i class="fa-solid fa-laptop"></i> Chromebooks: as a first option, download the Android version. If not supported, your second option is to enable Linux and use the Windows/Linux version (run Stranded.sh). Third option: run the Web version.</li>
-                    </ul>
-                </p>
                 <h2 class="text-xl lg:text-2xl text-red-900">Are you currently accepting fan translations?</h2>
                 <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl pb-1">Yes! However we ask you
                     to first negotiate with us via <a class="alink" href="https://discord.gg/4Rp2sVzAHk">Discord</a>
