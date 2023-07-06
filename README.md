@@ -33,7 +33,7 @@ author: brandon pow
 - the text inside every blog post uses markdown formatting, please check the [markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/) for more info.
 
 ## Forking
-- it is not recommended to fork this into an individual's github repo where the URL has a prefox (/blog-page etc.), because of all the BASEURL changes needed to all links, image links and _config.yml. it's just too much work. rather, please deploy to an individual or organization's base github page (johndoe.github.io) or similar.
+- it is not recommended to fork this into an individual's github repo where the URL has a prefix (/blog-page etc.), because of all the BASEURL changes needed to all links, image links and _config.yml. it's just too much work. rather, please deploy to an individual or organization's base github page (johndoe.github.io) or similar.
 - postcss v2 is the only version known to work for now, postcss v1 gives an `ERRCONNREFUSED`. sadly it is slower, about 5-6 seconds per refresh compared to v1's sub-2-second one.
 
 ## Further Reading
