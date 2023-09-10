@@ -17,5 +17,24 @@ image: /assets/img/bg/adjyteam.jpg
 <div class="px-2 lg:px-4">
     <img class="mx-auto rounded-lg w-full lg:w-3/4 xl:w-1/2" src="/assets/img/bg/adjyteam.jpg">
     <p class="text-center text-md font-boogaloo pb-1">Stray team sans Rakki, drawn by Adjy in March 2022</p>
+    <h1 class="font-boogaloo text-xl lg:text-2xl text-center p-4">Hey! We are the Stray Team founded in 2021. Our goal's to bring you some games that tell some good stories.</h2>
+</div>
+<!-- staff (data is in _data/staff.yml) -->
+<div class="grid gap-4 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 px-2 lg:px-4 font-boogaloo">
+{% for staff in site.data.staff %}
+<div class="flex flex-col w-full items-center bg-white/75 border border-gray-200/75 rounded-lg shadow md:flex-row hover:bg-white dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-white">
+    {% if staff.img %}
+    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src={{staff.img}} alt="">
+    {% endif %}
+    <div class="flex flex-col justify-between p-4 leading-normal">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{staff.name}}</h5>
+        <h6 class="mb-2 text-xl tracking-tight text-gray-900 dark:text-white">{{staff.role}}</h6>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{staff.text}}</p>
+        {% if staff.twitter %}
+        <a href="https://twitter.com/{{staff.twitter}}"><i class="fa-brands fa-twitter"></i> @{{staff.twitter}}</a>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
 </div>
 </div>

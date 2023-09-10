@@ -1,0 +1,59 @@
+- name: NekoPanda
+  img: assets/img/staff/nekopanda.webp
+  role: Leader
+  text: Originally founded the Stray Project.
+  twitter: 
+
+- name: Nathan
+  img: assets/img/staff/nathan.webp
+  role: Writer
+  text:
+  twitter: 
+
+- name: Adjy
+  img: assets/img/staff/adjy.webp
+  role: Writer
+  text: 
+  twitter: AdjyHarby
+
+- name: Treble
+  img: assets/img/staff/treb.webp
+  role: Writer
+  text: 
+  twitter: 
+
+- name: Flunky
+  img: assets/img/staff/flunky.jpg
+  role: Artist
+  text:
+  twitter: fwflunky
+
+- name: Rex Revon
+  img: assets/img/staff/rex.webp
+  role: Musician
+  text:
+  twitter: 
+
+- name: Zammu
+  img: 
+  role: Musician
+  text:
+  twitter: 
+
+- name: brandon pow
+  img: assets/img/staff/brandonpow.webp
+  role: GUI Coder
+  text: urrrrrr. (webmaster of this website!)
+  twitter: 
+
+- name: haku (alias 'none')
+  img: 
+  role: Script Coder
+  text:
+  twitter: 
+
+- name: Kara
+  img: assets/img/staff/kara.webp
+  role: Office Kitty
+  text:
+  twitter: 
