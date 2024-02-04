@@ -43,3 +43,6 @@ author: brandon pow
 ## Further Reading
 - [jekyll](https://jekyllrb.com/)
 - [tailwind v3](https://tailwindcss.com/)
+
+## For Linux Users
+- install rbenv, set rbenv local 3.1.2 and rbenv shell 3.1.2 first
