@@ -45,4 +45,4 @@ author: brandon pow
 - [tailwind v3](https://tailwindcss.com/)
 
 ## For Linux Users
-- install rbenv, set rbenv local 3.1.2 and rbenv shell 3.1.2 first
+- install rbenv, set rbenv local {version} and rbenv shell {version} first, where {version} is the number in .ruby-version, eg. 3.3.3
