@@ -1,8 +1,5 @@
-### Jekyll ###
-_site
-.jekyll-metadata
-.jekyll-cache/
-
-### NPM ###
+dist
+.astro
 /node_modules/
 /vendor
+.codex

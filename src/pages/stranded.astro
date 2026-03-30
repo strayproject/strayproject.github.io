@@ -1,0 +1,166 @@
+---
+import LegacyPage from "../components/LegacyPage.astro";
+---
+
+<LegacyPage
+  file="stranded.html"
+  title="Stranded"
+  description="Five Strangers, One Goal."
+  image="/assets/img/bg/campfire.webp"
+>
+  <link slot="head" rel="stylesheet" href="/assets/css/amplitude.css" />
+
+  <script is:inline>
+    (() => {
+      const setupCarousel = (root, options = {}) => {
+        if (!root) return;
+
+        const items = Array.from(root.querySelectorAll("[data-sp-slide]"));
+        if (!items.length) return;
+
+        const indicators = Array.from(
+          root.querySelectorAll("[data-sp-slide-to]"),
+        );
+        const prevButton = root.querySelector("[data-sp-prev]");
+        const nextButton = root.querySelector("[data-sp-next]");
+        const autoplay = options.autoplay ?? false;
+        const intervalMs = options.interval ?? 5000;
+        const fillSlides = options.fillSlides ?? false;
+        let activeIndex = Math.max(
+          0,
+          items.findIndex(
+            (item) => item.getAttribute("data-sp-slide") === "active",
+          ),
+        );
+        let timerId = null;
+
+        if (fillSlides) {
+          items.forEach((item) => {
+            item.classList.add("absolute", "inset-0");
+
+            item.querySelectorAll("img").forEach((image) => {
+              image.classList.add("h-full", "object-cover");
+            });
+          });
+        }
+
+        const update = (nextIndex) => {
+          activeIndex = (nextIndex + items.length) % items.length;
+
+          items.forEach((item, index) => {
+            item.style.display = index === activeIndex ? "block" : "none";
+            item.setAttribute("aria-hidden", index === activeIndex ? "false" : "true");
+          });
+
+          indicators.forEach((button, index) => {
+            const isActive = index === activeIndex;
+            button.setAttribute("aria-current", isActive ? "true" : "false");
+            button.classList.toggle("bg-white", isActive);
+            button.classList.toggle("text-gray-900", isActive);
+            button.classList.toggle("shadow-sm", isActive);
+            button.classList.toggle("bg-transparent", !isActive);
+            button.classList.toggle("text-inherit", !isActive);
+            button.classList.toggle("opacity-70", !isActive);
+          });
+        };
+
+        const stopAutoplay = () => {
+          if (timerId !== null) {
+            window.clearInterval(timerId);
+            timerId = null;
+          }
+        };
+
+        const startAutoplay = () => {
+          if (!autoplay) return;
+          stopAutoplay();
+          timerId = window.setInterval(() => update(activeIndex + 1), intervalMs);
+        };
+
+        indicators.forEach((button, index) => {
+          button.addEventListener("click", () => {
+            update(index);
+            startAutoplay();
+          });
+        });
+
+        prevButton?.addEventListener("click", () => {
+          update(activeIndex - 1);
+          startAutoplay();
+        });
+
+        nextButton?.addEventListener("click", () => {
+          update(activeIndex + 1);
+          startAutoplay();
+        });
+
+        root.addEventListener("mouseenter", stopAutoplay);
+        root.addEventListener("mouseleave", startAutoplay);
+
+        if (options.keyboard !== false) {
+          root.tabIndex = 0;
+          root.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowLeft") {
+              event.preventDefault();
+              update(activeIndex - 1);
+              startAutoplay();
+            }
+
+            if (event.key === "ArrowRight") {
+              event.preventDefault();
+              update(activeIndex + 1);
+              startAutoplay();
+            }
+          });
+        }
+
+        update(activeIndex);
+        startAutoplay();
+      };
+
+      const init = () => {
+        const castCarousel = document.getElementById("character-carousel");
+        if (castCarousel) {
+          castCarousel
+            .querySelectorAll("[data-sp-slide-to]")
+            .forEach((button) => {
+              button.classList.add(
+                "transition",
+                "duration-150",
+                "hover:bg-white/70",
+              );
+            });
+
+          setupCarousel(castCarousel, { autoplay: false });
+        }
+
+        const galleryCarousel = document.getElementById("gallery-carousel");
+        if (galleryCarousel) {
+          galleryCarousel
+            .querySelectorAll("[data-sp-slide-to]")
+            .forEach((button) => {
+              button.classList.add(
+                "bg-white/50",
+                "border",
+                "border-white/60",
+                "transition",
+                "duration-150",
+              );
+            });
+
+          setupCarousel(galleryCarousel, {
+            autoplay: true,
+            interval: 5000,
+            fillSlides: true,
+          });
+        }
+      };
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init, { once: true });
+      } else {
+        init();
+      }
+    })();
+  </script>
+</LegacyPage>

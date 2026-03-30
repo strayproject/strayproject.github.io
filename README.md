@@ -1,48 +1,45 @@
 # Stray Project Website
-[![.github/workflows/jekyll-ghpages.yml](https://github.com/strayproject/strayproject.github.io/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/strayproject/strayproject.github.io/actions/workflows/pages.yml)
+[![GitHub Pages deploy](https://github.com/strayproject/strayproject.github.io/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/strayproject/strayproject.github.io/actions/workflows/pages.yml)
 
-## Installation
-before starting, please install the following programs:
-- [node](https://nodejs.org)
-- [ruby](https://www.ruby-lang.org)
+This site now builds with Astro and deploys to GitHub Pages through GitHub Actions.
 
-for ease of use, also install:
-- [vs code](https://code.visualstudio.com/)
-- tailwind extension inside vscode
+## Local Development
+- Install [Node.js](https://nodejs.org/).
+- Clone the repo and open a terminal in the project root.
+- Run `npm install`.
+- Run `npm run dev`.
+- Open the local URL printed by Astro, usually `http://localhost:4321`.
 
-to get working for the first time:
-- clone repo
-- open a terminal in the repo folder (in vscode: open folder > strayproject.github.io > terminal > new terminal)
-- `npm install` (installs all the nodejs dependencies)
-- `bundle install` (installs all the ruby gems, jekyll etc.)
-- to start editing, `bundle exec jekyll serve --livereload`
--- a message should print saying `server address: http://127.0.0.1:4000` or another address. hold ctrl and click on it to open in a browser.
-- every commit refreshes the webpage on github pages using the [.yml workflow in the .github/workflows folder](.github/workflows/pages.yml). allow for one minute for the refresh to complete, check the actions tab if it fails.
+## Publishing
+- Push to `main` to trigger the Pages workflow in [.github/workflows/pages.yml](.github/workflows/pages.yml).
+- In GitHub repository settings, Pages should use `GitHub Actions` as the source.
+- This repo is published as the root GitHub Pages site at `https://strayproject.github.io`, so Astro does not use a `base` path.
+
+## Project Structure
+- `src/pages/` contains the site routes.
+- `src/content/posts/` contains blog posts.
+- `src/layouts/` contains shared Astro layouts.
+- `public/` contains static assets served as-is.
+- `legacy/pages/` keeps the larger migrated page bodies that Astro now wraps and serves.
 
 ## Adding a New Blog Post
-- all blog posts sit in the `_posts` folder. add a new file using the format `<yyyy>-<mm>-<dd>-<title>.md`, for example `2022-01-01-happy-new-year.md`.
-- inside every blog post, fill out the front matter (the text in between the dashed lines):
-```
+- Create a Markdown file in `src/content/posts/`.
+- Include frontmatter like this:
+
+```md
 ---
-layout: post
 title: New Website!
 author: brandon pow
+pubDate: 2026-03-30
+slug: new-website
+tags: admin
 ---
 ```
-- most times only title and author need to be edited.
-- the text inside every blog post uses markdown formatting, please check the [markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/) for more info.
 
-## Forking
-- it is not recommended to fork this into an individual's github repo where the URL has a prefix (/blog-page etc.), because of all the BASEURL changes needed to all links, image links and _config.yml. it's just too much work. rather, please deploy to an individual or organization's base github page (johndoe.github.io) or similar.
-- postcss v2 is the only version known to work for now, postcss v1 gives an `ERRCONNREFUSED`. sadly it is slower, about 5-6 seconds per refresh compared to v1's sub-2-second one.
+- `slug` controls the final URL. Posts currently publish to dated `.html` URLs like `/2026/03/30/new-website.html`.
+- Markdown formatting works as usual. Raw HTML inside posts is also supported.
 
-## Updating Modules
-- `npm update` for non-major version updates
-- `bundle update`
-
-## Further Reading
-- [jekyll](https://jekyllrb.com/)
-- [tailwind v3](https://tailwindcss.com/)
-
-## For Linux Users
-- install rbenv, set rbenv local {version} and rbenv shell {version} first, where {version} is the number in .ruby-version, eg. 3.3.3
+## Useful Commands
+- `npm run dev` starts the local development server.
+- `npm run build` creates the production build in `dist/`.
+- `npm run preview` previews the production build locally.

@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Page Not Found" description="This page does not exist.">
+  <div
+    class="h-full w-full fixed top-0 -z-10 bg-cover"
+    style="background-image: linear-gradient(135deg, #5b6b7a 23.08%, #4e5b69 23.08%, #4e5b69 50%, #5b6b7a 50%, #5b6b7a 73.08%, #4e5b69 73.08%, #4e5b69 100%); background-size: 183.85px 183.85px;"
+  ></div>
+  <div class="mx-auto max-w-3xl px-4 py-24 font-boogaloo">
+    <div class="bg-gray-200/75 rounded-lg p-8 text-center">
+      <p class="text-2xl lg:text-3xl pb-2">
+        <i class="fa-solid fa-map-signs pr-2"></i>Page not found
+      </p>
+      <p class="text-xl lg:text-2xl pb-4">
+        The page you were looking for has wandered off.
+      </p>
+      <a
+        href="/index.html"
+        class="inline-block bg-gray-500 hover:bg-green-500 transition duration-150 rounded border border-white text-white px-4 sm:px-8 py-1 sm:py-3 text-md"
+      >
+        Back to home
+      </a>
+    </div>
+  </div>
+</BaseLayout>
