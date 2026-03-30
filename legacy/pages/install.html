@@ -5,50 +5,235 @@ description: "Follow these instructions to install the game."
 image: /assets/img/bg/campfire.webp
 ---
 <!-- bg -->
-<div class="h-full w-full fixed top-0 -z-10 bg-cover blur-sm"  style="background-image:url('/assets/img/bg/beach1.webp');">
-</div>
-<!-- center column -->
-<div class="mx-2 md:mx-4 lg:mx-16 xl:mx-32" style="background-color: #fff8;">
-<div class="flex flex-row items-center mx-auto justify-center">
-    <h1 id="download" class="text-3xl md:text-3xl lg:text-4xl font-boogaloo self-center">Thank you for downloading!</h1>
-    <img class="self-center px-1" src="assets/img/emotes/love.webp">
-</div>
-<div class="px-2 sm:px-2 md:px-4 lg:px-6 xl:px-10">
-    <h1 class="text-xl md:text-2xl lg:text-3xl text-center font-boogaloo pt-4 pb-2">First Installation</h1>
-    <h2 class="text-lg sm:text-md md:text-lg lg:text-xl xl:text-2xl font-boogaloo text-red-800"><i class="fa-brands fa-windows pr-2"></i><i class="fa-brands fa-linux pr-2"></i>Windows / Linux</h2>
-    <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">Download the game's zip file, then open it. Drag the folder inside the zip file to your preferred location to extract it there, then open the folder and double-click on:</p>
-        <div class="pl-8">
-            <ul class="list-disc">
-                <li class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">64-bit Windows: "Stranded.exe"</li>
-                <li class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">64-bit Linux: "Stranded.sh" (be sure to run, not view!)</li>
-                <li class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">32-bit Windows: "Stranded-32.exe"</li>
+<div
+  class="fixed top-0 -z-10 h-full w-full bg-cover blur-sm"
+  style="background-image:url('/assets/img/bg/beach1.webp');"
+></div>
+
+<div class="mx-auto max-w-6xl px-3 py-4 sm:px-4 lg:px-6 lg:py-8">
+  <div class="overflow-hidden rounded-[2rem] bg-white/80 shadow-xl ring-1 ring-white/70 backdrop-blur-sm">
+    <section class="border-b border-orange-200/70 bg-gradient-to-br from-orange-50/90 via-amber-50/90 to-sky-100/80 px-4 py-8 sm:px-6 lg:px-10">
+      <div class="mx-auto max-w-4xl text-center font-boogaloo">
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <h1 id="download" class="text-4xl sm:text-5xl lg:text-6xl">
+            Thank you for downloading!
+          </h1>
+          <img
+            class="h-10 w-10 self-center sm:h-12 sm:w-12"
+            src="/assets/img/emotes/love.webp"
+            alt=""
+            aria-hidden="true"
+          />
+        </div>
+        <p class="mx-auto mt-4 max-w-2xl text-xl text-gray-800 sm:text-2xl">
+          Pick your platform below for the fastest way to get Stranded running.
+          If anything feels off, the help links at the bottom will point you in
+          the right direction.
+        </p>
+        <div class="mt-6 flex flex-wrap justify-center gap-3 text-lg sm:text-xl">
+          <a
+            href="/stranded.html#download"
+            class="rounded-full bg-red-800 px-5 py-2 text-white transition duration-150 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-700 focus:ring-offset-2"
+          >
+            Back to downloads
+          </a>
+          <a
+            href="#help"
+            class="rounded-full border border-red-800 px-5 py-2 text-red-900 transition duration-150 hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-700 focus:ring-offset-2"
+          >
+            Troubleshooting help
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="space-y-10 px-4 py-6 sm:px-6 lg:px-10 lg:py-10">
+      <section aria-labelledby="first-installation" class="space-y-5 font-boogaloo">
+        <div class="text-center">
+          <h2 id="first-installation" class="text-3xl sm:text-4xl lg:text-5xl">
+            First Installation
+          </h2>
+          <p class="mt-2 text-lg text-gray-700 sm:text-xl">
+            Each platform has slightly different steps, so choose the card that
+            matches your device.
+          </p>
+        </div>
+
+        <div class="grid gap-5 lg:grid-cols-3">
+          <section class="rounded-3xl bg-sky-50 p-5 shadow-sm ring-1 ring-sky-200">
+            <h3 class="text-2xl text-red-800 sm:text-3xl">
+              <i class="fa-brands fa-windows pr-2"></i><i class="fa-brands fa-linux pr-2"></i>
+              Windows / Linux
+            </h3>
+            <ol class="mt-4 space-y-3 pl-6 text-lg marker:text-red-700 sm:text-xl">
+              <li>Download the game `.zip` file and open it.</li>
+              <li>Drag the folder inside the zip to a normal location such as your desktop, downloads folder, or games folder.</li>
+              <li>Open the extracted folder and launch the file that matches your system:</li>
+            </ol>
+            <ul class="mt-3 list-disc space-y-2 pl-10 text-lg sm:text-xl">
+              <li>64-bit Windows: <code>Stranded.exe</code></li>
+              <li>32-bit Windows: <code>Stranded-32.exe</code></li>
+              <li>64-bit Linux: <code>Stranded.sh</code></li>
             </ul>
+            <div class="mt-4 rounded-2xl bg-white/80 p-4 text-lg text-gray-800 ring-1 ring-sky-100 sm:text-xl">
+              On Linux, if the file opens in a text editor instead of launching,
+              right-click <code>Stranded.sh</code> and choose “Run as Program”.
+              If needed, open a terminal in that folder and run
+              <code>chmod +x Stranded.sh && ./Stranded.sh</code>.
+            </div>
+          </section>
+
+          <section class="rounded-3xl bg-rose-50 p-5 shadow-sm ring-1 ring-rose-200">
+            <h3 class="text-2xl text-red-800 sm:text-3xl">
+              <i class="fa-brands fa-apple pr-2"></i>Mac
+            </h3>
+            <ol class="mt-4 space-y-3 pl-6 text-lg marker:text-red-700 sm:text-xl">
+              <li>Download the game `.zip` file and open it.</li>
+              <li>Drag the app inside the zip to your preferred folder, such as `Applications`.</li>
+              <li>Double-click the app to launch it.</li>
+            </ol>
+            <div class="mt-4 rounded-2xl bg-white/80 p-4 text-lg text-gray-800 ring-1 ring-rose-100 sm:text-xl">
+              If macOS blocks the app, Control-click it, choose “Open”, then
+              choose “Open” again in the warning prompt. If you still hit a
+              permissions issue, move the app out of the zip first and try
+              again.
+            </div>
+          </section>
+
+          <section class="rounded-3xl bg-amber-50 p-5 shadow-sm ring-1 ring-amber-200">
+            <h3 class="text-2xl text-red-800 sm:text-3xl">
+              <i class="fa-solid fa-mobile-screen pr-2"></i>Android
+            </h3>
+            <ol class="mt-4 space-y-3 pl-6 text-lg marker:text-red-700 sm:text-xl">
+              <li>Download the game `.apk` file, then open it.</li>
+              <li>If Android shows a security warning, tap “Settings”.</li>
+              <li>Enable installation from this source.</li>
+              <li>Return to the installer and tap “Install”.</li>
+            </ol>
+
+            <div class="mt-5 grid gap-3 sm:grid-cols-3">
+              <figure class="rounded-2xl bg-white/80 p-3 text-center ring-1 ring-amber-100">
+                <img
+                  class="mx-auto rounded-xl"
+                  src="/assets/img/sc/android_denied.webp"
+                  alt="Android warning screen with a Settings button."
+                  loading="lazy"
+                />
+                <figcaption class="mt-2 text-lg">1. Tap “Settings”.</figcaption>
+              </figure>
+              <figure class="rounded-2xl bg-white/80 p-3 text-center ring-1 ring-amber-100">
+                <img
+                  class="mx-auto rounded-xl"
+                  src="/assets/img/sc/android_allow.webp"
+                  alt="Android settings screen with install from this source enabled."
+                  loading="lazy"
+                />
+                <figcaption class="mt-2 text-lg">2. Allow this source.</figcaption>
+              </figure>
+              <figure class="rounded-2xl bg-white/80 p-3 text-center ring-1 ring-amber-100">
+                <img
+                  class="mx-auto rounded-xl"
+                  src="/assets/img/sc/android_install.webp"
+                  alt="Android installer screen with the Install button visible."
+                  loading="lazy"
+                />
+                <figcaption class="mt-2 text-lg">3. Go back and install.</figcaption>
+              </figure>
+            </div>
+          </section>
         </div>
-    <h2 class="text-lg sm:text-md md:text-lg lg:text-xl xl:text-2xl font-boogaloo text-red-800"><i class="fa-brands fa-apple pr-2"></i>Mac</h2>
-    <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">Download the game's zip file, then open it. Drag the .app icon inside it to your preferred location, then double-click to run. If you get permission errors, make it executable.</p>
-    <h2 class="text-lg sm:text-md md:text-lg lg:text-xl xl:text-2xl font-boogaloo text-red-800"><i class="fa-solid fa-mobile-screen pr-2"></i>Android</h2>
-    <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">Download the game's .apk file, then open it. If this is your first time installing an .apk file, there should be a security warning preventing you from running the file:</p>
-    <div class="flex flex-row flex-wrap gap-3 justify-center">
-        <div class="flex flex-col self-end">
-            <img class="mx-auto" src="assets/img/sc/android_denied.webp">
-            <p class="mx-auto font-boogaloo">Click "Settings"...</p>
+      </section>
+
+      <section aria-labelledby="updating-current-build" class="space-y-5 font-boogaloo">
+        <div class="text-center">
+          <h2 id="updating-current-build" class="text-3xl sm:text-4xl lg:text-5xl">
+            Updating Current Build
+          </h2>
+          <p class="mt-2 text-lg text-gray-700 sm:text-xl">
+            Updating is mostly the same as a first install, with one important
+            Android warning.
+          </p>
         </div>
-        <div class="flex flex-col self-end">
-            <img class="mx-auto" src="assets/img/sc/android_allow.webp">
-            <p class="mx-auto font-boogaloo">...then "allow from this source"...</p>
+
+        <div class="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
+          <section class="rounded-3xl bg-emerald-50 p-5 shadow-sm ring-1 ring-emerald-200 font-boogaloo">
+            <h3 class="text-2xl text-red-800 sm:text-3xl">
+              <i class="fa-brands fa-windows pr-2"></i><i class="fa-brands fa-linux pr-2"></i><i class="fa-brands fa-apple pr-2"></i>
+              Windows / Linux / Mac
+            </h3>
+            <ol class="mt-4 space-y-3 pl-6 text-lg marker:text-red-700 sm:text-xl">
+              <li>Download the newest build.</li>
+              <li>Extract or move it just like you did the first time.</li>
+              <li>Open the new version from its folder or app file.</li>
+            </ol>
+            <div class="mt-4 rounded-2xl bg-white/80 p-4 text-lg text-gray-800 ring-1 ring-emerald-100 sm:text-xl">
+              Your saves are stored in a different folder, so replacing the old
+              build will not remove them. You can safely delete the older game
+              files after confirming the new version launches correctly.
+            </div>
+            <p class="mt-4 text-lg text-gray-800 sm:text-xl">
+              One caution: loading a save made in a newer build with an older
+              build can cause errors.
+            </p>
+          </section>
+
+          <section class="rounded-3xl bg-orange-50 p-5 shadow-sm ring-1 ring-orange-200 font-boogaloo">
+            <h3 class="text-2xl text-red-800 sm:text-3xl">
+              <i class="fa-solid fa-mobile-screen pr-2"></i>Android
+            </h3>
+            <div class="mt-4 rounded-2xl bg-red-100 p-4 text-lg text-red-950 ring-1 ring-red-300 sm:text-xl">
+              <strong>Do not uninstall the previous app</strong> if you want to
+              keep your saves. Uninstalling the old app can delete your save
+              data.
+            </div>
+            <figure class="mt-4 rounded-2xl bg-white/80 p-3 text-center ring-1 ring-orange-100">
+              <img
+                class="mx-auto rounded-xl"
+                src="/assets/img/sc/android_update.webp"
+                alt="Android update prompt showing the Install button for the new version."
+                loading="lazy"
+              />
+              <figcaption class="mt-2 text-lg">
+                Open the new `.apk`, then tap “Install”.
+              </figcaption>
+            </figure>
+            <p class="mt-4 text-lg text-gray-800 sm:text-xl">
+              Download the new `.apk` and install it over the existing version.
+              That keeps your saves in place.
+            </p>
+          </section>
         </div>
-        <div class="flex flex-col self-end">
-            <img class="mx-auto" src="assets/img/sc/android_install.webp">
-            <p class="mx-auto font-boogaloo">...then press the back button and install.</p>
+      </section>
+
+      <section
+        id="help"
+        aria-labelledby="need-help"
+        class="rounded-3xl bg-slate-100/90 px-5 py-6 shadow-sm ring-1 ring-slate-200 font-boogaloo"
+      >
+        <h2 id="need-help" class="text-center text-3xl sm:text-4xl">
+          Need Help?
+        </h2>
+        <div class="mx-auto mt-4 grid max-w-4xl gap-4 sm:grid-cols-3">
+          <a
+            href="/stranded.html#download"
+            class="rounded-2xl bg-white px-4 py-4 text-center text-lg text-gray-900 shadow-sm ring-1 ring-slate-200 transition duration-150 hover:bg-slate-50 sm:text-xl"
+          >
+            Return to the Stranded download page
+          </a>
+          <a
+            href="https://discord.gg/4Rp2sVzAHk"
+            class="rounded-2xl bg-white px-4 py-4 text-center text-lg text-gray-900 shadow-sm ring-1 ring-slate-200 transition duration-150 hover:bg-slate-50 sm:text-xl"
+          >
+            Ask for help in Discord
+          </a>
+          <a
+            href="https://github.com/strayproject/strayproject.github.io/releases"
+            class="rounded-2xl bg-white px-4 py-4 text-center text-lg text-gray-900 shadow-sm ring-1 ring-slate-200 transition duration-150 hover:bg-slate-50 sm:text-xl"
+          >
+            Check the latest releases
+          </a>
         </div>
+      </section>
     </div>
-    <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">Tap "Settings", then allow installation from unknown sources, then return to the previous screen and tap "Install".</p>
-    <h1 class="text-xl md:text-2xl lg:text-3xl text-center font-boogaloo pt-4 pb-2">Updating Current Build</h1>
-    <h2 class="text-lg sm:text-md md:text-lg lg:text-xl xl:text-2xl font-boogaloo text-red-800"><i class="fa-brands fa-windows pr-2"></i><i class="fa-brands fa-linux pr-2"></i><i class="fa-brands fa-apple pr-2"></i>Windows / Linux / Mac</h2>
-    <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">The steps are the same as installing for the first time. Don't worry about your saves, they're in a different folder. You may safely delete or store the previous version. Be warned: loading a later save using a previous build can cause errors.</p>
-    <h2 class="text-lg sm:text-md md:text-lg lg:text-xl xl:text-2xl font-boogaloo text-red-800"><i class="fa-solid fa-mobile-screen pr-2"></i>Android</h2>
-    <img class="mx-auto" src="assets/img/sc/android_update.webp">
-    <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">DO NOT UNINSTALL THE PREVIOUS APP, OTHERWISE YOUR SAVES WILL BE DELETED. (Unless that is your desire.)</p>
-    <p class="pl-4 text-lg sm:text-md md:text-lg lg:text-lg xl:text-xl font-boogaloo pb-1">Download the new .apk file and open it, then on the following screen tap "Install".</p>
-</div>
+  </div>
 </div>

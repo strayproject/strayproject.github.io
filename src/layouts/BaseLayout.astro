@@ -5,6 +5,7 @@ const {
   title,
   description = "Stories, games, and updates from the Stray Project.",
   image,
+  loadAmplitude = false,
 } = Astro.props;
 
 const siteTitle = "Stray Project";
@@ -67,13 +68,26 @@ const socialLinks = [
       href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap"
       rel="stylesheet"
     />
-    <script is:inline type="text/javascript" src="/assets/js/amplitude.js"></script>
-    <script is:inline defer src="/assets/js/amplitude_init.js"></script>
+    {loadAmplitude && (
+      <>
+        <script is:inline type="text/javascript" src="/assets/js/amplitude.js"></script>
+        <script is:inline defer src="/assets/js/amplitude_init.js"></script>
+      </>
+    )}
     <slot name="head" />
   </head>
   <body>
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-black focus:shadow-lg"
+    >
+      Skip to main content
+    </a>
     <div class="flex min-h-screen flex-col">
-      <nav class="bg-gray-100/80 border-gray-200 px-3 sm:px-4 py-3 rounded-b-lg dark:bg-gray-800">
+      <nav
+        aria-label="Primary"
+        class="bg-gray-100/80 border-gray-200 px-3 sm:px-4 py-3 rounded-b-lg dark:bg-gray-800"
+      >
         <div class="container flex flex-wrap justify-between items-center mx-auto">
           <a href="/index.html" class="flex items-center">
             <span
@@ -123,7 +137,7 @@ const socialLinks = [
               <li>
                 <div class="flex py-3 px-3 md:py-0 md:px-0 items-center space-x-4">
                   {socialLinks.map((link) => (
-                    <a href={link.href}>
+                    <a href={link.href} aria-label={link.alt}>
                       <img
                         class="transition duration-250 ease-in-out transform hover:scale-125"
                         alt={link.alt}
@@ -137,9 +151,9 @@ const socialLinks = [
           </div>
         </div>
       </nav>
-      <div class="flex-1">
+      <main id="main-content" class="flex-1">
         <slot />
-      </div>
+      </main>
       <footer class="p-4 bg-white/80 rounded-t-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
         <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
           Art, story and music © <a href="/index.html" class="hover:underline">
