@@ -1,0 +1,45 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import { formatPostDate } from "../lib/posts";
+
+const {
+  title,
+  description,
+  image,
+  author,
+  pubDate,
+  tags = [],
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description} image={image}>
+  <div
+    class="h-full w-full fixed top-0 -z-10 bg-cover blur-sm"
+    style="background-image:url('/assets/img/bg/beach1.webp');"
+  ></div>
+  <div class="mx-0 md:mx-4 lg:mx-16 xl:mx-32" style="background-color: #fff8;">
+    <div class="py-2 lg:py-4 font-boogaloo">
+      <h1 class="text-3xl lg:text-4xl text-center">{title}</h1>
+      <p class="text-xl text-center">
+        {formatPostDate(pubDate)} | {author} | Tags:
+        {tags.map((tag) => (
+          <span class="bg-green-100 text-green-800 text-xs font-semibold mr-1 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900">
+            {tag.toUpperCase()}
+          </span>
+        ))}
+      </p>
+    </div>
+    <div class="px-2 md:px-8 lg:px-16 font-boogaloo prose lg:prose-lg max-w-none prose-img:rounded-xl xl:prose-xl">
+      <slot />
+    </div>
+    <a href="/posts.html">
+      <div class="flex justify-center items-center py-2">
+        <button
+          class="bg-gray-500 hover:bg-green-500 hover:border-white my-2 transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded border border-white text-white px-4 sm:px-8 py-1 sm:py-3 text-md font-boogaloo"
+        >
+          <i class="fa-solid fa-arrow-left pr-2"></i>Back to posts
+        </button>
+      </div>
+    </a>
+  </div>
+</BaseLayout>

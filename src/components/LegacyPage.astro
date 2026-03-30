@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getLegacyPageBody } from "../lib/legacy";
+
+const { file, title, description, image } = Astro.props;
+const body = getLegacyPageBody(file);
+---
+
+<BaseLayout title={title} description={description} image={image}>
+  <Fragment slot="head">
+    <slot name="head" />
+  </Fragment>
+  <div style="display: contents;" set:html={body}></div>
+  <slot />
+</BaseLayout>
