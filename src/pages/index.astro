@@ -13,8 +13,8 @@ const latestPosts = posts.slice(0, 4);
 
 <BaseLayout title="Main Page">
   <div
-    class="h-full w-full fixed top-0 -z-10"
-    style="background-color: #171717; opacity: 1; background-image: radial-gradient(#926c00 3px, transparent 3px), radial-gradient(#926c00 3px, #171717 3px); background-size: 80px 80px; background-position: 0 0,40px 40px;"
+    class="fixed top-0 -z-10 h-full w-full bg-cover bg-center"
+    style="background-image: url('/assets/img/bg/Sky 3.webp');"
   ></div>
   <div class="mx-2 md:mx-4 lg:mx-16 xl:mx-32">
     <div class="flex flex-col gap-4 py-4 lg:flex-row">
@@ -31,7 +31,7 @@ const latestPosts = posts.slice(0, 4);
                   src="/assets/img/icon/strandedlogo.webp"
                   alt="Stranded logo"
                 />
-                <p class="mt-4 text-xl sm:text-2xl lg:text-3xl text-shadow">
+                <p class="text-xl sm:text-2xl lg:text-3xl text-shadow">
                   Five Strangers, One Goal.
                 </p>
                 <div class="mt-8 flex flex-wrap justify-center gap-3 text-lg sm:text-xl">
@@ -88,15 +88,6 @@ const latestPosts = posts.slice(0, 4);
             })}
           </ul>
         </div>
-        <a
-          class="twitter-timeline"
-          data-height="500"
-          data-dnt="true"
-          href="https://twitter.com/TheStrayProject?ref_src=twsrc%5Etfw"
-        >
-          Tweets by TheStrayProject
-        </a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </aside>
     </div>
   </div>
