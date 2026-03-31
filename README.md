@@ -20,7 +20,6 @@ This site now builds with Astro and deploys to GitHub Pages through GitHub Actio
 - `src/content/posts/` contains blog posts.
 - `src/layouts/` contains shared Astro layouts.
 - `public/` contains static assets served as-is.
-- `legacy/pages/` keeps the larger migrated page bodies that Astro now wraps and serves.
 
 ## Adding a New Blog Post
 - Create a Markdown file in `src/content/posts/`.
@@ -31,12 +30,12 @@ This site now builds with Astro and deploys to GitHub Pages through GitHub Actio
 title: New Website!
 author: brandon pow
 pubDate: 2026-03-30
-slug: new-website
+urlSlug: new-website
 tags: admin
 ---
 ```
 
-- `slug` controls the final URL. Posts currently publish to dated `.html` URLs like `/2026/03/30/new-website.html`.
+- `urlSlug` controls the final URL. Posts currently publish to dated `.html` URLs like `/2026/03/30/new-website.html`.
 - Markdown formatting works as usual. Raw HTML inside posts is also supported.
 
 ## Useful Commands

@@ -5,7 +5,7 @@ pubDate: 2023-10-07
 urlSlug: stranded-v0.2.1-released
 tags: stranded update
 ---
-Stranded v0.2.1 has been released! ...I didn't post about v0.2.0, oops. You may download it from our [download page](/stranded.html).
+Stranded v0.2.1 has been released! ...I didn't post about v0.2.0, oops. You may download it from the [v0.2.1 release page](https://github.com/strayproject/strayproject.github.io/releases/tag/v0.2.1).
 
 ## Changes
 Chapter 2 adds many new CGs and continues the story after 1 year of development.

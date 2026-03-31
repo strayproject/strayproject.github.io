@@ -16,65 +16,45 @@ const latestPosts = posts.slice(0, 4);
     class="h-full w-full fixed top-0 -z-10"
     style="background-color: #171717; opacity: 1; background-image: radial-gradient(#926c00 3px, transparent 3px), radial-gradient(#926c00 3px, #171717 3px); background-size: 80px 80px; background-position: 0 0,40px 40px;"
   ></div>
-  <div class="container mx-auto">
-    <div class="flex flex-row flex-wrap py-4">
-      <main role="main" class="flex-auto">
-        <div class="mx-auto flex flex-col items-center justify-center">
-          <div
-            class="relative rounded-lg bg-gradient-to-tl bg-cover from-black container mx-auto flex flex-col items-center shadow-xl py-20"
+  <div class="mx-2 md:mx-4 lg:mx-16 xl:mx-32">
+    <div class="flex flex-col gap-4 py-4 lg:flex-row">
+      <main role="main" class="min-w-0 flex-[1.75]">
+        <div class="mx-auto flex flex-col gap-2">
+          <section
+            class="relative overflow-hidden rounded-lg bg-gradient-to-tl bg-cover from-black shadow-xl"
             style="background-image: url('/assets/img/campfire.webp')"
           >
-            <div class="w-11/12 sm:w-2/3 m-10">
-              <img
-                class="mx-auto justify-self-center"
-                src="/assets/img/icon/strandedlogo.webp"
-                alt="Stranded logo"
-              />
-              <h1
-                class="text-2xl sm:text-3xl md:text-4xl text-center text-white font-boogaloo text-shadow leading-tight"
-              >
-                Six Strangers, One Goal.
-              </h1>
+            <div class="bg-black/55 px-6 py-16 sm:px-10 lg:px-14 lg:py-24">
+              <div class="mx-auto max-w-3xl text-center font-boogaloo text-white">
+                <img
+                  class="mx-auto mb-6"
+                  src="/assets/img/icon/strandedlogo.webp"
+                  alt="Stranded logo"
+                />
+                <p class="mt-4 text-xl sm:text-2xl lg:text-3xl text-shadow">
+                  Five Strangers, One Goal.
+                </p>
+                <div class="mt-8 flex flex-wrap justify-center gap-3 text-lg sm:text-xl">
+                  <a
+                    href="/stranded.html"
+                    class="rounded-full bg-white/90 px-6 py-3 text-gray-900 transition duration-150 hover:bg-white"
+                  >
+                    Game Page
+                  </a>
+                  <a
+                    href="/posts.html"
+                    class="rounded-full border border-white/80 px-6 py-3 text-white transition duration-150 hover:bg-white/10"
+                  >
+                    Read Updates
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="flex justify-center items-center">
-              <a href="/stranded.html">
-                <button
-                  class="text-green-700 bg-gray-200/75 hover:bg-green-500 lg:text-2xl hover:border-green-500 hover:text-white transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded border border-white px-4 sm:px-8 py-1 sm:py-3 text-md font-boogaloo"
-                >
-                  {'>'} Main Page
-                </button>
-              </a>
-            </div>
-          </div>
-          <div
-            class="mt-2 relative rounded-lg bg-gradient-to-tl bg-cover from-black container mx-auto flex flex-col items-center shadow-xl py-20"
-            style="background-image: url('/assets/img/bg/diner.webp')"
-          >
-            <div class="w-11/12 sm:w-2/3 m-10">
-              <h1
-                class="text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-white first-line:text-shadow leading-tight"
-              >
-                WISH DINER
-              </h1>
-              <h1
-                class="text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl text-center text-white text-shadow leading-tight"
-              >
-                Everything has a price.
-              </h1>
-            </div>
-            <div class="flex justify-center items-center mb-10 sm:mb-20">
-              <a href="/wishdiner.html">
-                <button
-                  class="text-blue-900 bg-gray-200/75 hover:bg-blue-500 lg:text-2xl hover:border-blue-500 hover:text-white transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white hover:bg-indigo-700-800 rounded border border-white px-4 sm:px-8 py-1 sm:py-3 text-md"
-                >
-                  {'>'} Learn More
-                </button>
-              </a>
-            </div>
-          </div>
+          </section>
+
         </div>
       </main>
-      <aside class="flex-auto px-2 font-boogaloo">
+      <aside class="min-w-0 lg:w-[22rem] lg:flex-none font-boogaloo">
         <div class="p-4 mb-2 w-full rounded bg-gray-100/80">
           <div class="w-full h-12 flex">
             <img class="flex-none" src="/assets/img/emotes/dum.webp" alt="" />
