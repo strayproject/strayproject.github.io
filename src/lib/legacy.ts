@@ -1,8 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
 
-const repoRoot = path.resolve(fileURLToPath(new URL("../../", import.meta.url)));
+const repoRoot = process.cwd();
 
 export function getLegacyPageBody(fileName: string) {
   const source = fs.readFileSync(

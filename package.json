@@ -11,9 +11,9 @@
   "author": "brandon pow",
   "license": "ISC",
   "devDependencies": {
-    "@astrojs/sitemap": "^3.7.1",
+    "@astrojs/sitemap": "^3.7.2",
     "@tailwindcss/typography": "^0.5.16",
-    "astro": "^5.0.0",
+    "astro": "^6.1.9",
     "autoprefixer": "^10.4.21",
     "flowbite": "^1.8.1",
     "postcss": "^8.5.6",
