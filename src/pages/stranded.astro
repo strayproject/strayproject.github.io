@@ -145,6 +145,64 @@ const socialLinks = [
     icon: "fa-brands fa-facebook-f",
   },
 ];
+
+const castMembers = [
+  {
+    id: "owen",
+    name: "Owen",
+    full: "/assets/img/char/owenfull.webp",
+    species: "Otter",
+    age: "21",
+    interest: "Fishing",
+    description: "Otter with a loud and boisterous attitude. Knows how to fish.",
+    quote: "Yeah! No matter what happens, we'll get through this together!",
+  },
+  {
+    id: "terry",
+    name: "Terry",
+    full: "/assets/img/char/terryfull.webp",
+    species: "Fox",
+    age: "23",
+    interest: "Terry",
+    description:
+      "A cold fox, not of many words. His appearance and behavior seem sharp and distrustful, but is that his true nature?",
+    quote: "I'm SO gonna die with these idiots...",
+  },
+  {
+    id: "kim",
+    name: "Kim",
+    full: "/assets/img/char/kimfull.webp",
+    species: "Husky",
+    age: "25",
+    interest: "Sports",
+    description:
+      "A husky with a mild, optimistic temperament. Has natural leadership abilities and tries his best to keep the team together.",
+    quote: "A calm mind is a clear mind.",
+  },
+  {
+    id: "beru",
+    name: "Beru",
+    full: "/assets/img/char/berufull.webp",
+    species: "Bear",
+    age: "21",
+    interest: "Games",
+    description:
+      "A gamer bear, strong but soft on the inside. Often puts others first. His physical strength is an asset on the island.",
+    quote:
+      "Well if it's the cold you're worried about, my big fluffy fur can warm you up all night!",
+  },
+  {
+    id: "lucy",
+    name: "Lucy",
+    full: "/assets/img/char/lucyfull.webp",
+    species: "Bunny",
+    age: "23",
+    interest: "Plants",
+    description:
+      "A rabbit with a lot of smarts. Tends to stutter, but isn't afraid to speak when the situation demands it.",
+    quote: "N-No problem. It's the least I can do to help.",
+  },
+];
 ---
 
 <BaseLayout
@@ -172,7 +230,7 @@ const socialLinks = [
             A game by The Stray Project
           </p>
 
-          <img class="mx-auto my-7 w-full max-w-[560px]" src={`${assets}/line.webp`} alt="" />
+          <img class="intro-divider" src={`${assets}/line.webp`} alt="" />
 
           <h1 class="text-2xl text-[#20231f] sm:text-3xl">
             A survival story set on an unknown island!
@@ -208,8 +266,8 @@ const socialLinks = [
           </p>
         </section>
 
-        <section class="mt-12 text-center">
-          <img class="mx-auto mb-5 w-full max-w-[560px]" src={`${assets}/line.webp`} alt="" />
+        <section class="section-block text-center">
+          <img class="section-divider" src={`${assets}/line.webp`} alt="" />
           <h2 class="text-2xl sm:text-3xl">Meet the other survivors!</h2>
           <p class="mx-auto mt-3 max-w-[620px] text-base leading-snug sm:text-lg">
             Decide the fu<span class="secret-letter">t</span>ure of your own
@@ -223,10 +281,57 @@ const socialLinks = [
             alt="The Stranded survivors"
             loading="lazy"
           />
+          <div class="cast-tabs mx-auto mt-6" data-cast-tabs>
+            <div class="cast-tab-list" role="tablist" aria-label="Stranded survivors">
+              {castMembers.map((member, index) => (
+                <button
+                  id={`cast-tab-${member.id}`}
+                  class={`cast-tab ${index === 0 ? "is-active" : ""}`}
+                  type="button"
+                  role="tab"
+                  aria-selected={index === 0 ? "true" : "false"}
+                  aria-controls={`cast-panel-${member.id}`}
+                  data-cast-tab={member.id}
+                >
+                  <span>{member.name}</span>
+                </button>
+              ))}
+            </div>
+
+            {castMembers.map((member, index) => (
+              <article
+                id={`cast-panel-${member.id}`}
+                class="cast-panel"
+                role="tabpanel"
+                aria-labelledby={`cast-tab-${member.id}`}
+                data-cast-panel={member.id}
+                hidden={index !== 0}
+              >
+                <div class="cast-portrait-wrap">
+                  <img
+                    class="cast-portrait"
+                    src={member.full}
+                    alt={`${member.name} full character art`}
+                    loading="lazy"
+                  />
+                </div>
+                <div class="cast-copy">
+                  <h3>{member.name}</h3>
+                  <div class="cast-facts" aria-label={`${member.name} details`}>
+                    <span>Species: {member.species}</span>
+                    <span>Age: {member.age}</span>
+                    <span>Interest: {member.interest}</span>
+                  </div>
+                  <p>{member.description}</p>
+                  <blockquote>{member.quote}</blockquote>
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
 
-        <section class="mt-12 text-center">
-          <img class="mx-auto mb-5 w-full max-w-[560px]" src={`${assets}/line.webp`} alt="" />
+        <section class="section-block text-center">
+          <img class="section-divider" src={`${assets}/line.webp`} alt="" />
           <h2 class="text-2xl sm:text-3xl">Preview of the game!</h2>
           <p class="mx-auto mt-3 max-w-[620px] text-base leading-snug sm:text-lg">
             Find the hidden secrets within the unsuspecting island and do your best
@@ -278,8 +383,8 @@ const socialLinks = [
           </div>
         ))}
 
-        <section class="mt-12 text-center">
-          <img class="mx-auto mb-5 w-full max-w-[560px]" src={`${assets}/line.webp`} alt="" />
+        <section class="section-block text-center">
+          <img class="section-divider" src={`${assets}/line.webp`} alt="" />
           <h2 id="music" class="text-2xl sm:text-3xl">Music</h2>
           <p class="mx-auto mt-3 max-w-[620px] text-base leading-snug sm:text-lg">
             Stranded has 9 original tracks composed by Rex Revon and Zammu!
@@ -294,8 +399,8 @@ const socialLinks = [
           </p>
         </section>
 
-        <section class="mt-12 text-center">
-          <img class="mx-auto mb-5 w-full max-w-[560px]" src={`${assets}/line.webp`} alt="" />
+        <section class="section-block text-center">
+          <img class="section-divider" src={`${assets}/line.webp`} alt="" />
           <h2 id="translations" class="text-2xl sm:text-3xl">Translations</h2>
           <div class="translations-layout mx-auto mt-6">
             <img
@@ -351,8 +456,38 @@ const socialLinks = [
           </div>
         </section>
 
-        <section class="mt-12 text-center">
-          <img class="mx-auto mb-5 w-full max-w-[560px]" src={`${assets}/line.webp`} alt="" />
+        <section class="section-block">
+          <img class="section-divider" src={`${assets}/line.webp`} alt="" />
+          <div class="feature-showcase mx-auto">
+            <img
+              class="feature-side-image feature-side-image-top"
+              src="/assets/img/minibg/smoke.webp"
+              alt=""
+              loading="lazy"
+              aria-hidden="true"
+            />
+            <div class="feature-copy">
+              <h2 class="text-xl text-[#40551f] sm:text-2xl">Featuring*:</h2>
+              <ul class="feature-list">
+                <li>3 chapters (+1 prologue)</li>
+                <li>38k words (about 20 mins gameplay)</li>
+                <li>lots of art</li>
+                <li>9 original music tracks</li>
+              </ul>
+              <p>* correct as of chapter 3</p>
+            </div>
+            <img
+              class="feature-side-image feature-side-image-bottom"
+              src="/assets/img/minibg/sta.webp"
+              alt=""
+              loading="lazy"
+              aria-hidden="true"
+            />
+          </div>
+        </section>
+
+        <section class="section-block text-center">
+          <img class="section-divider" src={`${assets}/line.webp`} alt="" />
           <h2 class="text-2xl sm:text-3xl">Warning!</h2>
           <p class="mx-auto mt-3 max-w-[620px] text-base leading-snug sm:text-lg">
             This game contains blood, violence, profanity, graphic descriptions of
@@ -361,8 +496,8 @@ const socialLinks = [
           </p>
         </section>
 
-        <section class="mt-12">
-          <img class="mx-auto mb-5 w-full max-w-[560px]" src={`${assets}/line.webp`} alt="" />
+        <section class="section-block">
+          <img class="section-divider" src={`${assets}/line.webp`} alt="" />
           <h2 class="text-center text-2xl sm:text-3xl">Frequently Asked Questions</h2>
           <div class="info-stack mx-auto mt-6">
             <details>
@@ -410,8 +545,8 @@ const socialLinks = [
           </div>
         </section>
 
-        <section class="mt-12">
-          <img class="mx-auto mb-5 w-full max-w-[560px]" src={`${assets}/line.webp`} alt="" />
+        <section class="section-block">
+          <img class="section-divider" src={`${assets}/line.webp`} alt="" />
           <h2 id="patchnotes" class="text-center text-2xl sm:text-3xl">Patch Notes</h2>
           <div class="info-stack mx-auto mt-6">
             {patchNotes.map((patch) => (
@@ -427,8 +562,8 @@ const socialLinks = [
           </div>
         </section>
 
-        <section class="mt-12 text-center">
-          <img class="mx-auto mb-5 w-full max-w-[560px]" src={`${assets}/line.webp`} alt="" />
+        <section class="section-block text-center">
+          <img class="section-divider" src={`${assets}/line.webp`} alt="" />
           <h2 class="text-2xl sm:text-3xl">A message from The Stray Project!</h2>
           <p class="mt-3 text-base sm:text-lg">Thank you for playing our game.</p>
           <div class="social-links mx-auto mt-7">
@@ -448,6 +583,28 @@ const socialLinks = [
     .stranded-page {
       background: url("/assets/stranded/itch/background.webp") center top / cover fixed;
       min-height: 100vh;
+    }
+
+    .section-block {
+      margin-top: 2.25rem;
+    }
+
+    .section-divider,
+    .intro-divider {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 35rem;
+      width: 100%;
+    }
+
+    .section-divider {
+      margin-bottom: 1rem;
+    }
+
+    .intro-divider {
+      margin-bottom: 1.25rem;
+      margin-top: 1.25rem;
     }
 
     .social-button {
@@ -474,6 +631,167 @@ const socialLinks = [
 
     :global(.audio-player) {
       margin: 1.5rem auto 0;
+    }
+
+    .cast-tabs {
+      max-width: 44rem;
+    }
+
+    .cast-tab-list {
+      display: grid;
+      gap: 0.45rem;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .cast-tab {
+      background: rgba(237, 243, 228, 0.74);
+      border: 1px solid rgba(95, 121, 47, 0.2);
+      border-radius: 10px;
+      color: #40551f;
+      display: flex;
+      justify-content: center;
+      min-width: 0;
+      overflow: hidden;
+      padding: 0.65rem 0.75rem;
+      transition:
+        background-color 150ms ease,
+        border-color 150ms ease,
+        transform 150ms ease;
+    }
+
+    .cast-tab:hover,
+    .cast-tab:focus-visible,
+    .cast-tab.is-active {
+      background: rgba(159, 193, 96, 0.22);
+      border-color: rgba(95, 121, 47, 0.5);
+      outline: none;
+    }
+
+    .cast-tab.is-active {
+      transform: translateY(-2px);
+    }
+
+    .cast-tab span {
+      font-size: 1rem;
+      line-height: 1;
+      overflow-wrap: anywhere;
+    }
+
+    .cast-panel {
+      align-items: center;
+      background: rgba(237, 243, 228, 0.74);
+      border: 1px solid rgba(95, 121, 47, 0.2);
+      border-radius: 10px;
+      display: grid;
+      gap: 1rem;
+      margin-top: 0.85rem;
+      padding: 1rem;
+      text-align: left;
+    }
+
+    .cast-panel[hidden] {
+      display: none;
+    }
+
+    .cast-portrait-wrap {
+      align-self: stretch;
+      background: #f8f8f5;
+      border: 1px solid rgba(95, 121, 47, 0.16);
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      min-height: 13rem;
+      overflow: hidden;
+    }
+
+    .cast-portrait {
+      max-height: 18rem;
+      object-fit: contain;
+      object-position: bottom center;
+      width: auto;
+    }
+
+    .cast-copy h3 {
+      color: #20231f;
+      font-size: 1.5rem;
+      line-height: 1.1;
+      text-align: center;
+    }
+
+    .cast-facts {
+      display: grid;
+      gap: 0.4rem;
+      margin-top: 0.75rem;
+    }
+
+    .cast-facts span {
+      background: #f8f8f5;
+      border: 1px solid rgba(95, 121, 47, 0.16);
+      border-radius: 10px;
+      color: #40551f;
+      padding: 0.45rem 0.6rem;
+      text-align: center;
+    }
+
+    .cast-copy p,
+    .cast-copy blockquote {
+      color: #3f433b;
+      font-size: 1rem;
+      line-height: 1.35;
+      margin-top: 0.8rem;
+      text-align: center;
+    }
+
+    .cast-copy blockquote {
+      color: #4d5049;
+      font-style: italic;
+    }
+
+    .feature-showcase {
+      align-items: center;
+      display: grid;
+      gap: 1rem;
+      justify-items: center;
+      max-width: 48rem;
+    }
+
+    .feature-side-image {
+      max-width: min(16rem, 80vw);
+      width: 100%;
+    }
+
+    .feature-side-image-top {
+      transform: rotate(2deg);
+    }
+
+    .feature-side-image-bottom {
+      transform: rotate(-2deg);
+    }
+
+    .feature-copy {
+      color: #20231f;
+      text-align: left;
+    }
+
+    .feature-list {
+      list-style: disc;
+      margin-top: 0.75rem;
+      padding: 0;
+      padding-left: 2rem;
+    }
+
+    .feature-list li {
+      color: #3f433b;
+      font-size: 1rem;
+      line-height: 1.35;
+      padding-left: 0.5rem;
+    }
+
+    .feature-copy p {
+      color: #4d5049;
+      font-size: 1rem;
+      line-height: 1.35;
+      margin-top: 0.75rem;
     }
 
     .translations-layout {
@@ -596,6 +914,29 @@ const socialLinks = [
     }
 
     @media (min-width: 640px) {
+      .cast-panel {
+        grid-template-columns: minmax(9rem, 0.8fr) minmax(0, 1.2fr);
+      }
+
+      .cast-copy h3,
+      .cast-copy p,
+      .cast-copy blockquote {
+        text-align: left;
+      }
+
+      .cast-facts {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .feature-showcase {
+        grid-template-columns: minmax(9rem, 1fr) minmax(12rem, auto) minmax(9rem, 1fr);
+        max-width: 52rem;
+      }
+
+      .feature-side-image {
+        max-width: 14rem;
+      }
+
       .social-links {
         grid-template-columns: repeat(4, minmax(0, 1fr));
         max-width: 40rem;
@@ -612,6 +953,40 @@ const socialLinks = [
   </style>
 
   <script is:inline>
+    document.querySelectorAll("[data-cast-tabs]").forEach((root) => {
+      const tabs = Array.from(root.querySelectorAll("[data-cast-tab]"));
+      const panels = Array.from(root.querySelectorAll("[data-cast-panel]"));
+
+      const selectTab = (tab) => {
+        const selectedId = tab.getAttribute("data-cast-tab");
+
+        tabs.forEach((button) => {
+          const isSelected = button === tab;
+          button.classList.toggle("is-active", isSelected);
+          button.setAttribute("aria-selected", isSelected ? "true" : "false");
+        });
+
+        panels.forEach((panel) => {
+          panel.hidden = panel.getAttribute("data-cast-panel") !== selectedId;
+        });
+      };
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => selectTab(tab));
+        tab.addEventListener("keydown", (event) => {
+          const direction = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0;
+          if (!direction) {
+            return;
+          }
+
+          event.preventDefault();
+          const nextTab = tabs[(index + direction + tabs.length) % tabs.length];
+          nextTab.focus();
+          selectTab(nextTab);
+        });
+      });
+    });
+
     document.querySelectorAll("[data-install-after-download]").forEach((link) => {
       link.addEventListener("click", (event) => {
         if (
