@@ -5,7 +5,6 @@ const {
   title,
   description = "Stories, games, and updates from the Stray Project.",
   image,
-  loadAmplitude = false,
   showHeader = true,
 } = Astro.props;
 
@@ -69,12 +68,6 @@ const socialLinks = [
       href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap"
       rel="stylesheet"
     />
-    {loadAmplitude && (
-      <>
-        <script is:inline type="text/javascript" src="/assets/js/amplitude.js"></script>
-        <script is:inline defer src="/assets/js/amplitude_init.js"></script>
-      </>
-    )}
     <slot name="head" />
   </head>
   <body>

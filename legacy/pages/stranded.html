@@ -265,167 +265,13 @@ image: /assets/img/bg/campfire.webp
         </div>
         <!-- music -->
         <h2 id="music" class="text-3xl md:text-3xl lg:text-4xl text-center pt-4 pb-2">Music</h2>
-        <!-- Blue Playlist Container -->
-        <div id="stranded-musicplayer" class="w-full rounded-lg md:px-2 lg:px-4">
-            <!-- Amplitude Player -->
-            <div id="amplitude-player" class="flex flex-col md:flex-row bg-white/75 lg:max-h-full">
-                <!-- Left Side Player -->
-                <div id="amplitude-left" class="w-full md:w-1/2 my-auto flex flex-row md:flex-col">
-                    <img data-amplitude-song-info="cover_art_url" class="album-art m-auto block w-1/3 md:w-1/2" />
-                    <div id="player-left-bottom" class="w-full m-auto">
-                        <div id="time-container" class="py-4">
-                            <span class="current-time">
-                                <span class="amplitude-current-minutes"></span>:<span
-                                    class="amplitude-current-seconds"></span>
-                            </span>
-                            <div id="progress-container">
-                                <input type="range" class="amplitude-song-slider" />
-                                <progress id="song-played-progress" class="amplitude-song-played-progress"></progress>
-                                <progress id="song-buffered-progress" class="amplitude-buffered-progress"
-                                    value="0"></progress>
-                            </div>
-                            <span class="duration">
-                                <span class="amplitude-duration-minutes"></span>:<span
-                                    class="amplitude-duration-seconds"></span>
-                            </span>
-                        </div>
-
-                        <div id="control-container">
-                            <div id="repeat-container">
-                                <div class="amplitude-repeat" id="repeat"></div>
-                                <div class="amplitude-shuffle amplitude-shuffle-off" id="shuffle">
-                                </div>
-                            </div>
-
-                            <div id="central-control-container">
-                                <div id="central-controls">
-                                    <div class="amplitude-prev" id="previous"></div>
-                                    <div class="amplitude-play-pause" id="play-pause">
-
-                                    </div>
-                                    <div class="amplitude-next" id="next"></div>
-                                </div>
-                            </div>
-
-                            <div id="volume-container">
-                                <div class="volume-controls">
-                                    <div class="amplitude-mute amplitude-volume"></div>
-                                    <input type="range" class="amplitude-volume-slider" />
-                                    <div class="ms-range-fix"></div>
-                                </div>
-                                <div class="amplitude-shuffle amplitude-shuffle-off" id="shuffle-right"></div>
-                            </div>
-                        </div>
-
-                        <div id="meta-container" class="text-center">
-                            <span data-amplitude-song-info="name" class="song-name text-xl lg:text-2xl"></span>
-
-                            <div class="song-artist-album">
-                                <span data-amplitude-song-info="artist" class="text-lg lg:text-xl text-gray-500"></span>
-                                <span data-amplitude-song-info="album"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Left Side Player -->
-
-                <!-- Right Side Player -->
-                <div id="amplitude-right" class="w-full md:w-1/2 bg-white">
-                    <div class="song amplitude-song-container amplitude-play-pause flex flex-row"
-                        data-amplitude-song-index="0">
-                        <div class="song-now-playing-icon-container flex-initial self-center">
-                            <div class="play-button-container mx-auto my-auto">
-                            </div>
-                            <img class="now-playing" src="/assets/img/player/nowplaying.svg" class="w-full">
-                        </div>
-                        <div class="song-meta-data flex-1">
-                            <div class="song-title">Stranded (Main Theme)</div>
-                            <div class="song-artist text-gray-500">Rex Revon</div>
-                        </div>
-                        <div class="song-duration flex-initial self-center px-2 text-gray-500">1:33</div>
-                    </div>
-                    <div class="song amplitude-song-container amplitude-play-pause flex flex-row"
-                        data-amplitude-song-index="1">
-                        <div class="song-now-playing-icon-container flex-initial self-center align-middle">
-                            <div class="play-button-container">
-                            </div>
-                            <img class="now-playing" src="/assets/img/player/nowplaying.svg" />
-                        </div>
-                        <div class="song-meta-data flex-1">
-                            <div class="song-title">Intense</div>
-                            <div class="song-artist text-gray-500">Rex Revon</div>
-                        </div>
-                        <div class="song-duration flex-initial self-center px-2 text-gray-500">1:23</div>
-                    </div>
-                    <div class="song amplitude-song-container amplitude-play-pause flex flex-row"
-                        data-amplitude-song-index="2">
-                        <div class="song-now-playing-icon-container flex-initial self-center align-middle">
-                            <div class="play-button-container">
-                            </div>
-                            <img class="now-playing" src="/assets/img/player/nowplaying.svg" />
-                        </div>
-                        <div class="song-meta-data flex-1">
-                            <div class="song-title">Sun (Day)</div>
-                            <div class="song-artist text-gray-500">Rex Revon</div>
-                        </div>
-                        <div class="song-duration flex-initial self-center px-2 text-gray-500">1:14</div>
-                    </div>
-                    <div class="song amplitude-song-container amplitude-play-pause flex flex-row"
-                        data-amplitude-song-index="3">
-                        <div class="song-now-playing-icon-container flex-initial self-center align-middle">
-                            <div class="play-button-container">
-                            </div>
-                            <img class="now-playing" src="/assets/img/player/nowplaying.svg" />
-                        </div>
-                        <div class="song-meta-data flex-1">
-                            <div class="song-title">Hopeless Harmony</div>
-                            <div class="song-artist text-gray-500">Rex Revon</div>
-                        </div>
-                        <div class="song-duration flex-initial self-center px-2 text-gray-500">1:36</div>
-                    </div>
-                    <div class="song amplitude-song-container amplitude-play-pause flex flex-row"
-                        data-amplitude-song-index="4">
-                        <div class="song-now-playing-icon-container flex-initial self-center align-middle">
-                            <div class="play-button-container">
-                            </div>
-                            <img class="now-playing" src="/assets/img/player/nowplaying.svg" />
-                        </div>
-                        <div class="song-meta-data flex-1">
-                            <div class="song-title">Chaotic Dumbass</div>
-                            <div class="song-artist text-gray-500">Rex Revon</div>
-                        </div>
-                        <div class="song-duration flex-initial self-center px-2 text-gray-500">0:22</div>
-                    </div>
-                    <div class="song amplitude-song-container amplitude-play-pause flex flex-row"
-                        data-amplitude-song-index="5">
-                        <div class="song-now-playing-icon-container flex-initial self-center align-middle">
-                            <div class="play-button-container">
-                            </div>
-                            <img class="now-playing" src="/assets/img/player/nowplaying.svg" />
-                        </div>
-                        <div class="song-meta-data flex-1">
-                            <div class="song-title">HeartFelt Midnight</div>
-                            <div class="song-artist text-gray-500">Zammu</div>
-                        </div>
-                        <div class="song-duration flex-initial self-center px-2 text-gray-500">1:59</div>
-                    </div>
-                    <div class="song amplitude-song-container amplitude-play-pause flex flex-row"
-                        data-amplitude-song-index="6">
-                        <div class="song-now-playing-icon-container flex-initial self-center align-middle">
-                            <div class="play-button-container">
-                            </div>
-                            <img class="now-playing" src="/assets/img/player/nowplaying.svg" />
-                        </div>
-                        <div class="song-meta-data flex-1">
-                            <div class="song-title">Sincerely</div>
-                            <div class="song-artist text-gray-500">Zammu</div>
-                        </div>
-                        <div class="song-duration flex-initial self-center px-2 text-gray-500">2:20</div>
-                    </div>
-                </div>
-                <!-- End Right Side Player -->
-            </div>
+        <div id="stranded-musicplayer" class="w-full rounded-lg bg-white/75 px-4 py-5 text-center">
+            <p class="text-xl lg:text-2xl">The music player has moved to the current Stranded page.</p>
+            <p class="pt-2 text-lg lg:text-xl">
+                <a class="alink" href="/stranded.html#music">Listen to the Stranded soundtrack</a>
+            </p>
             <p class="text-center text-xl lg:text-2xl py-2">Coming to a streaming platform soon!</p>
+        </div>
             <!-- features -->
             <!-- translations -->
             <h2 id="translations" class="text-3xl md:text-3xl lg:text-4xl text-center pt-4 pb-2">Translations</h2>
@@ -637,5 +483,4 @@ image: /assets/img/bg/campfire.webp
             <p class="px-4 text-sm text-gray-800 text-center py-2">This game is a work of fiction. The story, along with
                 all names, characters and events are fictitious and any resemblance to real-life counterparts (if any)
                 are purely coincidental. No animals were harmed in the making of this game.</p>
-        </div>
     </div>

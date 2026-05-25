@@ -1,0 +1,599 @@
+---
+interface AudioTrack {
+  title: string;
+  artist: string;
+  duration: string;
+  src: string;
+  cover: string;
+}
+
+interface Props {
+  id: string;
+  tracks: AudioTrack[];
+  label?: string;
+}
+
+const { id, tracks, label = "Audio player" } = Astro.props;
+const firstTrack = tracks[0];
+---
+
+{firstTrack && (
+  <div
+    class="audio-player"
+    data-audio-player={id}
+    tabindex="0"
+    aria-label={label}
+  >
+    <audio data-player-audio preload="metadata"></audio>
+
+    <div class="player-now">
+      <img
+        class="player-cover"
+        data-player-cover
+        src={firstTrack.cover}
+        alt=""
+        loading="lazy"
+      />
+      <div class="player-main">
+        <div class="player-meta">
+          <p class="player-kicker">Now Playing</p>
+          <h3 data-player-title>{firstTrack.title}</h3>
+          <p data-player-artist>{firstTrack.artist}</p>
+        </div>
+
+        <div class="player-timeline">
+          <span data-player-current>0:00</span>
+          <input
+            class="player-seek"
+            data-player-seek
+            type="range"
+            min="0"
+            max="1000"
+            value="0"
+            aria-label="Seek through current track"
+          />
+          <span data-player-duration>{firstTrack.duration}</span>
+        </div>
+
+        <div class="player-controls" aria-label="Playback controls">
+          <div class="player-transport-controls">
+            <button type="button" class="player-icon-button" data-player-shuffle aria-label="Shuffle" aria-pressed="false">
+              <i class="fa-solid fa-shuffle" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="player-icon-button" data-player-prev aria-label="Previous track">
+              <i class="fa-solid fa-backward-step" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="player-icon-button player-play-button" data-player-toggle aria-label="Play">
+              <i class="fa-solid fa-play" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="player-icon-button" data-player-next aria-label="Next track">
+              <i class="fa-solid fa-forward-step" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="player-icon-button" data-player-repeat aria-label="Repeat current track" aria-pressed="false">
+              <i class="fa-solid fa-repeat" aria-hidden="true"></i>
+            </button>
+          </div>
+          <button type="button" class="player-icon-button" data-player-mute aria-label="Mute" aria-pressed="false">
+            <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="player-list" aria-label="Track list">
+      {tracks.map((track, index) => (
+        <button
+          type="button"
+          class="player-track"
+          data-player-track
+          data-track-index={index}
+          aria-current={index === 0 ? "true" : "false"}
+        >
+          <i class="fa-solid fa-music" aria-hidden="true"></i>
+          <span class="player-track-copy">
+            <span>{track.title}</span>
+            <span>{track.artist}</span>
+          </span>
+          <span class="player-track-duration">{track.duration}</span>
+        </button>
+      ))}
+    </div>
+  </div>
+)}
+
+<style>
+  .audio-player {
+    background: #f8f8f5;
+    border: 1px solid rgba(95, 121, 47, 0.24);
+    border-radius: 10px;
+    box-shadow: 0 12px 24px rgba(32, 35, 31, 0.12);
+    display: grid;
+    gap: 0.85rem;
+    max-width: 48rem;
+    padding: 0.85rem;
+    text-align: left;
+  }
+
+  .audio-player:focus-visible {
+    outline: 3px solid #5f792f;
+    outline-offset: 4px;
+  }
+
+  .player-now {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .player-cover {
+    aspect-ratio: 1;
+    background: #e7eddc;
+    border: 1px solid rgba(95, 121, 47, 0.18);
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(32, 35, 31, 0.14);
+    justify-self: center;
+    max-width: 12rem;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .player-main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  .player-meta {
+    text-align: center;
+  }
+
+  .player-kicker {
+    color: #5f792f;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .player-meta h3 {
+    color: #20231f;
+    font-size: 1.65rem;
+    line-height: 1.05;
+    margin-top: 0.2rem;
+  }
+
+  .player-meta p:last-child {
+    color: #4d5049;
+    font-size: 1rem;
+    margin-top: 0.15rem;
+  }
+
+  .player-timeline {
+    align-items: center;
+    color: #4d5049;
+    display: grid;
+    gap: 0.6rem;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    line-height: 1;
+  }
+
+  .player-timeline span {
+    min-width: 2.8rem;
+    text-align: center;
+  }
+
+  .player-controls {
+    align-items: center;
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: 1fr auto 1fr;
+  }
+
+  .player-transport-controls {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    grid-column: 2;
+    justify-content: center;
+  }
+
+  .player-controls > [data-player-mute] {
+    grid-column: 3;
+    justify-self: end;
+  }
+
+  .player-icon-button {
+    align-items: center;
+    background: #edf3e4;
+    border: 1px solid rgba(95, 121, 47, 0.22);
+    border-radius: 10px;
+    color: #40551f;
+    display: inline-flex;
+    flex: 0 0 auto;
+    height: 2.65rem;
+    justify-content: center;
+    transition:
+      background-color 150ms ease,
+      color 150ms ease,
+      transform 150ms ease;
+    width: 2.65rem;
+  }
+
+  .player-icon-button:hover,
+  .player-icon-button:focus-visible,
+  .player-icon-button[aria-pressed="true"] {
+    background: #779350;
+    color: #ffffff;
+    outline: none;
+  }
+
+  .player-icon-button:hover {
+    transform: translateY(-1px);
+  }
+
+  .player-play-button {
+    background: #9fc160;
+    color: #ffffff;
+    height: 3.35rem;
+    width: 3.35rem;
+  }
+
+  .player-seek {
+    --seek-progress: 0%;
+    appearance: none;
+    background: linear-gradient(
+      to right,
+      #779350 0%,
+      #779350 var(--seek-progress),
+      #dfe9cf var(--seek-progress),
+      #dfe9cf 100%
+    );
+    border: 1px solid rgba(95, 121, 47, 0.24);
+    border-radius: 999px;
+    cursor: pointer;
+    height: 0.6rem;
+    padding: 0;
+    width: 100%;
+  }
+
+  .player-seek:focus-visible {
+    outline: 3px solid #5f792f;
+    outline-offset: 4px;
+  }
+
+  .player-seek::-webkit-slider-runnable-track {
+    background: transparent;
+    border-radius: 999px;
+    height: 0.6rem;
+  }
+
+  .player-seek::-webkit-slider-thumb {
+    appearance: none;
+    background: #5f792f;
+    border: 2px solid #ffffff;
+    border-radius: 999px;
+    box-shadow: 0 1px 5px rgba(32, 35, 31, 0.25);
+    height: 1rem;
+    margin-top: -0.23rem;
+    width: 1rem;
+  }
+
+  .player-seek::-moz-range-track {
+    background: #dfe9cf;
+    border: 1px solid rgba(95, 121, 47, 0.24);
+    border-radius: 999px;
+    height: 0.6rem;
+  }
+
+  .player-seek::-moz-range-progress {
+    background: #779350;
+    border-radius: 999px;
+    height: 0.6rem;
+  }
+
+  .player-seek::-moz-range-thumb {
+    background: #5f792f;
+    border: 2px solid #ffffff;
+    border-radius: 999px;
+    box-shadow: 0 1px 5px rgba(32, 35, 31, 0.25);
+    height: 1rem;
+    width: 1rem;
+  }
+
+  .player-list {
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .player-track {
+    align-items: center;
+    background: rgba(237, 243, 228, 0.74);
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: #20231f;
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    padding: 0.7rem 0.8rem;
+    text-align: left;
+    transition:
+      background-color 150ms ease,
+      border-color 150ms ease;
+    width: 100%;
+  }
+
+  .player-track:hover,
+  .player-track:focus-visible,
+  .player-track[aria-current="true"] {
+    background: rgba(159, 193, 96, 0.28);
+    border-color: rgba(95, 121, 47, 0.3);
+    outline: none;
+  }
+
+  .player-track i {
+    color: #5f792f;
+  }
+
+  .player-track-copy {
+    display: grid;
+    gap: 0.1rem;
+    min-width: 0;
+  }
+
+  .player-track-copy span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .player-track-copy span:first-child {
+    font-size: 1.05rem;
+    line-height: 1.1;
+  }
+
+  .player-track-copy span:last-child,
+  .player-track-duration {
+    color: #5c6055;
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: 640px) {
+    .player-now {
+      align-items: center;
+      grid-template-columns: minmax(8rem, 12rem) minmax(0, 1fr);
+    }
+
+    .player-meta {
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .player-controls {
+      grid-template-columns: 1fr;
+    }
+
+    .player-transport-controls,
+    .player-controls > [data-player-mute] {
+      grid-column: 1;
+    }
+  }
+</style>
+
+<script define:vars={{ tracks, id }}>
+  const player = document.querySelector(`[data-audio-player="${id}"]`);
+
+  if (player) {
+    const audio = player.querySelector("[data-player-audio]");
+    const cover = player.querySelector("[data-player-cover]");
+    const title = player.querySelector("[data-player-title]");
+    const artist = player.querySelector("[data-player-artist]");
+    const currentTime = player.querySelector("[data-player-current]");
+    const duration = player.querySelector("[data-player-duration]");
+    const seek = player.querySelector("[data-player-seek]");
+    const toggleButton = player.querySelector("[data-player-toggle]");
+    const toggleIcon = toggleButton.querySelector("i");
+    const prevButton = player.querySelector("[data-player-prev]");
+    const nextButton = player.querySelector("[data-player-next]");
+    const muteButton = player.querySelector("[data-player-mute]");
+    const muteIcon = muteButton.querySelector("i");
+    const shuffleButton = player.querySelector("[data-player-shuffle]");
+    const repeatButton = player.querySelector("[data-player-repeat]");
+    const trackButtons = Array.from(player.querySelectorAll("[data-player-track]"));
+
+    let currentIndex = 0;
+    let isSeeking = false;
+    let isShuffle = false;
+    let isRepeat = false;
+    let lastVolume = 1;
+
+    const formatTime = (seconds) => {
+      if (!Number.isFinite(seconds)) return "0:00";
+
+      const minutes = Math.floor(seconds / 60);
+      const remainder = Math.floor(seconds % 60);
+      return `${minutes}:${remainder.toString().padStart(2, "0")}`;
+    };
+
+    const setPlayState = () => {
+      const isPlaying = !audio.paused;
+      toggleButton.setAttribute("aria-label", isPlaying ? "Pause" : "Play");
+      toggleIcon.className = `fa-solid ${isPlaying ? "fa-pause" : "fa-play"}`;
+    };
+
+    const updateVolumeIcon = () => {
+      const isMuted = audio.muted || audio.volume === 0;
+      muteButton.setAttribute("aria-pressed", String(isMuted));
+      muteButton.setAttribute("aria-label", isMuted ? "Unmute" : "Mute");
+      muteIcon.className = `fa-solid ${isMuted ? "fa-volume-xmark" : "fa-volume-high"}`;
+    };
+
+    const updateTrackState = () => {
+      const track = tracks[currentIndex];
+      audio.src = track.src;
+      cover.src = track.cover;
+      title.textContent = track.title;
+      artist.textContent = track.artist;
+      duration.textContent = track.duration;
+      currentTime.textContent = "0:00";
+      seek.value = "0";
+      seek.style.setProperty("--seek-progress", "0%");
+
+      trackButtons.forEach((button, index) => {
+        button.setAttribute("aria-current", index === currentIndex ? "true" : "false");
+      });
+    };
+
+    const playAudio = async () => {
+      try {
+        await audio.play();
+      } catch {
+        setPlayState();
+      }
+    };
+
+    const loadTrack = (index, shouldPlay = false) => {
+      currentIndex = (index + tracks.length) % tracks.length;
+      updateTrackState();
+
+      if (shouldPlay) {
+        playAudio();
+      }
+    };
+
+    const nextTrackIndex = () => {
+      if (!isShuffle || tracks.length < 2) {
+        return currentIndex + 1;
+      }
+
+      let nextIndex = currentIndex;
+      while (nextIndex === currentIndex) {
+        nextIndex = Math.floor(Math.random() * tracks.length);
+      }
+
+      return nextIndex;
+    };
+
+    const syncTimeline = () => {
+      currentTime.textContent = formatTime(audio.currentTime);
+
+      if (Number.isFinite(audio.duration)) {
+        duration.textContent = formatTime(audio.duration);
+
+        if (!isSeeking) {
+          const nextValue = (audio.currentTime / audio.duration) * Number(seek.max);
+          seek.value = String(nextValue);
+          seek.style.setProperty("--seek-progress", `${(nextValue / Number(seek.max)) * 100}%`);
+        }
+      }
+    };
+
+    toggleButton.addEventListener("click", () => {
+      if (audio.paused) {
+        playAudio();
+      } else {
+        audio.pause();
+      }
+    });
+
+    prevButton.addEventListener("click", () => {
+      loadTrack(currentIndex - 1, !audio.paused);
+    });
+
+    nextButton.addEventListener("click", () => {
+      loadTrack(nextTrackIndex(), !audio.paused);
+    });
+
+    shuffleButton.addEventListener("click", () => {
+      isShuffle = !isShuffle;
+      shuffleButton.setAttribute("aria-pressed", String(isShuffle));
+    });
+
+    repeatButton.addEventListener("click", () => {
+      isRepeat = !isRepeat;
+      repeatButton.setAttribute("aria-pressed", String(isRepeat));
+    });
+
+    muteButton.addEventListener("click", () => {
+      audio.muted = !audio.muted;
+
+      if (!audio.muted && audio.volume === 0) {
+        audio.volume = lastVolume || 1;
+      }
+
+      updateVolumeIcon();
+    });
+
+    seek.addEventListener("input", () => {
+      isSeeking = true;
+      seek.style.setProperty("--seek-progress", `${(Number(seek.value) / Number(seek.max)) * 100}%`);
+
+      if (Number.isFinite(audio.duration)) {
+        const nextTime = (Number(seek.value) / Number(seek.max)) * audio.duration;
+        currentTime.textContent = formatTime(nextTime);
+      }
+    });
+
+    seek.addEventListener("change", () => {
+      if (Number.isFinite(audio.duration)) {
+        audio.currentTime = (Number(seek.value) / Number(seek.max)) * audio.duration;
+      }
+
+      isSeeking = false;
+    });
+
+    trackButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        loadTrack(Number(button.dataset.trackIndex), true);
+      });
+    });
+
+    audio.addEventListener("play", setPlayState);
+    audio.addEventListener("pause", setPlayState);
+    audio.addEventListener("loadedmetadata", syncTimeline);
+    audio.addEventListener("timeupdate", syncTimeline);
+    audio.addEventListener("ended", () => {
+      if (isRepeat) {
+        audio.currentTime = 0;
+        playAudio();
+        return;
+      }
+
+      loadTrack(nextTrackIndex(), true);
+    });
+
+    player.addEventListener("keydown", (event) => {
+      if (event.target.closest("button, input, a")) return;
+
+      if (event.key === " " || event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        toggleButton.click();
+      }
+
+      if (event.key === "ArrowLeft") {
+        prevButton.click();
+      }
+
+      if (event.key === "ArrowRight") {
+        nextButton.click();
+      }
+
+      if (event.key.toLowerCase() === "s") {
+        shuffleButton.click();
+      }
+
+      if (event.key.toLowerCase() === "r") {
+        repeatButton.click();
+      }
+
+      if (event.key.toLowerCase() === "m") {
+        muteButton.click();
+      }
+    });
+
+    audio.volume = 1;
+    updateTrackState();
+    updateVolumeIcon();
+    setPlayState();
+  }
+</script>
