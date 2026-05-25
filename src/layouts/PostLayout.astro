@@ -1,5 +1,5 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
+import SheetPageLayout from "./SheetPageLayout.astro";
 import { formatPostDate } from "../lib/posts";
 
 const {
@@ -12,12 +12,7 @@ const {
 } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description} image={image}>
-  <div
-    class="fixed inset-0 -z-10 bg-cover bg-center"
-    style="background-image:url('/assets/stranded/itch/background.webp');"
-  ></div>
-  <div class="stranded-sheet mx-auto max-w-[1040px] px-5 py-7 text-[#20231f] sm:px-10 lg:px-14">
+<SheetPageLayout title={title} description={description} image={image}>
     <div class="font-boogaloo">
       <h1 class="text-center text-2xl leading-tight sm:text-3xl">{title}</h1>
       <p class="mt-3 text-center text-base leading-snug text-[#3f433b] sm:text-lg">
@@ -40,5 +35,4 @@ const {
         <i class="fa-solid fa-arrow-left pr-2"></i>Back to posts
       </a>
     </div>
-  </div>
-</BaseLayout>
+</SheetPageLayout>

@@ -1,60 +1,168 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import SheetPageLayout from "../layouts/SheetPageLayout.astro";
 import { staffMembers } from "../data/staff";
+
+const staffImageSizes: Record<string, { width: number; height: number }> = {
+  "assets/img/staff/nekopanda.webp": { width: 716, height: 716 },
+  "assets/img/staff/nathan.webp": { width: 465, height: 464 },
+  "assets/img/staff/adjy.webp": { width: 768, height: 767 },
+  "assets/img/staff/treb.webp": { width: 128, height: 128 },
+  "assets/img/staff/flunky.jpg": { width: 259, height: 259 },
+  "assets/img/staff/rex.webp": { width: 128, height: 128 },
+  "assets/img/staff/sabro.webp": { width: 207, height: 207 },
+  "assets/img/staff/kara.webp": { width: 640, height: 640 },
+};
 ---
 
-<BaseLayout
+<SheetPageLayout
   title="About Us"
   description="Meet the team!"
   image="/assets/img/bg/adjyteam.jpg"
 >
-  <div
-    class="fixed inset-0 -z-10 bg-cover bg-center"
-    style="background-image:url('/assets/stranded/itch/background.webp');"
-  ></div>
-  <div class="stranded-sheet mx-0 md:mx-4 lg:mx-16 xl:mx-32">
-    <div class="py-2 lg:py-4">
-      <p class="text-center text-2xl lg:text-3xl font-boogaloo pb-1">ABOUT US</p>
-    </div>
-    <div class="px-2 lg:px-4">
+    <section class="text-center">
+      <h1 class="text-2xl sm:text-3xl">About Us</h1>
       <img
-        class="mx-auto rounded-lg w-full lg:w-3/4 xl:w-1/2"
+        class="about-team-image mx-auto mt-5"
         src="/assets/img/bg/adjyteam.jpg"
         alt="Stray team sans Rakki, drawn by Adjy in March 2022"
+        width="1280"
+        height="720"
       />
-      <p class="text-center text-base font-boogaloo pb-1">
+      <p class="mt-2 text-sm text-[#4d5049] sm:text-base">
         Stray team sans Rakki, drawn by Adjy in March 2022
       </p>
-      <h1 class="font-boogaloo text-xl lg:text-2xl text-center p-4">
+      <p class="mx-auto mt-4 max-w-[620px] text-base leading-snug text-[#3f433b] sm:text-lg">
         Hey! We are the Stray Team founded in 2021. Our goal's to bring you some games that tell some good stories.
-      </h1>
-    </div>
-    <div class="grid gap-4 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 px-2 lg:px-4 font-boogaloo">
+      </p>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="sr-only">Team members</h2>
+      <div class="staff-grid">
       {staffMembers.map((staff) => (
-        <div class="flex flex-col w-full items-center bg-white/75 border border-gray-200/75 rounded-lg shadow md:flex-row hover:bg-white">
-          {staff.img && (
-            <img
-              class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-              src={`/${staff.img}`}
-              alt={staff.name}
-            />
-          )}
-          <div class="flex flex-col justify-between p-4 leading-normal">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+        <article class="staff-card">
+          <div class="staff-portrait-wrap">
+            {staff.img ? (
+              <img
+                class="staff-portrait"
+                src={`/${staff.img}`}
+                alt={staff.name}
+                width={staffImageSizes[staff.img]?.width}
+                height={staffImageSizes[staff.img]?.height}
+                loading="lazy"
+              />
+            ) : (
+              <div class="staff-placeholder" aria-hidden="true">
+                {staff.name.charAt(0).toUpperCase()}
+              </div>
+            )}
+          </div>
+          <div class="staff-copy">
+            <h3>
               {staff.name}
-            </h5>
-            <h6 class="mb-2 text-xl tracking-tight text-gray-900">
+            </h3>
+            <p class="staff-role">
               {staff.role}
-            </h6>
-            <p class="mb-3 font-normal text-gray-700">{staff.text}</p>
+            </p>
+            {staff.text && <p class="staff-text">{staff.text}</p>}
             {staff.twitter && (
-              <a href={`https://twitter.com/${staff.twitter}`}>
+              <a class="staff-link" href={`https://twitter.com/${staff.twitter}`}>
                 <i class="fa-brands fa-twitter"></i> @{staff.twitter}
               </a>
             )}
           </div>
-        </div>
+        </article>
       ))}
-    </div>
-  </div>
-</BaseLayout>
+      </div>
+    </section>
+
+    <style>
+      .about-team-image {
+        aspect-ratio: 16 / 9;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(32, 35, 31, 0.12);
+        max-width: 42rem;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      .staff-grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+      }
+
+      .staff-card {
+        background: rgba(237, 243, 228, 0.74);
+        border: 1px solid rgba(95, 121, 47, 0.2);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        overflow: hidden;
+        text-align: center;
+      }
+
+      .staff-portrait-wrap {
+        aspect-ratio: 1;
+        background: #f8f8f5;
+        border-bottom: 1px solid rgba(95, 121, 47, 0.16);
+        display: grid;
+        place-items: center;
+      }
+
+      .staff-portrait {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      .staff-placeholder {
+        align-items: center;
+        background: #9fbe57;
+        border-radius: 999px;
+        color: white;
+        display: flex;
+        font-size: 3rem;
+        height: 5.5rem;
+        justify-content: center;
+        width: 5.5rem;
+      }
+
+      .staff-copy {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 0.45rem;
+        padding: 1rem;
+      }
+
+      .staff-copy h3 {
+        color: #20231f;
+        font-size: 1.4rem;
+        line-height: 1.1;
+        overflow-wrap: anywhere;
+      }
+
+      .staff-role {
+        color: #40551f;
+        font-size: 1.05rem;
+        line-height: 1.1;
+      }
+
+      .staff-text {
+        color: #3f433b;
+        font-size: 1rem;
+        line-height: 1.3;
+      }
+
+      .staff-link {
+        color: #40551f;
+        font-size: 1rem;
+        line-height: 1.2;
+        margin-top: auto;
+        text-decoration: underline;
+        text-underline-offset: 0.18rem;
+      }
+    </style>
+</SheetPageLayout>

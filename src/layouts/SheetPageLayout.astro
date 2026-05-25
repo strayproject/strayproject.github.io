@@ -1,0 +1,23 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+const {
+  title,
+  description,
+  image,
+  sheetClass = "",
+  outerClass = "",
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description} image={image}>
+  <div
+    class="fixed inset-0 -z-10 bg-cover bg-center"
+    style="background-image: url('/assets/stranded/itch/background.webp');"
+  ></div>
+  <div class={`mx-auto max-w-[1040px] px-4 font-boogaloo text-[#20231f] sm:px-6 lg:px-10 ${outerClass}`}>
+    <div class={`stranded-sheet px-5 py-7 sm:px-10 lg:px-14 ${sheetClass}`}>
+      <slot />
+    </div>
+  </div>
+</BaseLayout>

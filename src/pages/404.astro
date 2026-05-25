@@ -1,14 +1,13 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import SheetPageLayout from "../layouts/SheetPageLayout.astro";
 ---
 
-<BaseLayout title="Page Not Found" description="This page does not exist.">
-  <div
-    class="fixed inset-0 -z-10 bg-cover bg-center"
-    style="background-image: url('/assets/stranded/itch/background.webp');"
-  ></div>
-  <div class="mx-auto max-w-3xl px-4 pt-24 font-boogaloo">
-    <div class="stranded-sheet p-8 text-center">
+<SheetPageLayout
+  title="Page Not Found"
+  description="This page does not exist."
+  outerClass="pt-24"
+  sheetClass="mx-auto max-w-3xl text-center"
+>
       <p class="text-2xl lg:text-3xl pb-2">
         <i class="fa-solid fa-map-signs pr-2"></i>Page not found
       </p>
@@ -21,6 +20,4 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       >
         Back to home
       </a>
-    </div>
-  </div>
-</BaseLayout>
+</SheetPageLayout>

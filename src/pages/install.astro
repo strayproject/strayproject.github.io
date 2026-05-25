@@ -1,5 +1,26 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import SheetPageLayout from "../layouts/SheetPageLayout.astro";
+
+const installDownloads = [
+  {
+    key: "windows-linux",
+    label: "Download Windows / Linux",
+    href: "https://github.com/strayproject/strayproject.github.io/releases/download/v0.3.0/Stranded-0.3.0-pc.zip",
+    icons: ["fa-brands fa-windows", "fa-brands fa-linux"],
+  },
+  {
+    key: "mac",
+    label: "Download Mac",
+    href: "https://github.com/strayproject/strayproject.github.io/releases/download/v0.3.0/Stranded-0.3.0-mac.zip",
+    icons: ["fa-brands fa-apple"],
+  },
+  {
+    key: "android",
+    label: "Download Android",
+    href: "https://github.com/strayproject/strayproject.github.io/releases/download/v0.3.0/com.strayproject.stranded-0.3.0-1777106477-release.apk",
+    icons: ["fa-brands fa-android"],
+  },
+];
 
 const firstInstallCards = [
   {
@@ -44,34 +65,33 @@ const firstInstallCards = [
         src: "/assets/img/sc/android_denied.webp",
         alt: "Android warning screen with a Settings button.",
         caption: "1. Tap Settings.",
+        width: 360,
+        height: 178,
       },
       {
         src: "/assets/img/sc/android_allow.webp",
         alt: "Android settings screen with install from this source enabled.",
         caption: "2. Allow this source.",
+        width: 360,
+        height: 170,
       },
       {
         src: "/assets/img/sc/android_install.webp",
         alt: "Android installer screen with the Install button visible.",
         caption: "3. Go back and install.",
+        width: 360,
+        height: 164,
       },
     ],
   },
 ];
 ---
 
-<BaseLayout
+<SheetPageLayout
   title="Installation"
   description="Follow these instructions to install the game."
   image="/assets/img/bg/campfire.webp"
 >
-  <div
-    class="fixed inset-0 -z-10 bg-cover bg-center"
-    style="background-image: url('/assets/stranded/itch/background.webp');"
-  ></div>
-
-  <div class="mx-auto max-w-[1040px] px-4 font-boogaloo text-[#20231f] sm:px-6 lg:px-10">
-    <div class="stranded-sheet px-5 py-7 sm:px-10 lg:px-14">
       <section class="text-center">
         <div class="mx-auto max-w-4xl text-center">
           <h1 id="download" class="inline-flex items-center justify-center gap-2 text-2xl sm:text-3xl">
@@ -79,16 +99,34 @@ const firstInstallCards = [
               class="h-10 w-10 flex-none sm:h-12 sm:w-12"
               src="/assets/img/emotes/love.webp"
               alt=""
+              width="64"
+              height="64"
               aria-hidden="true"
             />
             Thank you for downloading!
           </h1>
+          <div class="mt-5 flex flex-wrap justify-center gap-3 text-base sm:text-lg">
+            {installDownloads.map((download) => (
+              <a
+                class="install-download-button flex w-full items-center justify-center gap-2 rounded bg-[#9fbe57] px-5 py-2.5 text-white shadow transition duration-150 hover:bg-[#87a743] focus:outline-none focus:ring-2 focus:ring-[#5f792f] focus:ring-offset-2 sm:w-auto"
+                href={download.href}
+                data-download-option={download.key}
+              >
+                <span class="inline-flex items-center gap-1.5" aria-hidden="true">
+                  {download.icons.map((icon) => (
+                    <i class={icon}></i>
+                  ))}
+                </span>
+                <span>{download.label}</span>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
       <div class="space-y-12">
         <section aria-labelledby="first-installation" class="space-y-5">
-          <img class="mx-auto mb-5 w-full max-w-[560px]" src="/assets/stranded/itch/line.webp" alt="" />
+          <img class="mx-auto mb-5 w-full max-w-[560px]" src="/assets/stranded/itch/line.webp" alt="" width="920" height="100" />
           <div class="text-center">
             <h2 id="first-installation" class="text-2xl sm:text-3xl">
               First Installation
@@ -131,6 +169,8 @@ const firstInstallCards = [
                           class="mx-auto rounded-[10px]"
                           src={image.src}
                           alt={image.alt}
+                          width={image.width}
+                          height={image.height}
                           loading="lazy"
                         />
                         <figcaption class="mt-2 text-base text-[#3f433b] sm:text-lg">{image.caption}</figcaption>
@@ -144,7 +184,7 @@ const firstInstallCards = [
         </section>
 
         <section aria-labelledby="updating-current-build" class="space-y-5">
-          <img class="mx-auto mb-5 w-full max-w-[560px]" src="/assets/stranded/itch/line.webp" alt="" />
+          <img class="mx-auto mb-5 w-full max-w-[560px]" src="/assets/stranded/itch/line.webp" alt="" width="920" height="100" />
           <div class="text-center">
             <h2 id="updating-current-build" class="text-2xl sm:text-3xl">
               Updating Current Build
@@ -191,6 +231,8 @@ const firstInstallCards = [
                   class="mx-auto rounded-[10px]"
                   src="/assets/img/sc/android_update.webp"
                   alt="Android update prompt showing the Install button for the new version."
+                  width="360"
+                  height="163"
                   loading="lazy"
                 />
                 <figcaption class="mt-2 text-base text-[#3f433b] sm:text-lg">
@@ -235,6 +277,23 @@ const firstInstallCards = [
           </div>
         </section>
       </div>
-    </div>
-  </div>
-</BaseLayout>
+  <style>
+    .install-download-button.is-selected {
+      background-color: #779350;
+      box-shadow:
+        0 0 0 2px #f8f8f5,
+        0 0 0 4px #5f792f;
+    }
+  </style>
+
+  <script is:inline>
+    const selectedDownload = new URLSearchParams(window.location.search).get("download");
+    if (selectedDownload) {
+      document.querySelectorAll("[data-download-option]").forEach((button) => {
+        if (button.getAttribute("data-download-option") === selectedDownload) {
+          button.classList.add("is-selected");
+        }
+      });
+    }
+  </script>
+</SheetPageLayout>

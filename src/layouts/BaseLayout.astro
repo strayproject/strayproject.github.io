@@ -14,6 +14,7 @@ const canonicalUrl = Astro.url.href;
 const imageUrl = image
   ? new URL(image, Astro.site ?? Astro.url).toString()
   : undefined;
+const currentPath = Astro.url.pathname === "/" ? "/index.html" : Astro.url.pathname;
 
 const navLinks = [
   { href: "/index.html", label: "Home" },
@@ -21,6 +22,14 @@ const navLinks = [
   { href: "/posts.html", label: "Posts" },
   { href: "/about.html", label: "About Us" },
 ];
+
+const activeNavLinks = navLinks.map((link) => ({
+  ...link,
+  isActive:
+    currentPath === link.href ||
+    (link.href === "/posts.html" && /^\/\d{4}\//.test(currentPath)) ||
+    (link.href === "/stranded.html" && currentPath === "/install.html"),
+}));
 
 const socialLinks = [
   {
@@ -89,6 +98,8 @@ const socialLinks = [
                 class="h-8 w-8"
                 src="/assets/img/icon/canned_stew.webp"
                 alt=""
+                width="32"
+                height="32"
                 aria-hidden="true"
               />
               <span
@@ -122,11 +133,16 @@ const socialLinks = [
             </button>
             <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
               <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-                {navLinks.map((link) => (
+                {activeNavLinks.map((link) => (
                   <li>
                     <a
                       href={link.href}
-                      class="block border-b border-[rgba(95,121,47,0.12)] px-3 py-3 text-[#3f433b] transition duration-200 hover:bg-[#edf3e4] md:border-0 md:p-0 md:text-base md:hover:bg-transparent md:hover:text-[#6f8c38] lg:text-lg"
+                      aria-current={link.isActive ? "page" : undefined}
+                      class={`block border-b border-[rgba(95,121,47,0.12)] px-3 py-3 transition duration-200 hover:bg-[#edf3e4] md:border-0 md:p-0 md:text-base md:hover:bg-transparent md:hover:text-[#6f8c38] lg:text-lg ${
+                        link.isActive
+                          ? "text-[#5f792f] underline decoration-[#9fbe57] decoration-2 underline-offset-4"
+                          : "text-[#3f433b]"
+                      }`}
                     >
                       {link.label}
                     </a>
@@ -143,6 +159,8 @@ const socialLinks = [
                           class="transition duration-200 ease-in-out transform hover:scale-125"
                           alt={link.alt}
                           src={link.img}
+                          width="24"
+                          height="24"
                         />
                       </a>
                     ))}

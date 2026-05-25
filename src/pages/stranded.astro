@@ -6,30 +6,47 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const assets = "/assets/stranded/itch";
 
 const screenshots = [
-  { src: `${assets}/ss1.webp`, alt: "Stranded gameplay screenshot with beach dialogue" },
-  { src: `${assets}/ss2.webp`, alt: "Stranded gameplay screenshot with close-up dialogue" },
-  { src: `${assets}/ss3.webp`, alt: "Stranded gameplay screenshot with a toy on the sand" },
-  { src: `${assets}/ss4.webp`, alt: "Stranded gameplay screenshot with survivors on the island" },
+  {
+    src: `${assets}/ss1.webp`,
+    alt: "Stranded gameplay screenshot with beach dialogue",
+    width: 500,
+    height: 300,
+  },
+  {
+    src: `${assets}/ss2.webp`,
+    alt: "Stranded gameplay screenshot with close-up dialogue",
+    width: 500,
+    height: 300,
+  },
+  {
+    src: `${assets}/ss3.webp`,
+    alt: "Stranded gameplay screenshot with a toy on the sand",
+    width: 500,
+    height: 300,
+  },
+  {
+    src: `${assets}/ss4.webp`,
+    alt: "Stranded gameplay screenshot with survivors on the island",
+    width: 500,
+    height: 300,
+  },
 ];
 
 const downloads = [
   {
     label: "Windows / Linux",
-    href: "https://github.com/strayproject/strayproject.github.io/releases/download/v0.3.0/Stranded-0.3.0-pc.zip",
+    href: "/install.html?download=windows-linux",
     icons: ["fa-brands fa-windows", "fa-brands fa-linux"],
-    installAfterDownload: true,
   },
   {
     label: "Mac",
-    href: "https://github.com/strayproject/strayproject.github.io/releases/download/v0.3.0/Stranded-0.3.0-mac.zip",
+    href: "/install.html?download=mac",
     icons: ["fa-brands fa-apple"],
-    installAfterDownload: true,
   },
   {
     label: "Android",
-    href: "https://github.com/strayproject/strayproject.github.io/releases/download/v0.3.0/com.strayproject.stranded-0.3.0-1777106477-release.apk",
+    href: "/install.html?download=android",
     icons: ["fa-brands fa-android"],
-    installAfterDownload: true,
   },
   {
     label: "Web Version",
@@ -151,6 +168,8 @@ const castMembers = [
     id: "owen",
     name: "Owen",
     full: "/assets/img/char/owenfull.webp",
+    width: 372,
+    height: 616,
     species: "Otter",
     age: "21",
     interest: "Fishing",
@@ -161,6 +180,8 @@ const castMembers = [
     id: "terry",
     name: "Terry",
     full: "/assets/img/char/terryfull.webp",
+    width: 372,
+    height: 616,
     species: "Fox",
     age: "23",
     interest: "Terry",
@@ -172,6 +193,8 @@ const castMembers = [
     id: "kim",
     name: "Kim",
     full: "/assets/img/char/kimfull.webp",
+    width: 372,
+    height: 616,
     species: "Husky",
     age: "25",
     interest: "Sports",
@@ -183,6 +206,8 @@ const castMembers = [
     id: "beru",
     name: "Beru",
     full: "/assets/img/char/berufull.webp",
+    width: 372,
+    height: 616,
     species: "Bear",
     age: "21",
     interest: "Games",
@@ -195,6 +220,8 @@ const castMembers = [
     id: "lucy",
     name: "Lucy",
     full: "/assets/img/char/lucyfull.webp",
+    width: 372,
+    height: 616,
     species: "Bunny",
     age: "23",
     interest: "Plants",
@@ -218,19 +245,23 @@ const castMembers = [
             class="mx-auto w-full max-w-[620px]"
             src={`${assets}/cover.webp`}
             alt="The Stranded cast"
+            width="920"
+            height="530"
             loading="eager"
           />
           <img
             class="mx-auto w-full max-w-[560px] sm:mt-4"
             src={`${assets}/stranded-logo.webp`}
             alt="Stranded"
+            width="900"
+            height="200"
             loading="eager"
           />
           <p class="mt-1 text-sm uppercase tracking-[0.16em] text-[#34372f] sm:text-base">
             A game by The Stray Project
           </p>
 
-          <img class="intro-divider" src={`${assets}/line.webp`} alt="" />
+          <img class="intro-divider" src={`${assets}/line.webp`} alt="" width="920" height="100" />
 
           <h1 class="text-2xl text-[#20231f] sm:text-3xl">
             A survival story set on an unknown island!
@@ -248,9 +279,6 @@ const castMembers = [
               <a
                 class="flex w-full items-center justify-center gap-2 rounded bg-[#9fbe57] px-5 py-2.5 text-white shadow transition duration-150 hover:bg-[#87a743] focus:outline-none focus:ring-2 focus:ring-[#5f792f] focus:ring-offset-2 sm:w-auto"
                 href={download.href}
-                data-install-after-download={download.installAfterDownload ? "true" : undefined}
-                target={download.installAfterDownload ? "_blank" : undefined}
-                rel={download.installAfterDownload ? "noopener" : undefined}
               >
                 <span class="inline-flex items-center gap-1.5" aria-hidden="true">
                   {download.icons.map((icon) => (
@@ -267,7 +295,7 @@ const castMembers = [
         </section>
 
         <section class="section-block text-center">
-          <img class="section-divider" src={`${assets}/line.webp`} alt="" />
+          <img class="section-divider" src={`${assets}/line.webp`} alt="" width="920" height="100" />
           <h2 class="text-2xl sm:text-3xl">Meet the other survivors!</h2>
           <p class="mx-auto mt-3 max-w-[620px] text-base leading-snug sm:text-lg">
             Decide the fu<span class="secret-letter">t</span>ure of your own
@@ -279,6 +307,8 @@ const castMembers = [
             class="mx-auto mt-6 w-full max-w-[640px]"
             src={`${assets}/character.webp`}
             alt="The Stranded survivors"
+            width="1000"
+            height="400"
             loading="lazy"
           />
           <div class="cast-tabs mx-auto mt-6" data-cast-tabs>
@@ -312,6 +342,8 @@ const castMembers = [
                     class="cast-portrait"
                     src={member.full}
                     alt={`${member.name} full character art`}
+                    width={member.width}
+                    height={member.height}
                     loading="lazy"
                   />
                 </div>
@@ -331,7 +363,7 @@ const castMembers = [
         </section>
 
         <section class="section-block text-center">
-          <img class="section-divider" src={`${assets}/line.webp`} alt="" />
+          <img class="section-divider" src={`${assets}/line.webp`} alt="" width="920" height="100" />
           <h2 class="text-2xl sm:text-3xl">Preview of the game!</h2>
           <p class="mx-auto mt-3 max-w-[620px] text-base leading-snug sm:text-lg">
             Find the hidden secrets within the unsuspecting island and do your best
@@ -350,6 +382,8 @@ const castMembers = [
                   class="block aspect-[5/3] w-full object-cover"
                   src={screenshot.src}
                   alt={screenshot.alt}
+                  width={screenshot.width}
+                  height={screenshot.height}
                   loading="lazy"
                 />
               </button>
@@ -377,6 +411,8 @@ const castMembers = [
                 class="max-h-[88vh] w-full object-contain"
                 src={screenshot.src}
                 alt={screenshot.alt}
+                width={screenshot.width}
+                height={screenshot.height}
                 loading="lazy"
               />
             </div>
@@ -384,7 +420,7 @@ const castMembers = [
         ))}
 
         <section class="section-block text-center">
-          <img class="section-divider" src={`${assets}/line.webp`} alt="" />
+          <img class="section-divider" src={`${assets}/line.webp`} alt="" width="920" height="100" />
           <h2 id="music" class="text-2xl sm:text-3xl">Music</h2>
           <p class="mx-auto mt-3 max-w-[620px] text-base leading-snug sm:text-lg">
             Stranded has 9 original tracks composed by Rex Revon and Zammu!
@@ -400,13 +436,15 @@ const castMembers = [
         </section>
 
         <section class="section-block text-center">
-          <img class="section-divider" src={`${assets}/line.webp`} alt="" />
+          <img class="section-divider" src={`${assets}/line.webp`} alt="" width="920" height="100" />
           <h2 id="translations" class="text-2xl sm:text-3xl">Translations</h2>
           <div class="translations-layout mx-auto mt-6">
             <img
               class="translation-image"
               src="/assets/img/sc/tr.webp"
               alt="Stranded language selection screenshot"
+              width="1168"
+              height="292"
               loading="lazy"
             />
             <div class="translation-copy">
@@ -457,12 +495,14 @@ const castMembers = [
         </section>
 
         <section class="section-block">
-          <img class="section-divider" src={`${assets}/line.webp`} alt="" />
+          <img class="section-divider" src={`${assets}/line.webp`} alt="" width="920" height="100" />
           <div class="feature-showcase mx-auto">
             <img
               class="feature-side-image feature-side-image-top"
               src="/assets/img/minibg/smoke.webp"
               alt=""
+              width="480"
+              height="408"
               loading="lazy"
               aria-hidden="true"
             />
@@ -480,6 +520,8 @@ const castMembers = [
               class="feature-side-image feature-side-image-bottom"
               src="/assets/img/minibg/sta.webp"
               alt=""
+              width="480"
+              height="408"
               loading="lazy"
               aria-hidden="true"
             />
@@ -487,7 +529,7 @@ const castMembers = [
         </section>
 
         <section class="section-block text-center">
-          <img class="section-divider" src={`${assets}/line.webp`} alt="" />
+          <img class="section-divider" src={`${assets}/line.webp`} alt="" width="920" height="100" />
           <h2 class="text-2xl sm:text-3xl">Warning!</h2>
           <p class="mx-auto mt-3 max-w-[620px] text-base leading-snug sm:text-lg">
             This game contains blood, violence, profanity, graphic descriptions of
@@ -497,7 +539,7 @@ const castMembers = [
         </section>
 
         <section class="section-block">
-          <img class="section-divider" src={`${assets}/line.webp`} alt="" />
+          <img class="section-divider" src={`${assets}/line.webp`} alt="" width="920" height="100" />
           <h2 class="text-center text-2xl sm:text-3xl">Frequently Asked Questions</h2>
           <div class="info-stack mx-auto mt-6">
             <details>
@@ -546,7 +588,7 @@ const castMembers = [
         </section>
 
         <section class="section-block">
-          <img class="section-divider" src={`${assets}/line.webp`} alt="" />
+          <img class="section-divider" src={`${assets}/line.webp`} alt="" width="920" height="100" />
           <h2 id="patchnotes" class="text-center text-2xl sm:text-3xl">Patch Notes</h2>
           <div class="info-stack mx-auto mt-6">
             {patchNotes.map((patch) => (
@@ -563,7 +605,7 @@ const castMembers = [
         </section>
 
         <section class="section-block text-center">
-          <img class="section-divider" src={`${assets}/line.webp`} alt="" />
+          <img class="section-divider" src={`${assets}/line.webp`} alt="" width="920" height="100" />
           <h2 class="text-2xl sm:text-3xl">A message from The Stray Project!</h2>
           <p class="mt-3 text-base sm:text-lg">Thank you for playing our game.</p>
           <div class="social-links mx-auto mt-7">
@@ -640,7 +682,11 @@ const castMembers = [
     .cast-tab-list {
       display: grid;
       gap: 0.45rem;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-auto-columns: minmax(5.25rem, 1fr);
+      grid-auto-flow: column;
+      overflow-x: auto;
+      padding: 0.15rem 0.15rem 0.35rem;
+      scroll-snap-type: x proximity;
     }
 
     .cast-tab {
@@ -653,6 +699,7 @@ const castMembers = [
       min-width: 0;
       overflow: hidden;
       padding: 0.65rem 0.75rem;
+      scroll-snap-align: start;
       transition:
         background-color 150ms ease,
         border-color 150ms ease,
@@ -914,6 +961,14 @@ const castMembers = [
     }
 
     @media (min-width: 640px) {
+      .cast-tab-list {
+        grid-auto-columns: initial;
+        grid-auto-flow: row;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        overflow-x: visible;
+        padding: 0;
+      }
+
       .cast-panel {
         grid-template-columns: minmax(9rem, 0.8fr) minmax(0, 1.2fr);
       }
@@ -987,23 +1042,5 @@ const castMembers = [
       });
     });
 
-    document.querySelectorAll("[data-install-after-download]").forEach((link) => {
-      link.addEventListener("click", (event) => {
-        if (
-          event.defaultPrevented ||
-          event.button !== 0 ||
-          event.metaKey ||
-          event.ctrlKey ||
-          event.shiftKey ||
-          event.altKey
-        ) {
-          return;
-        }
-
-        window.setTimeout(() => {
-          window.location.href = "/install.html";
-        }, 350);
-      });
-    });
   </script>
 </BaseLayout>

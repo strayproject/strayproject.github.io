@@ -1,5 +1,5 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import SheetPageLayout from "../layouts/SheetPageLayout.astro";
 import {
   formatPostDate,
   getPostExcerpt,
@@ -10,18 +10,13 @@ import {
 const posts = await getSortedPosts();
 ---
 
-<BaseLayout
+<SheetPageLayout
   title="Posts"
   description="News from the development team!"
   image="/assets/img/bg/campfire.webp"
 >
-  <div
-    class="fixed inset-0 -z-10 bg-cover bg-center"
-    style="background-image:url('/assets/stranded/itch/background.webp');"
-  ></div>
-  <div class="stranded-sheet mx-auto max-w-[1040px] px-5 py-7 text-[#20231f] sm:px-10 lg:px-14">
     <div class="mx-auto flex flex-row items-center justify-center">
-      <img class="inline pr-2" src="/assets/img/emotes/dum.webp" alt="" />
+      <img class="inline pr-2" src="/assets/img/emotes/dum.webp" alt="" width="64" height="64" />
       <h1 id="download" class="self-center font-boogaloo text-2xl sm:text-3xl">
         Posts
       </h1>
@@ -61,5 +56,4 @@ const posts = await getSortedPosts();
         })}
       </ul>
     </div>
-  </div>
-</BaseLayout>
+</SheetPageLayout>
