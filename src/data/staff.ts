@@ -45,8 +45,8 @@ export const staffMembers: StaffMember[] = [
     role: "Musician",
   },
   {
-    name: "brandon pow",
-    img: "assets/img/staff/brandonpow.webp",
+    name: "sabro",
+    img: "assets/img/staff/sabro.webp",
     role: "GUI Coder",
     text: "urrrrrr. (webmaster of this website!)",
   },

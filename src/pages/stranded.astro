@@ -1,167 +1,264 @@
 ---
-import LegacyPage from "../components/LegacyPage.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const assets = "/assets/stranded/itch";
+
+const screenshots = [
+  { src: `${assets}/ss1.webp`, alt: "Stranded gameplay screenshot with beach dialogue" },
+  { src: `${assets}/ss2.webp`, alt: "Stranded gameplay screenshot with close-up dialogue" },
+  { src: `${assets}/ss3.webp`, alt: "Stranded gameplay screenshot with a toy on the sand" },
+  { src: `${assets}/ss4.webp`, alt: "Stranded gameplay screenshot with survivors on the island" },
+];
+
+const downloads = [
+  {
+    label: "Windows / Linux",
+    href: "https://github.com/strayproject/strayproject.github.io/releases/download/v0.3.0/Stranded-0.3.0-pc.zip",
+  },
+  {
+    label: "Mac",
+    href: "https://github.com/strayproject/strayproject.github.io/releases/download/v0.3.0/Stranded-0.3.0-mac.zip",
+  },
+  {
+    label: "Android",
+    href: "https://github.com/strayproject/strayproject.github.io/releases/download/v0.3.0/com.strayproject.stranded-0.3.0-1777106477-release.apk",
+  },
+  {
+    label: "Web Version",
+    href: "https://strayproject.github.io/stranded-web/",
+  },
+];
+
+const socialLinks = [
+  {
+    label: "Support Us",
+    href: "https://ko-fi.com/strayproject",
+    className: "kofi",
+  },
+  {
+    label: "Follow Us",
+    href: "https://twitter.com/thestrayproject",
+    className: "x",
+  },
+  {
+    label: "Join In",
+    href: "https://discord.gg/4Rp2sVzAHk",
+    className: "discord",
+  },
+];
 ---
 
-<LegacyPage
-  file="stranded.html"
+<BaseLayout
   title="Stranded"
-  description="Five Strangers, One Goal."
-  image="/assets/img/bg/campfire.webp"
-  loadAmplitude={true}
+  description="A survival story set on an unknown island."
+  image={`${assets}/cover.webp`}
 >
-  <link slot="head" rel="stylesheet" href="/assets/css/amplitude.css" />
+  <div class="stranded-page font-boogaloo">
+    <div class="min-h-screen px-4 py-6 text-[#20231f] sm:px-6 lg:px-10">
+      <article class="mx-auto max-w-[760px] bg-[#f8f8f5]/95 px-5 py-7 shadow-2xl ring-1 ring-black/10 sm:px-10 lg:px-14">
+        <section class="text-center">
+          <img
+            class="mx-auto w-full max-w-[620px]"
+            src={`${assets}/cover.webp`}
+            alt="The Stranded cast"
+            loading="eager"
+          />
+          <img
+            class="mx-auto mt-4 w-full max-w-[560px]"
+            src={`${assets}/stranded-logo.webp`}
+            alt="Stranded"
+            loading="eager"
+          />
+          <p class="mt-1 text-sm uppercase tracking-[0.16em] text-[#34372f] sm:text-base">
+            A game by The Stray Project
+          </p>
 
-  <script is:inline>
-    (() => {
-      const setupCarousel = (root, options = {}) => {
-        if (!root) return;
+          <img class="mx-auto my-7 w-full max-w-[560px]" src={`${assets}/line.webp`} alt="" />
 
-        const items = Array.from(root.querySelectorAll("[data-sp-slide]"));
-        if (!items.length) return;
+          <h1 class="text-2xl text-[#20231f] sm:text-3xl">
+            A survival story set on an unknown island!
+          </h1>
+          <p class="mx-auto mt-4 max-w-[620px] text-base leading-snug sm:text-lg">
+            A holiday vacation goes completely wrong after your plane crashes onto an
+            unknown island. Play as the protagonist of the story who manages to
+            survive the crash along with few other survivors.
+          </p>
 
-        const indicators = Array.from(
-          root.querySelectorAll("[data-sp-slide-to]"),
-        );
-        const prevButton = root.querySelector("[data-sp-prev]");
-        const nextButton = root.querySelector("[data-sp-next]");
-        const autoplay = options.autoplay ?? false;
-        const intervalMs = options.interval ?? 5000;
-        const fillSlides = options.fillSlides ?? false;
-        let activeIndex = Math.max(
-          0,
-          items.findIndex(
-            (item) => item.getAttribute("data-sp-slide") === "active",
-          ),
-        );
-        let timerId = null;
+          <div class="mt-7 flex flex-wrap justify-center gap-3 text-base sm:text-lg">
+            {downloads.map((download) => (
+              <a
+                class="rounded bg-[#9fbe57] px-5 py-2.5 text-white shadow transition duration-150 hover:bg-[#87a743] focus:outline-none focus:ring-2 focus:ring-[#5f792f] focus:ring-offset-2"
+                href={download.href}
+              >
+                {download.label}
+              </a>
+            ))}
+          </div>
+          <p class="mt-3 text-sm text-[#4d5049] sm:text-base">
+            v0.3.0 | Apr 25, 2026 | <a class="underline hover:text-[#6f8c38]" href="/install.html">Installation Guide</a> | <a class="underline hover:text-[#6f8c38]" href="https://thestrayproject.itch.io/stranded">Itch.io page</a>
+          </p>
+        </section>
 
-        if (fillSlides) {
-          items.forEach((item) => {
-            item.classList.add("absolute", "inset-0");
+        <section class="mt-12 text-center">
+          <img class="mx-auto mb-5 w-full max-w-[560px]" src={`${assets}/line.webp`} alt="" />
+          <h2 class="text-2xl sm:text-3xl">Meet the other survivors!</h2>
+          <p class="mx-auto mt-3 max-w-[620px] text-base leading-snug sm:text-lg">
+            Decide the future of your own existence while forging favourable
+            relationships with the rest of the survivors. Their lives completely
+            rest in your hands.
+          </p>
+          <img
+            class="mx-auto mt-6 w-full max-w-[640px]"
+            src={`${assets}/character.webp`}
+            alt="The Stranded survivors"
+            loading="lazy"
+          />
+        </section>
 
-            item.querySelectorAll("img").forEach((image) => {
-              image.classList.add("h-full", "object-cover");
-            });
-          });
-        }
+        <section class="mt-12 text-center">
+          <img class="mx-auto mb-5 w-full max-w-[560px]" src={`${assets}/line.webp`} alt="" />
+          <h2 class="text-2xl sm:text-3xl">Preview of the game!</h2>
+          <p class="mx-auto mt-3 max-w-[620px] text-base leading-snug sm:text-lg">
+            Find the hidden secrets within the unsuspecting island and do your best
+            to survive.
+          </p>
+          <div class="mx-auto mt-6 grid max-w-[660px] gap-3 sm:grid-cols-2">
+            {screenshots.map((screenshot) => (
+              <img
+                class="aspect-[5/3] w-full border-4 border-[#777b77] object-cover shadow-md"
+                src={screenshot.src}
+                alt={screenshot.alt}
+                loading="lazy"
+              />
+            ))}
+          </div>
+        </section>
 
-        const update = (nextIndex) => {
-          activeIndex = (nextIndex + items.length) % items.length;
+        <section class="mt-12 text-center">
+          <img class="mx-auto mb-5 w-full max-w-[560px]" src={`${assets}/line.webp`} alt="" />
+          <h2 class="text-2xl sm:text-3xl">Warning!</h2>
+          <p class="mx-auto mt-3 max-w-[620px] text-base leading-snug sm:text-lg">
+            This game contains blood, violence, profanity, graphic descriptions of
+            deaths, aspects of psychological horror, and features same-sex romance
+            between mature furry adults. Viewer discretion is advised.
+          </p>
+        </section>
 
-          items.forEach((item, index) => {
-            item.style.display = index === activeIndex ? "block" : "none";
-            item.setAttribute("aria-hidden", index === activeIndex ? "false" : "true");
-          });
+        <section class="mt-12 text-center">
+          <img class="mx-auto mb-5 w-full max-w-[560px]" src={`${assets}/line.webp`} alt="" />
+          <h2 class="text-2xl sm:text-3xl">A message from The Stray Project!</h2>
+          <p class="mt-3 text-base sm:text-lg">Thank you for playing our game.</p>
+          <div class="mx-auto mt-7 flex max-w-[330px] flex-col gap-4">
+            {socialLinks.map((link) => (
+              <a class={`social-button ${link.className}`} href={link.href}>
+                <span>{link.label}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      </article>
+    </div>
+  </div>
 
-          indicators.forEach((button, index) => {
-            const isActive = index === activeIndex;
-            button.setAttribute("aria-current", isActive ? "true" : "false");
-            button.classList.toggle("bg-white", isActive);
-            button.classList.toggle("text-gray-900", isActive);
-            button.classList.toggle("shadow-sm", isActive);
-            button.classList.toggle("bg-transparent", !isActive);
-            button.classList.toggle("text-inherit", !isActive);
-            button.classList.toggle("opacity-70", !isActive);
-          });
-        };
+  <style>
+    :global(body) {
+      background: #eef5ea;
+    }
 
-        const stopAutoplay = () => {
-          if (timerId !== null) {
-            window.clearInterval(timerId);
-            timerId = null;
-          }
-        };
+    .stranded-page {
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0) 0 18%, rgba(255, 255, 255, 0.64) 18% 82%, rgba(255, 255, 255, 0) 82% 100%),
+        url("/assets/stranded/itch/background.webp") center top / cover fixed;
+      min-height: 100vh;
+    }
 
-        const startAutoplay = () => {
-          if (!autoplay) return;
-          stopAutoplay();
-          timerId = window.setInterval(() => update(activeIndex + 1), intervalMs);
-        };
+    article {
+      position: relative;
+    }
 
-        indicators.forEach((button, index) => {
-          button.addEventListener("click", () => {
-            update(index);
-            startAutoplay();
-          });
-        });
+    article::before,
+    article::after {
+      background: linear-gradient(180deg, transparent, rgba(36, 38, 37, 0.5), transparent);
+      content: "";
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 10px;
+    }
 
-        prevButton?.addEventListener("click", () => {
-          update(activeIndex - 1);
-          startAutoplay();
-        });
+    article::before {
+      left: -7px;
+    }
 
-        nextButton?.addEventListener("click", () => {
-          update(activeIndex + 1);
-          startAutoplay();
-        });
+    article::after {
+      right: -7px;
+    }
 
-        root.addEventListener("mouseenter", stopAutoplay);
-        root.addEventListener("mouseleave", startAutoplay);
+    .social-button {
+      align-items: center;
+      aspect-ratio: 3 / 1;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      color: white;
+      display: flex;
+      font-size: clamp(1rem, 3vw, 1.35rem);
+      justify-content: center;
+      padding-left: 3.5rem;
+      text-transform: uppercase;
+      transition: transform 150ms ease, filter 150ms ease;
+      width: 100%;
+    }
 
-        if (options.keyboard !== false) {
-          root.tabIndex = 0;
-          root.addEventListener("keydown", (event) => {
-            if (event.key === "ArrowLeft") {
-              event.preventDefault();
-              update(activeIndex - 1);
-              startAutoplay();
-            }
+    .social-button:hover,
+    .social-button:focus-visible {
+      filter: brightness(1.04);
+      outline: none;
+      transform: translateY(-1px);
+    }
 
-            if (event.key === "ArrowRight") {
-              event.preventDefault();
-              update(activeIndex + 1);
-              startAutoplay();
-            }
-          });
-        }
+    .social-button span {
+      min-width: 8rem;
+      text-align: left;
+    }
 
-        update(activeIndex);
-        startAutoplay();
-      };
+    .social-button.kofi {
+      background-image: url("/assets/stranded/itch/kofi-button.webp");
+    }
 
-      const init = () => {
-        const castCarousel = document.getElementById("character-carousel");
-        if (castCarousel) {
-          castCarousel
-            .querySelectorAll("[data-sp-slide-to]")
-            .forEach((button) => {
-              button.classList.add(
-                "transition",
-                "duration-150",
-                "hover:bg-white/70",
-              );
-            });
+    .social-button.kofi:hover,
+    .social-button.kofi:focus-visible {
+      background-image: url("/assets/stranded/itch/kofi-button-hover.webp");
+    }
 
-          setupCarousel(castCarousel, { autoplay: false });
-        }
+    .social-button.x {
+      background-image: url("/assets/stranded/itch/x-button.webp");
+    }
 
-        const galleryCarousel = document.getElementById("gallery-carousel");
-        if (galleryCarousel) {
-          galleryCarousel
-            .querySelectorAll("[data-sp-slide-to]")
-            .forEach((button) => {
-              button.classList.add(
-                "bg-white/50",
-                "border",
-                "border-white/60",
-                "transition",
-                "duration-150",
-              );
-            });
+    .social-button.x:hover,
+    .social-button.x:focus-visible {
+      background-image: url("/assets/stranded/itch/x-button-hover.webp");
+    }
 
-          setupCarousel(galleryCarousel, {
-            autoplay: true,
-            interval: 5000,
-            fillSlides: true,
-          });
-        }
-      };
+    .social-button.discord {
+      background-image: url("/assets/stranded/itch/discord-button.webp");
+    }
 
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", init, { once: true });
-      } else {
-        init();
+    .social-button.discord:hover,
+    .social-button.discord:focus-visible {
+      background-image: url("/assets/stranded/itch/discord-button-hover.webp");
+    }
+
+    @media (max-width: 640px) {
+      .stranded-page {
+        background-attachment: scroll;
+        background-position: center top;
       }
-    })();
-  </script>
-</LegacyPage>
+
+      article::before,
+      article::after {
+        display: none;
+      }
+    }
+  </style>
+</BaseLayout>

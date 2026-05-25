@@ -1,6 +1,6 @@
 ---
 title: Stranded v0.2.1 released + Ch.2 musings
-author: brandon pow
+author: sabro
 pubDate: 2023-10-07
 urlSlug: stranded-v0.2.1-released
 tags: stranded update

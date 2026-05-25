@@ -1,6 +1,6 @@
 ---
 title: Stranded - 1st Anniversary
-author: brandon pow
+author: sabro
 pubDate: 2022-06-02
 urlSlug: stranded-1st-anniversary
 tags: stranded history

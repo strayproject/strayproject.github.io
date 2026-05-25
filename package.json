@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview"
   },
-  "author": "brandon pow",
+  "author": "sabro",
   "license": "ISC",
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.2",

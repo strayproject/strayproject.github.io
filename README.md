@@ -28,7 +28,7 @@ This site now builds with Astro and deploys to GitHub Pages through GitHub Actio
 ```md
 ---
 title: New Website!
-author: brandon pow
+author: sabro
 pubDate: 2026-03-30
 urlSlug: new-website
 tags: admin
