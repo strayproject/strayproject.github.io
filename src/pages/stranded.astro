@@ -54,17 +54,17 @@ const socialLinks = [
   image={`${assets}/cover.webp`}
 >
   <div class="stranded-page font-boogaloo">
-    <div class="min-h-screen px-4 py-6 text-[#20231f] sm:px-6 lg:px-10">
-      <article class="mx-auto max-w-[760px] bg-[#f8f8f5]/95 px-5 py-7 shadow-2xl ring-1 ring-black/10 sm:px-10 lg:px-14">
+    <div class="min-h-screen px-4 text-[#20231f] sm:px-6 lg:px-10">
+      <article class="stranded-sheet mx-auto max-w-[760px] px-5 py-7 sm:px-10 lg:max-w-[920px] lg:px-14 xl:max-w-[1040px]">
         <section class="text-center">
           <img
-            class="mx-auto w-full max-w-[620px]"
+            class="mx-auto hidden w-full max-w-[620px] sm:block"
             src={`${assets}/cover.webp`}
             alt="The Stranded cast"
             loading="eager"
           />
           <img
-            class="mx-auto mt-4 w-full max-w-[560px]"
+            class="mx-auto w-full max-w-[560px] sm:mt-4"
             src={`${assets}/stranded-logo.webp`}
             alt="Stranded"
             loading="eager"
@@ -79,15 +79,17 @@ const socialLinks = [
             A survival story set on an unknown island!
           </h1>
           <p class="mx-auto mt-4 max-w-[620px] text-base leading-snug sm:text-lg">
-            A holiday vacation goes completely wrong after your plane crashes onto an
-            unknown island. Play as the protagonist of the story who manages to
-            survive the crash along with few other survivors.
+            A holiday vacation goe<span class="secret-letter">s</span>{" "}
+            completely wrong after your plane crashes onto an unknown island.
+            Pl<span class="secret-letter">a</span>y as the protagonist of the story
+            who manages to sur<span class="secret-letter">v</span>ive the crash
+            along with few oth<span class="secret-letter">e</span>r survivors.
           </p>
 
           <div class="mt-7 flex flex-wrap justify-center gap-3 text-base sm:text-lg">
             {downloads.map((download) => (
               <a
-                class="rounded bg-[#9fbe57] px-5 py-2.5 text-white shadow transition duration-150 hover:bg-[#87a743] focus:outline-none focus:ring-2 focus:ring-[#5f792f] focus:ring-offset-2"
+                class="w-full rounded bg-[#9fbe57] px-5 py-2.5 text-white shadow transition duration-150 hover:bg-[#87a743] focus:outline-none focus:ring-2 focus:ring-[#5f792f] focus:ring-offset-2 sm:w-auto"
                 href={download.href}
               >
                 {download.label}
@@ -103,9 +105,10 @@ const socialLinks = [
           <img class="mx-auto mb-5 w-full max-w-[560px]" src={`${assets}/line.webp`} alt="" />
           <h2 class="text-2xl sm:text-3xl">Meet the other survivors!</h2>
           <p class="mx-auto mt-3 max-w-[620px] text-base leading-snug sm:text-lg">
-            Decide the future of your own existence while forging favourable
-            relationships with the rest of the survivors. Their lives completely
-            rest in your hands.
+            Decide the fu<span class="secret-letter">t</span>ure of your own
+            existence while forging favourable relations<span class="secret-letter">h</span>ips
+            with the r<span class="secret-letter">e</span>st of the survivors.
+            Their lives co<span class="secret-letter">m</span>pletely rest in your hands.
           </p>
           <img
             class="mx-auto mt-6 w-full max-w-[640px]"
@@ -123,16 +126,50 @@ const socialLinks = [
             to survive.
           </p>
           <div class="mx-auto mt-6 grid max-w-[660px] gap-3 sm:grid-cols-2">
-            {screenshots.map((screenshot) => (
+            {screenshots.map((screenshot, index) => (
+              <button
+                class="block cursor-zoom-in border-4 border-[#777b77] bg-[#777b77] shadow-md transition duration-150 hover:brightness-105 focus:outline-none focus:ring-2 focus:ring-[#5f792f] focus:ring-offset-2"
+                type="button"
+                data-modal-target={`screenshot-modal-${index}`}
+                data-modal-toggle={`screenshot-modal-${index}`}
+                aria-label={`Open ${screenshot.alt}`}
+              >
+                <img
+                  class="aspect-[5/3] w-full object-cover"
+                  src={screenshot.src}
+                  alt={screenshot.alt}
+                  loading="lazy"
+                />
+              </button>
+            ))}
+          </div>
+        </section>
+
+        {screenshots.map((screenshot, index) => (
+          <div
+            id={`screenshot-modal-${index}`}
+            tabindex="-1"
+            aria-hidden="true"
+            class="fixed inset-0 z-50 hidden items-center justify-center overflow-y-auto overflow-x-hidden bg-black/80 p-4"
+          >
+            <div class="relative max-h-full w-full max-w-5xl">
+              <button
+                type="button"
+                class="absolute -right-2 -top-2 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white text-2xl leading-none text-gray-900 shadow transition duration-150 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white"
+                data-modal-hide={`screenshot-modal-${index}`}
+                aria-label="Close screenshot preview"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
               <img
-                class="aspect-[5/3] w-full border-4 border-[#777b77] object-cover shadow-md"
+                class="max-h-[88vh] w-full object-contain"
                 src={screenshot.src}
                 alt={screenshot.alt}
                 loading="lazy"
               />
-            ))}
+            </div>
           </div>
-        </section>
+        ))}
 
         <section class="mt-12 text-center">
           <img class="mx-auto mb-5 w-full max-w-[560px]" src={`${assets}/line.webp`} alt="" />
@@ -148,7 +185,7 @@ const socialLinks = [
           <img class="mx-auto mb-5 w-full max-w-[560px]" src={`${assets}/line.webp`} alt="" />
           <h2 class="text-2xl sm:text-3xl">A message from The Stray Project!</h2>
           <p class="mt-3 text-base sm:text-lg">Thank you for playing our game.</p>
-          <div class="mx-auto mt-7 flex max-w-[330px] flex-col gap-4">
+          <div class="mx-auto mt-7 flex max-w-[330px] flex-col gap-1.5">
             {socialLinks.map((link) => (
               <a class={`social-button ${link.className}`} href={link.href}>
                 <span>{link.label}</span>
@@ -161,37 +198,9 @@ const socialLinks = [
   </div>
 
   <style>
-    :global(body) {
-      background: #eef5ea;
-    }
-
     .stranded-page {
-      background:
-        linear-gradient(90deg, rgba(255, 255, 255, 0) 0 18%, rgba(255, 255, 255, 0.64) 18% 82%, rgba(255, 255, 255, 0) 82% 100%),
-        url("/assets/stranded/itch/background.webp") center top / cover fixed;
+      background: url("/assets/stranded/itch/background.webp") center top / cover fixed;
       min-height: 100vh;
-    }
-
-    article {
-      position: relative;
-    }
-
-    article::before,
-    article::after {
-      background: linear-gradient(180deg, transparent, rgba(36, 38, 37, 0.5), transparent);
-      content: "";
-      height: 100%;
-      position: absolute;
-      top: 0;
-      width: 10px;
-    }
-
-    article::before {
-      left: -7px;
-    }
-
-    article::after {
-      right: -7px;
     }
 
     .social-button {
@@ -204,22 +213,35 @@ const socialLinks = [
       display: flex;
       font-size: clamp(1rem, 3vw, 1.35rem);
       justify-content: center;
-      padding-left: 3.5rem;
+      padding-left: 4.75rem;
       text-transform: uppercase;
-      transition: transform 150ms ease, filter 150ms ease;
+      transition: filter 150ms ease;
       width: 100%;
+    }
+
+    .secret-letter {
+      color: #5f7f24;
     }
 
     .social-button:hover,
     .social-button:focus-visible {
       filter: brightness(1.04);
       outline: none;
-      transform: translateY(-1px);
     }
 
     .social-button span {
       min-width: 8rem;
       text-align: left;
+    }
+
+    @media (max-width: 380px) {
+      .social-button {
+        padding-left: 4.25rem;
+      }
+
+      .social-button span {
+        min-width: 7.25rem;
+      }
     }
 
     .social-button.kofi {
@@ -255,10 +277,6 @@ const socialLinks = [
         background-position: center top;
       }
 
-      article::before,
-      article::after {
-        display: none;
-      }
     }
   </style>
 </BaseLayout>

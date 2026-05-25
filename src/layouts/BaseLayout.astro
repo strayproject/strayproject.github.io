@@ -88,7 +88,7 @@ const socialLinks = [
       {showHeader && (
         <nav
           aria-label="Primary"
-          class="bg-gray-100/80 border-gray-200 px-3 sm:px-4 py-3 rounded-b-lg dark:bg-gray-800 font-boogaloo"
+          class="bg-gray-100/80 border-gray-200 px-3 sm:px-4 py-3 rounded-b-lg font-boogaloo"
         >
           <div class="container flex flex-wrap justify-between items-center mx-auto">
             <a href="/index.html" class="flex items-center gap-2">
@@ -99,7 +99,7 @@ const socialLinks = [
                 aria-hidden="true"
               />
               <span
-                class="self-center text-xl font-semibold whitespace-nowrap dark:text-white md:hover:text-blue-700 transition duration-250 font-boogaloo"
+                class="self-center text-xl font-semibold whitespace-nowrap text-gray-900 md:hover:text-blue-700 transition duration-200 font-boogaloo"
               >
                 Stray Project
               </span>
@@ -107,7 +107,7 @@ const socialLinks = [
             <button
               data-collapse-toggle="mobile-menu"
               type="button"
-              class="inline-flex items-center p-2 ml-3 text-sm text-gray-300 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              class="inline-flex items-center p-2 ml-3 text-sm text-gray-300 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
               aria-controls="mobile-menu"
               aria-expanded="false"
             >
@@ -133,7 +133,7 @@ const socialLinks = [
                   <li>
                     <a
                       href={link.href}
-                      class="block py-3 px-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:text-md lg:text-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 transition duration-250"
+                      class="block py-3 px-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:text-base lg:text-lg md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 transition duration-200"
                     >
                       {link.label}
                     </a>
@@ -147,7 +147,7 @@ const socialLinks = [
                     {socialLinks.map((link) => (
                       <a href={link.href} aria-label={link.alt}>
                         <img
-                          class="transition duration-250 ease-in-out transform hover:scale-125"
+                          class="transition duration-200 ease-in-out transform hover:scale-125"
                           alt={link.alt}
                           src={link.img}
                         />
@@ -163,8 +163,8 @@ const socialLinks = [
       <main id="main-content" class="flex-1">
         <slot />
       </main>
-      <footer class="p-4 bg-white/80 rounded-t-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 font-boogaloo">
-        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+      <footer class="p-4 bg-white/80 rounded-t-lg shadow md:flex md:items-center md:justify-between md:p-6 font-boogaloo">
+        <span class="text-sm text-gray-500 sm:text-center">
           Art, story and music © <a href="/index.html" class="hover:underline">
             The Stray Project
           </a>. All Rights Reserved. This website uses third-party cookies from <a
@@ -176,7 +176,7 @@ const socialLinks = [
             Itch.io
           </a>.
         </span>
-        <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+        <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 sm:mt-0">
           <li>
             <a href="https://github.com/strayproject/strayproject.github.io" class="mr-4 hover:underline md:mr-6">
               <i class="fa-brands fa-github pr-2"></i>Source
