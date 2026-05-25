@@ -17,29 +17,28 @@ const {
     class="fixed inset-0 -z-10 bg-cover bg-center"
     style="background-image:url('/assets/stranded/itch/background.webp');"
   ></div>
-  <div class="stranded-sheet mx-0 md:mx-4 lg:mx-16 xl:mx-32">
-    <div class="px-2 py-3 font-boogaloo lg:py-4">
-      <h1 class="text-3xl leading-tight text-center lg:text-4xl">{title}</h1>
-      <p class="mt-2 text-center text-lg leading-snug sm:text-xl lg:text-2xl">
+  <div class="stranded-sheet mx-auto max-w-[1040px] px-5 py-7 text-[#20231f] sm:px-10 lg:px-14">
+    <div class="font-boogaloo">
+      <h1 class="text-center text-2xl leading-tight sm:text-3xl">{title}</h1>
+      <p class="mt-3 text-center text-base leading-snug text-[#3f433b] sm:text-lg">
         {formatPostDate(pubDate)} | {author} | Tags:
         {tags.map((tag) => (
-          <span class="mr-1 inline-block rounded bg-green-100 px-2.5 py-0.5 text-base font-semibold text-green-800">
+          <span class="mr-1 inline-block rounded bg-[#9fbe57] px-2.5 py-0.5 text-sm font-semibold text-white">
             {tag.toUpperCase()}
           </span>
         ))}
       </p>
     </div>
-    <div class="prose prose-lg mx-auto max-w-4xl px-4 font-boogaloo prose-p:leading-relaxed prose-li:leading-relaxed prose-img:mx-auto prose-img:max-h-[70vh] prose-img:rounded-xl prose-img:object-contain md:px-8 lg:px-16 xl:prose-xl">
+    <div class="prose mx-auto mt-6 max-w-4xl font-boogaloo text-[#20231f] prose-headings:text-[#20231f] prose-a:text-[#6f8c38] prose-p:text-base prose-p:leading-snug prose-p:text-[#3f433b] prose-li:text-base prose-li:leading-snug prose-li:text-[#3f433b] prose-img:mx-auto prose-img:max-h-[70vh] prose-img:rounded-[10px] prose-img:object-contain sm:prose-p:text-lg sm:prose-li:text-lg">
       <slot />
     </div>
-    <a href="/posts.html">
-      <div class="flex justify-center items-center py-2">
-        <button
-          class="bg-gray-500 hover:bg-green-500 hover:border-white my-2 transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 ring-offset-indigo-700 focus:ring-white rounded border border-white text-white px-4 sm:px-8 py-1 sm:py-3 text-base font-boogaloo"
-        >
-          <i class="fa-solid fa-arrow-left pr-2"></i>Back to posts
-        </button>
-      </div>
-    </a>
+    <div class="flex items-center justify-center py-6">
+      <a
+        href="/posts.html"
+        class="rounded bg-[#9fbe57] px-5 py-2.5 font-boogaloo text-base text-white shadow transition duration-150 hover:bg-[#87a743] focus:outline-none focus:ring-2 focus:ring-[#5f792f] focus:ring-offset-2 sm:text-lg"
+      >
+        <i class="fa-solid fa-arrow-left pr-2"></i>Back to posts
+      </a>
+    </div>
   </div>
 </BaseLayout>

@@ -21,10 +21,10 @@ const latestPosts = posts.slice(0, 4);
       <main role="main" class="min-w-0 flex-[1.75]">
         <div class="mx-auto flex flex-col gap-2">
           <section
-            class="relative overflow-hidden rounded-lg bg-gradient-to-tl bg-cover from-black shadow-xl"
+            class="relative overflow-hidden rounded-lg bg-cover bg-center shadow-xl"
             style="background-image: url('/assets/img/campfire.webp')"
           >
-            <div class="bg-black/55 px-6 py-16 sm:px-10 lg:px-14 lg:py-24">
+            <div class="px-6 py-16 sm:px-10 lg:px-14 lg:py-24">
               <div class="mx-auto max-w-3xl text-center font-boogaloo text-white">
                 <img
                   class="mx-auto mb-6"
@@ -55,10 +55,10 @@ const latestPosts = posts.slice(0, 4);
         </div>
       </main>
       <aside class="min-w-0 lg:w-[22rem] lg:flex-none font-boogaloo">
-        <div class="p-4 mb-2 w-full rounded bg-gray-100/80">
-          <div class="w-full h-12 flex">
+        <div class="mb-2 w-full rounded-[10px] border border-[rgba(95,121,47,0.2)] bg-[#f8f8f5]/90 p-4">
+          <div class="flex h-12 w-full">
             <img class="flex-none" src="/assets/img/emotes/dum.webp" alt="" />
-            <h1 class="self-center place-self-center text-xl lg:text-2xl">New Posts</h1>
+            <h1 class="place-self-center self-center text-xl text-[#20231f] lg:text-2xl">New Posts</h1>
           </div>
           <ul class="flex flex-col overflow-hidden">
             {latestPosts.map((post) => {
@@ -67,20 +67,20 @@ const latestPosts = posts.slice(0, 4);
               return (
                 <li class="pb-1">
                   <a href={getPostPath(post)}>
-                    <div class="relative w-full rounded-lg min-h-12 bg-blue-100/80 hover:bg-blue-200 transition duration-200 px-2.5 py-2">
+                    <div class="relative min-h-12 w-full rounded-[10px] border border-[rgba(95,121,47,0.16)] bg-[rgba(237,243,228,0.74)] px-2.5 py-2 transition duration-150 hover:bg-[#edf3e4]">
                       {primaryTag === "stranded" && (
-                        <span class="absolute bottom-1 right-0 bg-green-100 text-green-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">
+                        <span class="absolute bottom-1 right-0 mr-2 rounded bg-[#9fbe57] px-2.5 py-0.5 text-sm font-medium text-white">
                           STRANDED
                         </span>
                       )}
                       {primaryTag === "admin" && (
-                        <span class="absolute bottom-1 right-0 bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">
+                        <span class="absolute bottom-1 right-0 mr-2 rounded bg-[#5f792f] px-2.5 py-0.5 text-sm font-medium text-white">
                           ADMIN
                         </span>
                       )}
-                      <h2 class="pr-24 text-lg lg:text-xl text-gray-800">{post.data.title}</h2>
-                      <p class="text-sm text-gray-600">{formatPostDate(post.data.pubDate)}</p>
-                      <p class="text-sm text-gray-700">{getPostExcerpt(post, 12)}</p>
+                      <h2 class="pr-24 text-lg text-[#20231f] lg:text-xl">{post.data.title}</h2>
+                      <p class="text-sm text-[#4d5049]">{formatPostDate(post.data.pubDate)}</p>
+                      <p class="text-sm text-[#3f433b]">{getPostExcerpt(post, 12)}</p>
                     </div>
                   </a>
                 </li>
