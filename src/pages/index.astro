@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getImage } from "astro:assets";
+import backgroundSource from "../assets/stranded/itch/background.webp";
+import campfireSource from "../assets/shared/campfire.webp";
 import {
   formatPostDate,
   getPostExcerpt,
@@ -9,12 +12,24 @@ import {
 
 const posts = await getSortedPosts();
 const latestPosts = posts.slice(0, 4);
+const backgroundImage = await getImage({
+  src: backgroundSource,
+  width: 1920,
+  format: "webp",
+  quality: 82,
+});
+const campfireImage = await getImage({
+  src: campfireSource,
+  width: 1280,
+  format: "webp",
+  quality: 84,
+});
 ---
 
 <BaseLayout title="Main Page">
   <div
     class="fixed top-0 -z-10 h-full w-full bg-cover bg-center"
-    style="background-image: url('/assets/stranded/itch/background.webp');"
+    style={`background-image: url("${backgroundImage.src}");`}
   ></div>
   <div class="mx-2 md:mx-4 lg:mx-16 xl:mx-32">
     <div class="flex flex-col gap-4 py-4 lg:flex-row">
@@ -22,7 +37,7 @@ const latestPosts = posts.slice(0, 4);
         <div class="mx-auto flex flex-col gap-2">
           <section
             class="relative overflow-hidden rounded-lg bg-cover bg-center shadow-xl"
-            style="background-image: url('/assets/img/campfire.webp')"
+            style={`background-image: url("${campfireImage.src}")`}
           >
             <div class="px-6 py-16 sm:px-10 lg:px-14 lg:py-24">
               <div class="mx-auto max-w-3xl text-center font-boogaloo text-white">

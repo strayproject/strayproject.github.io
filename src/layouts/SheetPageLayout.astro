@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import { getImage } from "astro:assets";
+import backgroundSource from "../assets/stranded/itch/background.webp";
+import baseSource from "../assets/stranded/itch/base.webp";
 
 const {
   title,
@@ -8,16 +11,32 @@ const {
   sheetClass = "",
   outerClass = "",
 } = Astro.props;
+
+const backgroundImage = await getImage({
+  src: backgroundSource,
+  width: 1920,
+  format: "webp",
+  quality: 82,
+});
+const sheetBorderImage = await getImage({
+  src: baseSource,
+  format: "webp",
+  quality: 90,
+});
 ---
 
 <BaseLayout title={title} description={description} image={image}>
   <div
-    class="fixed inset-0 -z-10 bg-cover bg-center"
-    style="background-image: url('/assets/stranded/itch/background.webp');"
-  ></div>
-  <div class={`mx-auto max-w-[1040px] px-4 font-boogaloo text-[#20231f] sm:px-6 lg:px-10 ${outerClass}`}>
-    <div class={`stranded-sheet px-5 py-7 sm:px-10 lg:px-14 ${sheetClass}`}>
-      <slot />
+    style={`--stranded-background-image: url("${backgroundImage.src}"); --stranded-sheet-border-image: url("${sheetBorderImage.src}");`}
+  >
+    <div
+      class="fixed inset-0 -z-10 bg-cover bg-center"
+      style="background-image: var(--stranded-background-image);"
+    ></div>
+    <div class={`mx-auto max-w-[1040px] px-4 font-boogaloo text-[#20231f] sm:px-6 lg:px-10 ${outerClass}`}>
+      <div class={`stranded-sheet px-5 py-7 sm:px-10 lg:px-14 ${sheetClass}`}>
+        <slot />
+      </div>
     </div>
   </div>
 </BaseLayout>

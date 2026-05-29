@@ -1,5 +1,7 @@
 ---
 import SheetPageLayout from "../layouts/SheetPageLayout.astro";
+import { Image } from "astro:assets";
+import lineImage from "../assets/stranded/itch/line.webp";
 
 const installDownloads = [
   {
@@ -126,7 +128,7 @@ const firstInstallCards = [
 
       <div class="space-y-12">
         <section aria-labelledby="first-installation" class="space-y-5">
-          <img class="mx-auto mb-5 w-full max-w-[560px]" src="/assets/stranded/itch/line.webp" alt="" width="920" height="100" />
+          <Image class="mx-auto mb-5 w-full max-w-[560px]" src={lineImage} alt="" loading="lazy" />
           <div class="text-center">
             <h2 id="first-installation" class="text-2xl sm:text-3xl">
               First Installation
@@ -184,7 +186,7 @@ const firstInstallCards = [
         </section>
 
         <section aria-labelledby="updating-current-build" class="space-y-5">
-          <img class="mx-auto mb-5 w-full max-w-[560px]" src="/assets/stranded/itch/line.webp" alt="" width="920" height="100" />
+          <Image class="mx-auto mb-5 w-full max-w-[560px]" src={lineImage} alt="" loading="lazy" />
           <div class="text-center">
             <h2 id="updating-current-build" class="text-2xl sm:text-3xl">
               Updating Current Build

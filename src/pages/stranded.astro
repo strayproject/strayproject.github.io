@@ -2,30 +2,51 @@
 import AudioPlayer from "../components/AudioPlayer.astro";
 import { strandedMusicTracks } from "../data/strandedMusic";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image, getImage } from "astro:assets";
 
-const assets = "/assets/stranded/itch";
+const strandedAssets = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/stranded/**/*.{webp,jpg,jpeg,png,avif}",
+  { eager: true },
+);
+
+const asset = (path: string) => {
+  const image = strandedAssets[`../assets/stranded/${path}`]?.default;
+  if (!image) {
+    throw new Error(`Missing Stranded image asset: ${path}`);
+  }
+  return image;
+};
+
+const backgroundSource = asset("itch/background.webp");
+const baseSource = asset("itch/base.webp");
+const coverImage = asset("itch/cover.webp");
+const lineImage = asset("itch/line.webp");
+const strandedLogo = asset("itch/stranded-logo.webp");
+const smokeImage = asset("minibg/smoke.webp");
+const staImage = asset("minibg/sta.webp");
+const translationImage = asset("sc/tr.webp");
 
 const screenshots = [
   {
-    src: `${assets}/ss1.webp`,
+    src: asset("itch/ss1.webp"),
     alt: "Stranded gameplay screenshot with beach dialogue",
     width: 1920,
     height: 1080,
   },
   {
-    src: `${assets}/ss2.webp`,
+    src: asset("itch/ss2.webp"),
     alt: "Stranded gameplay screenshot with close-up dialogue",
     width: 1920,
     height: 1080,
   },
   {
-    src: `${assets}/ss3.webp`,
+    src: asset("itch/ss3.webp"),
     alt: "Stranded gameplay screenshot with a toy on the sand",
     width: 1920,
     height: 1080,
   },
   {
-    src: `${assets}/ss4.webp`,
+    src: asset("itch/ss4.webp"),
     alt: "Stranded gameplay screenshot with survivors on the island",
     width: 1920,
     height: 1080,
@@ -167,12 +188,12 @@ const castMembers = [
   {
     id: "owen",
     name: "Owen",
-    portrait: `${assets}/cast/portrait-owen.webp`,
-    sprite: `${assets}/cast/sprite-owen.webp`,
+    portrait: asset("itch/cast/portrait-owen.webp"),
+    sprite: asset("itch/cast/sprite-owen.webp"),
     hitX: 0,
     spriteTop: 206,
     spriteHeight: 168,
-    full: "/assets/img/char/owenfull.webp",
+    full: asset("char/owenfull.webp"),
     width: 372,
     height: 616,
     species: "Otter",
@@ -184,12 +205,12 @@ const castMembers = [
   {
     id: "terry",
     name: "Terry",
-    portrait: `${assets}/cast/portrait-terry.webp`,
-    sprite: `${assets}/cast/sprite-terry.webp`,
+    portrait: asset("itch/cast/portrait-terry.webp"),
+    sprite: asset("itch/cast/sprite-terry.webp"),
     hitX: 205,
     spriteTop: 194,
     spriteHeight: 180,
-    full: "/assets/img/char/terryfull.webp",
+    full: asset("char/terryfull.webp"),
     width: 372,
     height: 616,
     species: "Fox",
@@ -202,12 +223,12 @@ const castMembers = [
   {
     id: "kim",
     name: "Kim",
-    portrait: `${assets}/cast/portrait-kim.webp`,
-    sprite: `${assets}/cast/sprite-kim.webp`,
+    portrait: asset("itch/cast/portrait-kim.webp"),
+    sprite: asset("itch/cast/sprite-kim.webp"),
     hitX: 410,
     spriteTop: 206,
     spriteHeight: 168,
-    full: "/assets/img/char/kimfull.webp",
+    full: asset("char/kimfull.webp"),
     width: 372,
     height: 616,
     species: "Husky",
@@ -220,12 +241,12 @@ const castMembers = [
   {
     id: "beru",
     name: "Beru",
-    portrait: `${assets}/cast/portrait-beru.webp`,
-    sprite: `${assets}/cast/sprite-beru.webp`,
+    portrait: asset("itch/cast/portrait-beru.webp"),
+    sprite: asset("itch/cast/sprite-beru.webp"),
     hitX: 615,
     spriteTop: 218,
     spriteHeight: 156,
-    full: "/assets/img/char/berufull.webp",
+    full: asset("char/berufull.webp"),
     width: 372,
     height: 616,
     species: "Bear",
@@ -239,12 +260,12 @@ const castMembers = [
   {
     id: "lucy",
     name: "Lucy",
-    portrait: `${assets}/cast/portrait-lucy.webp`,
-    sprite: `${assets}/cast/sprite-lucy.webp`,
+    portrait: asset("itch/cast/portrait-lucy.webp"),
+    sprite: asset("itch/cast/sprite-lucy.webp"),
     hitX: 820,
     spriteTop: 194,
     spriteHeight: 180,
-    full: "/assets/img/char/lucyfull.webp",
+    full: asset("char/lucyfull.webp"),
     width: 372,
     height: 616,
     species: "Bunny",
@@ -255,38 +276,57 @@ const castMembers = [
     quote: "N-No problem. It's the least I can do to help.",
   },
 ];
+
+const backgroundImage = await getImage({
+  src: backgroundSource,
+  width: 1920,
+  format: "webp",
+  quality: 82,
+});
+const sheetBorderImage = await getImage({
+  src: baseSource,
+  format: "webp",
+  quality: 90,
+});
+const ogImage = await getImage({
+  src: coverImage,
+  width: 1200,
+  format: "webp",
+  quality: 86,
+});
+const strandedBackgroundImage = `url("${backgroundImage.src}")`;
+const strandedSheetBorderImage = `url("${sheetBorderImage.src}")`;
 ---
 
 <BaseLayout
   title="Stranded"
   description="A survival story set on an unknown island."
-  image={`${assets}/cover.webp`}
+  image={ogImage.src}
 >
-  <div class="stranded-page font-boogaloo">
+  <div
+    class="stranded-page font-boogaloo"
+    style={`--stranded-background-image: ${strandedBackgroundImage}; --stranded-sheet-border-image: ${strandedSheetBorderImage};`}
+  >
     <div class="min-h-screen px-4 text-[#20231f] sm:px-6 lg:px-10">
       <article class="stranded-sheet mx-auto max-w-[760px] px-5 py-7 sm:px-10 lg:max-w-[920px] lg:px-14 xl:max-w-[1040px]">
         <section class="text-center">
-          <img
+          <Image
             class="mx-auto w-full max-w-[620px]"
-            src={`${assets}/cover.webp`}
+            src={coverImage}
             alt="The Stranded cast"
-            width="920"
-            height="530"
             loading="eager"
           />
-          <img
+          <Image
             class="mx-auto w-full max-w-[560px] sm:mt-4"
-            src={`${assets}/stranded-logo.webp`}
+            src={strandedLogo}
             alt="Stranded"
-            width="900"
-            height="200"
             loading="eager"
           />
           <p class="mt-1 text-sm uppercase tracking-[0.16em] text-[#34372f] sm:text-base">
             A game by The Stray Project
           </p>
 
-          <img class="intro-divider" src={`${assets}/line.webp`} alt="" width="920" height="100" />
+          <Image class="intro-divider" src={lineImage} alt="" loading="eager" />
 
           <h1 class="text-2xl text-[#20231f] sm:text-3xl">
             A survival story set on an unknown island!
@@ -320,7 +360,7 @@ const castMembers = [
         </section>
 
         <section class="section-block text-center">
-          <img class="section-divider" src={`${assets}/line.webp`} alt="" width="920" height="100" />
+          <Image class="section-divider" src={lineImage} alt="" loading="lazy" />
           <h2 class="text-2xl sm:text-3xl">Meet the other survivors!</h2>
           <p class="mx-auto mt-3 max-w-[620px] text-base leading-snug sm:text-lg">
             Decide the fu<span class="secret-letter">t</span>ure of your own
@@ -329,11 +369,11 @@ const castMembers = [
             Their lives co<span class="secret-letter">m</span>pletely rest in your hands.
           </p>
           <div class="cast-tabs mx-auto mt-6" data-cast-tabs>
-            <div class="cast-stage" role="tablist" aria-label="Stranded survivors" data-cast-stage>
+            <div class="cast-stage has-selection" role="tablist" aria-label="Stranded survivors" data-cast-stage>
               {castMembers.map((member, index) => (
                 <button
                   id={`cast-tab-${member.id}`}
-                  class="cast-visual-tab"
+                  class={`cast-visual-tab${index === 0 ? " is-active" : ""}`}
                   type="button"
                   role="tab"
                   aria-selected={index === 0 ? "true" : "false"}
@@ -347,21 +387,17 @@ const castMembers = [
                     --sprite-height: ${(member.spriteHeight / 400) * 100}%;
                   `}
                 >
-                  <img
+                  <Image
                     class="cast-piece cast-piece-portrait"
                     src={member.portrait}
                     alt=""
-                    width="242"
-                    height="277"
                     loading="lazy"
                     aria-hidden="true"
                   />
-                  <img
+                  <Image
                     class="cast-piece cast-piece-sprite"
                     src={member.sprite}
                     alt=""
-                    width="156"
-                    height={member.spriteHeight}
                     loading="lazy"
                     aria-hidden="true"
                   />
@@ -379,12 +415,10 @@ const castMembers = [
                 hidden={index !== 0}
               >
                 <div class="cast-portrait-wrap">
-                  <img
+                  <Image
                     class="cast-portrait"
                     src={member.full}
                     alt={`${member.name} full character art`}
-                    width={member.width}
-                    height={member.height}
                     loading="lazy"
                   />
                 </div>
@@ -404,7 +438,7 @@ const castMembers = [
         </section>
 
         <section class="section-block text-center">
-          <img class="section-divider" src={`${assets}/line.webp`} alt="" width="920" height="100" />
+          <Image class="section-divider" src={lineImage} alt="" loading="lazy" />
           <h2 class="text-2xl sm:text-3xl">Preview of the game!</h2>
           <p class="mx-auto mt-3 max-w-[620px] text-base leading-snug sm:text-lg">
             Find the hidden secrets within the unsuspecting island and do your best
@@ -419,12 +453,11 @@ const castMembers = [
                 data-modal-toggle={`screenshot-modal-${index}`}
                 aria-label={`Open ${screenshot.alt}`}
               >
-                <img
+                <Image
                   class="absolute left-1/2 top-1/2 h-[108%] w-[108%] max-w-none -translate-x-1/2 -translate-y-1/2 object-cover"
                   src={screenshot.src}
                   alt={screenshot.alt}
-                  width={screenshot.width}
-                  height={screenshot.height}
+                  width={760}
                   loading="lazy"
                 />
               </button>
@@ -448,12 +481,11 @@ const castMembers = [
               >
                 <span aria-hidden="true">&times;</span>
               </button>
-              <img
+              <Image
                 class="max-h-[88vh] w-full object-contain"
                 src={screenshot.src}
                 alt={screenshot.alt}
                 width={screenshot.width}
-                height={screenshot.height}
                 loading="lazy"
               />
             </div>
@@ -461,7 +493,7 @@ const castMembers = [
         ))}
 
         <section class="section-block text-center">
-          <img class="section-divider" src={`${assets}/line.webp`} alt="" width="920" height="100" />
+          <Image class="section-divider" src={lineImage} alt="" loading="lazy" />
           <h2 id="music" class="text-2xl sm:text-3xl">Music</h2>
           <p class="mx-auto mt-3 max-w-[620px] text-base leading-snug sm:text-lg">
             Stranded has 9 original tracks composed by Rex Revon and Zammu!
@@ -477,15 +509,13 @@ const castMembers = [
         </section>
 
         <section class="section-block text-center">
-          <img class="section-divider" src={`${assets}/line.webp`} alt="" width="920" height="100" />
+          <Image class="section-divider" src={lineImage} alt="" loading="lazy" />
           <h2 id="translations" class="text-2xl sm:text-3xl">Translations</h2>
           <div class="translations-layout mx-auto mt-6">
-            <img
+            <Image
               class="translation-image"
-              src="/assets/img/sc/tr.webp"
+              src={translationImage}
               alt="Stranded language selection screenshot"
-              width="1168"
-              height="292"
               loading="lazy"
             />
             <div class="translation-copy">
@@ -536,14 +566,12 @@ const castMembers = [
         </section>
 
         <section class="section-block">
-          <img class="section-divider" src={`${assets}/line.webp`} alt="" width="920" height="100" />
+          <Image class="section-divider" src={lineImage} alt="" loading="lazy" />
           <div class="feature-showcase mx-auto">
-            <img
+            <Image
               class="feature-side-image feature-side-image-top"
-              src="/assets/img/minibg/smoke.webp"
+              src={smokeImage}
               alt=""
-              width="480"
-              height="408"
               loading="lazy"
               aria-hidden="true"
             />
@@ -557,12 +585,10 @@ const castMembers = [
               </ul>
               <p>* correct as of chapter 3</p>
             </div>
-            <img
+            <Image
               class="feature-side-image feature-side-image-bottom"
-              src="/assets/img/minibg/sta.webp"
+              src={staImage}
               alt=""
-              width="480"
-              height="408"
               loading="lazy"
               aria-hidden="true"
             />
@@ -570,7 +596,7 @@ const castMembers = [
         </section>
 
         <section class="section-block text-center">
-          <img class="section-divider" src={`${assets}/line.webp`} alt="" width="920" height="100" />
+          <Image class="section-divider" src={lineImage} alt="" loading="lazy" />
           <h2 class="text-2xl sm:text-3xl">Warning!</h2>
           <p class="mx-auto mt-3 max-w-[620px] text-base leading-snug sm:text-lg">
             This game contains blood, violence, profanity, graphic descriptions of
@@ -580,7 +606,7 @@ const castMembers = [
         </section>
 
         <section class="section-block">
-          <img class="section-divider" src={`${assets}/line.webp`} alt="" width="920" height="100" />
+          <Image class="section-divider" src={lineImage} alt="" loading="lazy" />
           <h2 class="text-center text-2xl sm:text-3xl">Frequently Asked Questions</h2>
           <div class="info-stack mx-auto mt-6">
             <details>
@@ -629,7 +655,7 @@ const castMembers = [
         </section>
 
         <section class="section-block">
-          <img class="section-divider" src={`${assets}/line.webp`} alt="" width="920" height="100" />
+          <Image class="section-divider" src={lineImage} alt="" loading="lazy" />
           <h2 id="patchnotes" class="text-center text-2xl sm:text-3xl">Patch Notes</h2>
           <div class="info-stack mx-auto mt-6">
             {patchNotes.map((patch) => (
@@ -646,7 +672,7 @@ const castMembers = [
         </section>
 
         <section class="section-block text-center">
-          <img class="section-divider" src={`${assets}/line.webp`} alt="" width="920" height="100" />
+          <Image class="section-divider" src={lineImage} alt="" loading="lazy" />
           <h2 class="text-2xl sm:text-3xl">A message from The Stray Project!</h2>
           <p class="mt-3 text-base sm:text-lg">Thank you for playing our game.</p>
           <div class="social-links mx-auto mt-7">
@@ -664,7 +690,7 @@ const castMembers = [
 
   <style>
     .stranded-page {
-      background: url("/assets/stranded/itch/background.webp") center top / cover fixed;
+      background: var(--stranded-background-image) center top / cover fixed;
       min-height: 100vh;
     }
 
@@ -748,9 +774,11 @@ const castMembers = [
     }
 
     .cast-piece {
+      filter: brightness(1);
       height: auto;
       pointer-events: none;
       position: absolute;
+      transition: filter 150ms ease;
       user-select: none;
     }
 
@@ -758,7 +786,6 @@ const castMembers = [
       left: 9.667%;
       opacity: 1;
       top: 6.75%;
-      transition: opacity 150ms ease;
       width: 80.667%;
       z-index: 1;
     }
@@ -767,13 +794,21 @@ const castMembers = [
       image-rendering: pixelated;
       left: 19%;
       top: var(--sprite-top);
-      transition: transform 150ms ease;
+      transition:
+        filter 150ms ease,
+        transform 150ms ease;
       width: 52%;
       z-index: 2;
     }
 
-    .cast-stage.has-selection .cast-visual-tab:not(.is-active) .cast-piece-portrait {
-      opacity: 0.8;
+    .cast-stage.has-selection .cast-visual-tab:not(.is-active) .cast-piece {
+      filter: brightness(0.5) saturate(0.82);
+    }
+
+    .cast-stage.has-selection .cast-visual-tab:not(.is-active):hover .cast-piece,
+    .cast-stage.has-selection .cast-visual-tab:not(.is-active):focus-visible .cast-piece,
+    .cast-visual-tab.is-active .cast-piece {
+      filter: brightness(1);
     }
 
     .cast-visual-tab:hover .cast-piece-sprite,

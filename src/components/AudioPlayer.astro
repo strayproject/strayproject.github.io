@@ -1,10 +1,12 @@
 ---
+import { getImage } from "astro:assets";
+
 interface AudioTrack {
   title: string;
   artist: string;
   duration: string;
   src: string;
-  cover: string;
+  cover: string | ImageMetadata;
 }
 
 interface Props {
@@ -14,7 +16,25 @@ interface Props {
 }
 
 const { id, tracks, label = "Audio player" } = Astro.props;
-const firstTrack = tracks[0];
+const playerTracks = await Promise.all(
+  tracks.map(async (track) => {
+    const cover =
+      typeof track.cover === "string"
+        ? track.cover
+        : (
+            await getImage({
+              src: track.cover,
+              width: 496,
+              height: 496,
+              format: "webp",
+              quality: 86,
+            })
+          ).src;
+
+    return { ...track, cover };
+  }),
+);
+const firstTrack = playerTracks[0];
 ---
 
 {firstTrack && (
@@ -83,7 +103,7 @@ const firstTrack = tracks[0];
     </div>
 
     <div class="player-list" aria-label="Track list">
-      {tracks.map((track, index) => (
+      {playerTracks.map((track, index) => (
         <button
           type="button"
           class="player-track"
@@ -386,7 +406,7 @@ const firstTrack = tracks[0];
   }
 </style>
 
-<script define:vars={{ tracks, id }}>
+<script define:vars={{ tracks: playerTracks, id }}>
   const player = document.querySelector(`[data-audio-player="${id}"]`);
 
   if (player) {
