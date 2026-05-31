@@ -279,9 +279,15 @@ const castMembers = [
 
 const backgroundImage = await getImage({
   src: backgroundSource,
-  width: 1920,
+  width: 1280,
   format: "webp",
-  quality: 82,
+  quality: 76,
+});
+const mobileBackgroundImage = await getImage({
+  src: backgroundSource,
+  width: 640,
+  format: "webp",
+  quality: 68,
 });
 const sheetBorderImage = await getImage({
   src: baseSource,
@@ -295,6 +301,7 @@ const ogImage = await getImage({
   quality: 86,
 });
 const strandedBackgroundImage = `url("${backgroundImage.src}")`;
+const strandedMobileBackgroundImage = `url("${mobileBackgroundImage.src}")`;
 const strandedSheetBorderImage = `url("${sheetBorderImage.src}")`;
 ---
 
@@ -303,9 +310,27 @@ const strandedSheetBorderImage = `url("${sheetBorderImage.src}")`;
   description="A survival story set on an unknown island."
   image={ogImage.src}
 >
+  <Fragment slot="head">
+    <link
+      rel="preload"
+      href={mobileBackgroundImage.src}
+      as="image"
+      type="image/webp"
+      media="(max-width: 640px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href={backgroundImage.src}
+      as="image"
+      type="image/webp"
+      media="(min-width: 641px)"
+      fetchpriority="high"
+    />
+  </Fragment>
   <div
     class="stranded-page font-boogaloo"
-    style={`--stranded-background-image: ${strandedBackgroundImage}; --stranded-sheet-border-image: ${strandedSheetBorderImage};`}
+    style={`--stranded-background-image: ${strandedBackgroundImage}; --stranded-background-image-mobile: ${strandedMobileBackgroundImage}; --stranded-sheet-border-image: ${strandedSheetBorderImage};`}
   >
     <div class="min-h-screen px-4 text-[#20231f] sm:px-6 lg:px-10">
       <article class="stranded-sheet mx-auto max-w-[760px] px-5 py-7 sm:px-10 lg:max-w-[920px] lg:px-14 xl:max-w-[1040px]">
@@ -314,12 +339,15 @@ const strandedSheetBorderImage = `url("${sheetBorderImage.src}")`;
             class="mx-auto w-full max-w-[620px]"
             src={coverImage}
             alt="The Stranded cast"
+            width={620}
             loading="eager"
+            fetchpriority="high"
           />
           <Image
             class="mx-auto w-full max-w-[560px] sm:mt-4"
             src={strandedLogo}
             alt="Stranded"
+            width={560}
             loading="eager"
           />
           <p class="mt-1 text-sm uppercase tracking-[0.16em] text-[#34372f] sm:text-base">
@@ -457,7 +485,7 @@ const strandedSheetBorderImage = `url("${sheetBorderImage.src}")`;
                   class="absolute left-1/2 top-1/2 h-[108%] w-[108%] max-w-none -translate-x-1/2 -translate-y-1/2 object-cover"
                   src={screenshot.src}
                   alt={screenshot.alt}
-                  width={760}
+                  width={520}
                   loading="lazy"
                 />
               </button>
@@ -485,7 +513,7 @@ const strandedSheetBorderImage = `url("${sheetBorderImage.src}")`;
                 class="max-h-[88vh] w-full object-contain"
                 src={screenshot.src}
                 alt={screenshot.alt}
-                width={screenshot.width}
+                width={1280}
                 loading="lazy"
               />
             </div>
@@ -690,7 +718,12 @@ const strandedSheetBorderImage = `url("${sheetBorderImage.src}")`;
 
   <style>
     .stranded-page {
-      background: var(--stranded-background-image) center top / cover fixed;
+      background-color: #eef5ea;
+      background-image: var(--stranded-background-image);
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
       min-height: 100vh;
     }
 
@@ -1085,6 +1118,7 @@ const strandedSheetBorderImage = `url("${sheetBorderImage.src}")`;
 
     @media (max-width: 640px) {
       .stranded-page {
+        background-image: var(--stranded-background-image-mobile);
         background-attachment: scroll;
         background-position: center top;
       }
@@ -1127,6 +1161,50 @@ const strandedSheetBorderImage = `url("${sheetBorderImage.src}")`;
           selectTab(nextTab);
         });
       });
+    });
+
+    const openModal = (modal) => {
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      modal.setAttribute("aria-hidden", "false");
+    };
+
+    const closeModal = (modal) => {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      modal.setAttribute("aria-hidden", "true");
+    };
+
+    document.querySelectorAll("[data-modal-toggle], [data-modal-target]").forEach((trigger) => {
+      const modalId = trigger.getAttribute("data-modal-target") || trigger.getAttribute("data-modal-toggle");
+      const modal = modalId ? document.getElementById(modalId) : null;
+
+      if (!modal) return;
+
+      trigger.addEventListener("click", () => openModal(modal));
+    });
+
+    document.querySelectorAll("[data-modal-hide]").forEach((trigger) => {
+      const modalId = trigger.getAttribute("data-modal-hide");
+      const modal = modalId ? document.getElementById(modalId) : null;
+
+      if (!modal) return;
+
+      trigger.addEventListener("click", () => closeModal(modal));
+    });
+
+    document.querySelectorAll("[id^='screenshot-modal-']").forEach((modal) => {
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          closeModal(modal);
+        }
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+
+      document.querySelectorAll("[id^='screenshot-modal-']:not(.hidden)").forEach(closeModal);
     });
 
   </script>

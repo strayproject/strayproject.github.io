@@ -66,16 +66,19 @@ const socialLinks = [
     <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="preconnect" href="https://kit.fontawesome.com" />
+    <link rel="preconnect" href="https://ka-f.fontawesome.com" crossorigin />
     <script
       defer
       src="https://kit.fontawesome.com/8c6c4c3a07.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="/assets/fonts/boogaloo-v25-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
     <slot name="head" />
   </head>
@@ -96,7 +99,7 @@ const socialLinks = [
             <a href="/index.html" class="flex items-center gap-2">
               <img
                 class="h-8 w-8"
-                src="/assets/img/icon/canned_stew.webp"
+                src="/assets/img/icon/canned_stew-64.webp"
                 alt=""
                 width="32"
                 height="32"
@@ -196,6 +199,23 @@ const socialLinks = [
         </ul>
       </footer>
     </div>
-    <script is:inline src="/assets/js/flowbite.js"></script>
+    <script is:inline>
+      document.querySelectorAll("[data-collapse-toggle]").forEach((toggle) => {
+        const targetId = toggle.getAttribute("data-collapse-toggle");
+        const target = targetId ? document.getElementById(targetId) : null;
+
+        if (!target) return;
+
+        toggle.addEventListener("click", () => {
+          const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+          toggle.setAttribute("aria-expanded", String(!isExpanded));
+          target.classList.toggle("hidden", isExpanded);
+
+          toggle.querySelectorAll("svg").forEach((icon) => {
+            icon.classList.toggle("hidden");
+          });
+        });
+      });
+    </script>
   </body>
 </html>

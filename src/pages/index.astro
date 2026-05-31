@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getImage } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 import backgroundSource from "../assets/stranded/itch/background.webp";
 import campfireSource from "../assets/shared/campfire.webp";
 import {
@@ -14,33 +14,59 @@ const posts = await getSortedPosts();
 const latestPosts = posts.slice(0, 4);
 const backgroundImage = await getImage({
   src: backgroundSource,
-  width: 1920,
-  format: "webp",
-  quality: 82,
-});
-const campfireImage = await getImage({
-  src: campfireSource,
   width: 1280,
   format: "webp",
-  quality: 84,
+  quality: 76,
+});
+const mobileBackgroundImage = await getImage({
+  src: backgroundSource,
+  width: 640,
+  format: "webp",
+  quality: 68,
 });
 ---
 
 <BaseLayout title="Main Page">
+  <Fragment slot="head">
+    <link
+      rel="preload"
+      href={mobileBackgroundImage.src}
+      as="image"
+      type="image/webp"
+      media="(max-width: 640px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href={backgroundImage.src}
+      as="image"
+      type="image/webp"
+      media="(min-width: 641px)"
+      fetchpriority="high"
+    />
+  </Fragment>
   <div
-    class="fixed top-0 -z-10 h-full w-full bg-cover bg-center"
-    style={`background-image: url("${backgroundImage.src}");`}
+    class="home-background fixed top-0 -z-10 h-full w-full bg-cover bg-center"
+    style={`--home-background-image: url("${backgroundImage.src}"); --home-background-image-mobile: url("${mobileBackgroundImage.src}");`}
   ></div>
   <div class="mx-2 md:mx-4 lg:mx-16 xl:mx-32">
     <div class="flex flex-col gap-4 py-4 lg:flex-row">
       <main role="main" class="min-w-0 flex-[1.75]">
         <div class="mx-auto flex flex-col gap-2">
           <section
-            class="relative overflow-hidden rounded-lg bg-cover bg-center shadow-xl"
-            style={`background-image: url("${campfireImage.src}")`}
+            class="relative overflow-hidden rounded-lg bg-[#20231f] shadow-xl"
           >
+            <Image
+              class="absolute inset-0 h-full w-full object-cover"
+              src={campfireSource}
+              alt=""
+              width={1280}
+              loading="eager"
+              fetchpriority="high"
+              aria-hidden="true"
+            />
             <div class="px-6 py-16 sm:px-10 lg:px-14 lg:py-24">
-              <div class="mx-auto max-w-3xl text-center font-boogaloo text-white">
+              <div class="relative mx-auto max-w-3xl text-center font-boogaloo text-white">
                 <img
                   class="mx-auto mb-6"
                   src="/assets/img/icon/strandedlogo.webp"
@@ -74,7 +100,7 @@ const campfireImage = await getImage({
       <aside class="min-w-0 lg:w-[22rem] lg:flex-none font-boogaloo">
         <div class="mb-2 w-full rounded-[10px] border border-[rgba(95,121,47,0.2)] bg-[#f8f8f5]/90 p-4">
           <div class="flex h-12 w-full">
-            <img class="flex-none" src="/assets/img/emotes/dum.webp" alt="" width="64" height="64" />
+            <img class="h-12 w-12 flex-none" src="/assets/img/emotes/dum-64.webp" alt="" width="64" height="64" />
             <h1 class="place-self-center self-center text-xl text-[#20231f] lg:text-2xl">New Posts</h1>
           </div>
           <ul class="flex flex-col overflow-hidden">
@@ -108,4 +134,15 @@ const campfireImage = await getImage({
       </aside>
     </div>
   </div>
+  <style>
+    .home-background {
+      background-image: var(--home-background-image);
+    }
+
+    @media (max-width: 640px) {
+      .home-background {
+        background-image: var(--home-background-image-mobile);
+      }
+    }
+  </style>
 </BaseLayout>

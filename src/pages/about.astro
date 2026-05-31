@@ -2,31 +2,31 @@
 import SheetPageLayout from "../layouts/SheetPageLayout.astro";
 import { staffMembers } from "../data/staff";
 
-const staffImageSizes: Record<string, { width: number; height: number }> = {
-  "assets/img/staff/nekopanda.webp": { width: 716, height: 716 },
-  "assets/img/staff/nathan.webp": { width: 465, height: 464 },
-  "assets/img/staff/adjy.webp": { width: 768, height: 767 },
-  "assets/img/staff/treb.webp": { width: 128, height: 128 },
-  "assets/img/staff/flunky.jpg": { width: 259, height: 259 },
-  "assets/img/staff/rex.webp": { width: 128, height: 128 },
-  "assets/img/staff/sabro.webp": { width: 207, height: 207 },
-  "assets/img/staff/kara.webp": { width: 640, height: 640 },
+const staffImages: Record<string, string> = {
+  "assets/img/staff/nekopanda.webp": "/assets/img/staff/nekopanda-360.webp",
+  "assets/img/staff/nathan.webp": "/assets/img/staff/nathan-360.webp",
+  "assets/img/staff/adjy.webp": "/assets/img/staff/adjy-360.webp",
+  "assets/img/staff/treb.webp": "/assets/img/staff/treb-360.webp",
+  "assets/img/staff/flunky.jpg": "/assets/img/staff/flunky-360.webp",
+  "assets/img/staff/rex.webp": "/assets/img/staff/rex-360.webp",
+  "assets/img/staff/sabro.webp": "/assets/img/staff/sabro-360.webp",
+  "assets/img/staff/kara.webp": "/assets/img/staff/kara-360.webp",
 };
 ---
 
 <SheetPageLayout
   title="About Us"
   description="Meet the team!"
-  image="/assets/img/bg/adjyteam.jpg"
+  image="/assets/img/bg/adjyteam-960.webp"
 >
     <section class="text-center">
       <h1 class="text-2xl sm:text-3xl">About Us</h1>
       <img
         class="about-team-image mx-auto mt-5"
-        src="/assets/img/bg/adjyteam.jpg"
+        src="/assets/img/bg/adjyteam-960.webp"
         alt="Stray team sans Rakki, drawn by Adjy in March 2022"
-        width="1280"
-        height="720"
+        width="960"
+        height="540"
       />
       <p class="mt-2 text-sm text-[#4d5049] sm:text-base">
         Stray team sans Rakki, drawn by Adjy in March 2022
@@ -45,10 +45,10 @@ const staffImageSizes: Record<string, { width: number; height: number }> = {
             {staff.img ? (
               <img
                 class="staff-portrait"
-                src={`/${staff.img}`}
+                src={staffImages[staff.img] ?? `/${staff.img}`}
                 alt={staff.name}
-                width={staffImageSizes[staff.img]?.width}
-                height={staffImageSizes[staff.img]?.height}
+                width="360"
+                height="360"
                 loading="lazy"
               />
             ) : (

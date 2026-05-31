@@ -13,11 +13,11 @@ Actually this story starts a little bit before that date: before October 2020, N
 <div class="container mx-auto not-prose" markdown="0">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
         <div>
-            <img class="rounded-lg" src="/assets/img/posts/old1.webp">
+            <img class="rounded-lg" src="/assets/img/posts/old1-720.webp" width="720" height="405" loading="lazy">
             <p class="text-center py-0">Grumpy fellow</p>
         </div>
         <div>
-            <img class="rounded-lg" src="/assets/img/posts/old2.webp">
+            <img class="rounded-lg" src="/assets/img/posts/old2-720.webp" width="720" height="405" loading="lazy">
             <p class="text-center py-0">The gang</p>
         </div>
     </div>
@@ -29,7 +29,7 @@ I don't know much about it since I never got access to the original files, I'll 
 Near the end of October 2020, the artist Flunky (then called Flunky Wolf) agreed to collaborate with Nekopanda and produced some sprite designs. Over the next few months, more art would be produced by him.
 
 ### Demo - Prologue
-![](/assets/img/posts/olddemoscreen.jpg)
+![](/assets/img/posts/olddemoscreen-960.webp)
 June 24th, 2021 was the date that the visual novel with Flunky's assets was made publicly available. This demo only included the prologue of the game up until the plane crash and had five characters displayed on the main menu. However, they did not actually make an appearance in the game until the release of Chapter 1 in November 2021.
 
 ### Release of Chapter 1
@@ -39,11 +39,11 @@ Many aspects of Stranded-0's script carry over to Stranded. Look at these two co
 <div class="container mx-auto not-prose" markdown="0">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
         <div>
-            <img class="rounded-lg" src="/assets/img/posts/wakeupold.webp">
+            <img class="rounded-lg" src="/assets/img/posts/wakeupold-720.webp" width="720" height="405" loading="lazy">
             <p class="text-center py-0">Old</p>
         </div>
         <div>
-            <img class="rounded-lg" src="/assets/img/posts/wakeupnew.webp">
+            <img class="rounded-lg" src="/assets/img/posts/wakeupnew-720.webp" width="720" height="405" loading="lazy">
             <p class="text-center py-0">New</p>
         </div>
     </div>

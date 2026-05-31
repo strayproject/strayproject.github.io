@@ -12,7 +12,7 @@ Stranded v0.3.0 has been released! You may download it from the [v0.3.0 release 
 It's been a while honestly. Like, 2 years, 3 years. We've taken this long to push an update, and uh... just getting it out to this point required a lot of effort. This much time elapsing between updates is basically insane, but I hope you all can forgive us for it. I speak from the bottom of my heart when I say thank you for continuing to support us.
 
 ## Content
-![Someone's angry...](/assets/img/posts/Warning.webp)
+![Someone's angry...](/assets/img/posts/Warning-960.webp)
 As some of you players may have noticed, chapters seem to start with the morning sunrise and end at night with sleep. Chapter 3 is by coincidence also the third day of the survivors' trial, featuring a branching path. Terry likes to do his own thing, so in this day you can choose to spend your day with him, or with the rest of the crew. Be warned, though, he is quite cranky.
 
 In this update we introduce Routes, a system that allows you to quickly jump to any point in the story that you like. Sections are locked, but unlock as you progress in the story. A marker will indicate which section you currently are in. I think it's a great way to keep tabs on what happens!

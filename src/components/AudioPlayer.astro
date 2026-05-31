@@ -432,6 +432,7 @@ const firstTrack = playerTracks[0];
     let isShuffle = false;
     let isRepeat = false;
     let lastVolume = 1;
+    let loadedIndex = -1;
 
     const formatTime = (seconds) => {
       if (!Number.isFinite(seconds)) return "0:00";
@@ -456,7 +457,6 @@ const firstTrack = playerTracks[0];
 
     const updateTrackState = () => {
       const track = tracks[currentIndex];
-      audio.src = track.src;
       cover.src = track.cover;
       title.textContent = track.title;
       artist.textContent = track.artist;
@@ -470,8 +470,21 @@ const firstTrack = playerTracks[0];
       });
     };
 
+    const ensureAudioSource = () => {
+      const track = tracks[currentIndex];
+
+      if (loadedIndex === currentIndex && audio.getAttribute("src") === track.src) {
+        return;
+      }
+
+      audio.src = track.src;
+      loadedIndex = currentIndex;
+      audio.load();
+    };
+
     const playAudio = async () => {
       try {
+        ensureAudioSource();
         await audio.play();
       } catch {
         setPlayState();

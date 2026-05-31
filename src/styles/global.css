@@ -1,6 +1,14 @@
 @import "tailwindcss";
 @config "../../tailwind.config.cjs";
 
+@font-face {
+  font-display: swap;
+  font-family: "Boogaloo";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/boogaloo-v25-latin.woff2") format("woff2");
+}
+
 body {
   background: #eef5ea;
   color: #000000;
