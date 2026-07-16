@@ -11,9 +11,9 @@
   "author": "sabro",
   "license": "ISC",
   "devDependencies": {
-    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/typography": "^0.5.19",
-    "astro": "^6.3.7",
+    "astro": "^7.0.9",
     "autoprefixer": "^10.5.0",
     "flowbite": "^4.0.2",
     "postcss": "^8.5.15",
