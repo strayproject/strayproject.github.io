@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://strayproject.github.io",
@@ -8,4 +9,7 @@ export default defineConfig({
     format: "file",
   },
   integrations: [sitemap()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
