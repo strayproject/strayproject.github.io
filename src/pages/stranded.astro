@@ -340,8 +340,8 @@ const strandedSheetBorderImage = `url("${sheetBorderImage.src}")`;
     class="stranded-page font-boogaloo"
     style={`--stranded-background-image: ${strandedBackgroundImage}; --stranded-background-image-mobile: ${strandedMobileBackgroundImage}; --stranded-sheet-border-image: ${strandedSheetBorderImage};`}
   >
-    <div class="min-h-screen px-4 text-[#20231f] sm:px-6 lg:px-10">
-      <article class="stranded-sheet mx-auto max-w-[760px] px-5 py-7 sm:px-10 lg:max-w-[920px] lg:px-14 xl:max-w-[1040px]">
+    <div class="min-h-screen text-[#20231f] sm:px-6 lg:px-10">
+      <article class="stranded-sheet mx-auto max-w-[760px] px-3 py-5 sm:px-8 sm:py-7 lg:max-w-[920px] lg:px-10 xl:max-w-[1040px]">
         <section class="text-center">
           <Image
             class="mx-auto w-full max-w-[620px]"
@@ -368,11 +368,17 @@ const strandedSheetBorderImage = `url("${sheetBorderImage.src}")`;
             A survival story set on an unknown island!
           </h1>
           <p class="mx-auto mt-4 max-w-[620px] text-base leading-snug sm:text-lg">
-            A holiday vacation goe<span class="secret-letter">s</span>{" "}
-            completely wrong after your plane crashes onto an unknown island.
-            Pl<span class="secret-letter">a</span>y as the protagonist of the story
-            who manages to sur<span class="secret-letter">v</span>ive the crash
-            along with few oth<span class="secret-letter">e</span>r survivors.
+            <span class="sr-only">
+              A holiday vacation goes completely wrong after your plane crashes onto an unknown island.
+              Play as the protagonist of the story who manages to survive the crash along with few other survivors.
+            </span>
+            <span aria-hidden="true">
+              A holiday vacation goe<span class="secret-letter">s</span>{" "}
+              completely wrong after your plane crashes onto an unknown island.
+              Pl<span class="secret-letter">a</span>y as the protagonist of the story
+              who manages to sur<span class="secret-letter">v</span>ive the crash
+              along with few oth<span class="secret-letter">e</span>r survivors.
+            </span>
           </p>
 
           <div class="mt-7 flex flex-wrap justify-center gap-3 text-base sm:text-lg">
@@ -399,10 +405,16 @@ const strandedSheetBorderImage = `url("${sheetBorderImage.src}")`;
           <Image class="section-divider" src={lineImage} alt="" loading="lazy" />
           <h2 class="text-2xl sm:text-3xl">Meet the other survivors!</h2>
           <p class="mx-auto mt-3 max-w-[620px] text-base leading-snug sm:text-lg">
-            Decide the fu<span class="secret-letter">t</span>ure of your own
-            existence while forging favourable relations<span class="secret-letter">h</span>ips
-            with the r<span class="secret-letter">e</span>st of the survivors.
-            Their lives co<span class="secret-letter">m</span>pletely rest in your hands.
+            <span class="sr-only">
+              Decide the future of your own existence while forging favourable relationships
+              with the rest of the survivors. Their lives completely rest in your hands.
+            </span>
+            <span aria-hidden="true">
+              Decide the fu<span class="secret-letter">t</span>ure of your own
+              existence while forging favourable relations<span class="secret-letter">h</span>ips
+              with the r<span class="secret-letter">e</span>st of the survivors.
+              Their lives co<span class="secret-letter">m</span>pletely rest in your hands.
+            </span>
           </p>
           <div class="cast-tabs mx-auto mt-6" data-cast-tabs>
             <div class="cast-stage has-selection" role="tablist" aria-label="Stranded survivors" data-cast-stage>
@@ -896,13 +908,20 @@ const strandedSheetBorderImage = `url("${sheetBorderImage.src}")`;
       color: #20231f;
       font-size: 1.5rem;
       line-height: 1.1;
+      margin: 0;
       text-align: center;
+    }
+
+    .cast-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
     }
 
     .cast-facts {
       display: grid;
-      gap: 0.4rem;
-      margin-top: 0.75rem;
+      gap: 0.5rem;
+      margin: 0;
     }
 
     .cast-facts span {
@@ -919,7 +938,7 @@ const strandedSheetBorderImage = `url("${sheetBorderImage.src}")`;
       color: #3f433b;
       font-size: 1rem;
       line-height: 1.35;
-      margin-top: 0.8rem;
+      margin: 0;
       text-align: center;
     }
 

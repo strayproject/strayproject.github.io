@@ -29,14 +29,14 @@ const posts = await getSortedPosts();
           return (
             <li>
               <a href={getPostPath(post)}>
-                <div class="relative min-h-32 w-full rounded-[10px] border border-[rgba(95,121,47,0.2)] bg-[rgba(237,243,228,0.74)] p-4 font-boogaloo shadow-sm transition duration-150 hover:bg-[#edf3e4] sm:p-5">
+                <div class="relative min-h-32 w-full rounded-[10px] border border-[rgba(95,121,47,0.2)] bg-[rgba(237,243,228,0.74)] p-4 pb-10 text-left font-boogaloo shadow-sm transition duration-150 hover:bg-[#edf3e4] sm:p-5">
                   <div class="flex flex-col gap-1 sm:flex-row sm:justify-between sm:gap-4">
                     <h2 class="text-xl leading-tight text-[#20231f] sm:text-2xl">{post.data.title}</h2>
                     <p class="whitespace-nowrap text-sm text-[#4d5049] sm:text-base">
                       {formatPostDate(post.data.pubDate)}
                     </p>
                   </div>
-                  <p class="mt-2 pr-28 text-base leading-snug text-[#3f433b] sm:text-lg">
+                  <p class="mt-2 text-base leading-snug text-[#3f433b] sm:pr-28 sm:text-lg">
                     {getPostExcerpt(post)}
                   </p>
                   {primaryTag === "stranded" && (

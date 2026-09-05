@@ -33,7 +33,7 @@ body {
 
 @media (max-width: 640px) {
   .stranded-sheet {
-    --sheet-border-width: 2.5rem;
+    --sheet-border-width: 1rem;
   }
 }
 
